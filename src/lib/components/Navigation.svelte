@@ -3,7 +3,6 @@
 	import { Shield, Menu, X } from 'lucide-svelte';
 	import { page } from '$app/stores';
 	import { t } from '$lib/utils/translations.js';
-	import LanguageSwitcher from './LanguageSwitcher.svelte';
 
 	let { variant = 'default', showCTA = true } = $props();
 
@@ -112,16 +111,6 @@
 
 			{#if showCTA}
 				<div class="flex items-center space-x-4">
-					<!-- Language Switcher sempre visibile -->
-					<div class="hidden sm:block">
-						<LanguageSwitcher variant="dropdown" />
-					</div>
-
-					<!-- Mobile language switcher (solo icona) -->
-					<div class="sm:hidden">
-						<LanguageSwitcher variant="buttons" />
-					</div>
-
 					<!-- Desktop CTA -->
 					<div class="hidden md:flex items-center space-x-4">
 						{#if currentPath !== '/pricing'}
@@ -174,16 +163,6 @@
 				</div>
 			{:else}
 				<div class="flex items-center space-x-4">
-					<!-- Language Switcher per layout senza CTA -->
-					<div class="hidden sm:block">
-						<LanguageSwitcher variant="dropdown" />
-					</div>
-
-					<!-- Mobile language switcher (compatto) -->
-					<div class="sm:hidden">
-						<LanguageSwitcher variant="buttons" />
-					</div>
-
 					<div class="hidden md:block">
 						<a
 							href="/"
@@ -340,7 +319,6 @@
 						>
 							{t('nav.language')}
 						</p>
-						<LanguageSwitcher variant="buttons" />
 					</div>
 				</div>
 			</div>
