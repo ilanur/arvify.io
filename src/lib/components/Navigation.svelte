@@ -37,7 +37,7 @@
 								? 'text-white'
 								: 'text-gray-900'}"
 					>
-						Smart AI {currentPath === '/mcp-servers' ? '' : 'Box'}
+						Arvify {currentPath === '/mcp-servers' ? 'MCP' : ''}
 					</span>
 				</a>
 

@@ -46,7 +46,7 @@
 							<User class="w-8 h-8 text-blue-400" />
 						</div>
 						<h2 class="text-3xl font-bold text-white mb-2">Accedi al Tuo Device</h2>
-						<p class="text-blue-100">Gestisci il tuo Smart AI Box</p>
+						<p class="text-blue-100">Gestisci il tuo Arvify</p>
 					</div>
 
 					<!-- Login Form -->
@@ -94,7 +94,7 @@
 								id="deviceId"
 								bind:value={deviceId}
 								class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-blue-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
-								placeholder="SAB-XXXX-XXXX"
+								placeholder="ARV-XXXX-XXXX"
 							/>
 							<p class="text-xs text-blue-200 mt-1">Trova l'ID sotto il tuo dispositivo</p>
 						</div>
@@ -138,7 +138,7 @@
 			<div class="space-y-8">
 				<!-- Header -->
 				<div class="text-center mb-12">
-					<h2 class="text-4xl font-bold text-white mb-4">Dashboard Smart AI Box</h2>
+					<h2 class="text-4xl font-bold text-white mb-4">Dashboard Arvify</h2>
 					<p class="text-blue-100 text-lg">Controllo completo del tuo assistente AI</p>
 					<button
 						onclick={toggleMode}
@@ -304,7 +304,7 @@
 				<div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 text-center">
 					<Smartphone class="w-12 h-12 text-blue-400 mx-auto mb-4" />
 					<h3 class="text-2xl font-bold text-white mb-3">Scarica l'App Mobile</h3>
-					<p class="text-blue-100 mb-6">Controlla il tuo Smart AI Box ovunque tu sia</p>
+					<p class="text-blue-100 mb-6">Controlla il tuo Arvify ovunque tu sia</p>
 					<div class="flex flex-col sm:flex-row gap-4 justify-center">
 						<button class="bg-black text-white px-6 py-3 rounded-lg flex items-center space-x-2">
 							<span class="text-2xl">📱</span>

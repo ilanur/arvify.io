@@ -11,7 +11,7 @@
 	} from 'lucide-svelte';
 
 	const contactInfo = [
-		{ icon: Mail, label: 'Email', value: 'info@smartaibox.com' },
+		{ icon: Mail, label: 'Email', value: 'info@arvify.io' },
 		{ icon: Phone, label: 'Telefono', value: '+39 02 1234 5678' },
 		{ icon: MapPin, label: 'Indirizzo', value: "Via dell'Innovazione 42, Milano" }
 	];
@@ -45,7 +45,7 @@
 					>
 						<Shield class="w-6 h-6 text-white" />
 					</div>
-					<span class="text-2xl font-bold">Smart AI Box</span>
+					<span class="text-2xl font-bold">Arvify.io</span>
 				</div>
 
 				<p class="text-gray-300 text-lg mb-6 leading-relaxed max-w-md">
@@ -66,21 +66,21 @@
 				<!-- Social Links -->
 				<div class="flex items-center space-x-4 mt-6">
 					<a
-						href="https://twitter.com/smartaibox"
+						href="https://twitter.com/arvifyio"
 						class="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
 						aria-label="Twitter"
 					>
 						<Twitter class="w-5 h-5" />
 					</a>
 					<a
-						href="https://github.com/smartaibox"
+						href="https://github.com/arvify"
 						class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
 						aria-label="GitHub"
 					>
 						<Github class="w-5 h-5" />
 					</a>
 					<a
-						href="https://discord.gg/smartaibox"
+						href="https://discord.gg/arvify"
 						class="w-10 h-10 bg-gray-800 hover:bg-green-600 rounded-lg flex items-center justify-center transition-colors"
 						aria-label="Discord"
 					>
@@ -134,9 +134,7 @@
 			<div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
 				<div>
 					<h3 class="text-lg font-semibold mb-2">Resta aggiornato</h3>
-					<p class="text-gray-300">
-						Ricevi le ultime novità su Smart AI Box e aggiornamenti software
-					</p>
+					<p class="text-gray-300">Ricevi le ultime novità su Arvify e aggiornamenti software</p>
 				</div>
 
 				<div class="flex space-x-3 w-full md:w-auto">
@@ -160,7 +158,7 @@
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
 			<div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
 				<div class="flex items-center space-x-6 text-sm text-gray-400">
-					<span>© 2025 Smart AI Box. Tutti i diritti riservati.</span>
+					<span>© 2025 Arvify.io. Tutti i diritti riservati.</span>
 					<span>Made in Italy 🇮🇹</span>
 				</div>
 

@@ -6,7 +6,7 @@
 			number: 1,
 			icon: MessageSquare,
 			title: 'Fai la tua domanda',
-			description: "Usa l'app mobile per inviare la tua richiesta al Smart AI Box",
+			description: "Usa l'app mobile per inviare la tua richiesta ad Arvify",
 			color: 'blue',
 			details: 'Voice-to-text, digitazione o upload file'
 		},
@@ -52,7 +52,7 @@
 			<h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
 				Come Funziona
 				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-					Smart AI Box
+					Arvify
 				</span>
 			</h2>
 			<p class="text-xl text-blue-100 max-w-3xl mx-auto">
@@ -140,7 +140,7 @@
 								<div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
 									<Smartphone class="w-4 h-4 text-white" />
 								</div>
-								<span class="text-white font-semibold">Smart AI Control</span>
+								<span class="text-white font-semibold">Arvify Control</span>
 							</div>
 							<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
 						</div>

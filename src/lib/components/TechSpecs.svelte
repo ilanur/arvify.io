@@ -134,7 +134,7 @@
 					<span class="text-gray-400">→</span>
 					<div class="flex items-center space-x-2">
 						<HardDrive class="w-5 h-5 text-emerald-600" />
-						<span class="font-medium">Smart AI Box</span>
+						<span class="font-medium">Arvify</span>
 					</div>
 					<span class="text-gray-400">→</span>
 					<div class="flex items-center space-x-2">

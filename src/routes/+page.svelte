@@ -16,16 +16,16 @@
 </script>
 
 <svelte:head>
-	<title>Smart AI Box - Il Primo Assistente AI Ibrido Privacy-First</title>
+	<title>Arvify.io - Il Primo Assistente AI Ibrido Privacy-First</title>
 	<meta
 		name="description"
-		content="Smart AI Box: Raspberry Pi 5 con Ollama integrato per AI locale e cloud ibrido. Massima privacy, controllo totale via app mobile. Ordinalo ora!"
+		content="Arvify: Raspberry Pi 5 con Ollama integrato per AI locale e cloud ibrido. Massima privacy, controllo totale via app mobile. Ordinalo ora!"
 	/>
 	<meta
 		name="keywords"
-		content="AI Box, Raspberry Pi, Ollama, Privacy AI, Hybrid AI, Model Context Protocol, MCP"
+		content="Arvify, AI Box, Raspberry Pi, Ollama, Privacy AI, Hybrid AI, Model Context Protocol, MCP"
 	/>
-	<meta property="og:title" content="Smart AI Box - Assistente AI Ibrido Privacy-First" />
+	<meta property="og:title" content="Arvify.io - Assistente AI Ibrido Privacy-First" />
 	<meta
 		property="og:description"
 		content="Il primo dispositivo AI che combina elaborazione locale e cloud con controllo totale dei tuoi dati"
@@ -54,7 +54,7 @@
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 			<h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Pronto per il Futuro dell'AI?</h2>
 			<p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-				Unisciti a migliaia di utenti che hanno già scelto Smart AI Box per un'esperienza AI davvero
+				Unisciti a migliaia di utenti che hanno già scelto Arvify per un'esperienza AI davvero
 				privata e potente.
 			</p>
 

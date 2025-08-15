@@ -1,4 +1,28 @@
-# Smart AI Box - Landing Page
+# Arvify.io - Landing Page
+
+Una moderna landing ### Vantaggi Chiave
+
+1. **Privacy totale** - Elaborazione locale quando possibile
+2. **Potenza cloud** - Accesso a GPT-4, Claude, Gemini quando serve
+3. **Controllo granulare** - Approvi cosa condividere e per quanto tempo
+4. **Auto-cancellazione** - TTL automatico per tutti i dati cloud
+5. **Tracciabilità completa** - Log di ogni operazione
+
+## 🛠️ Tecnologie Landing PageArvify.io, il primo assistente AI ibrido privacy-first basato su Raspberry Pi 5. Questo progetto presenta il dispositivo Arvify con un'interfaccia utente attraente e funzionale.
+
+## ✨ Caratteristiche
+
+- **🎨 Design Moderno**: Landing page responsive costruita con SvelteKit 5 e Tailwind CSS
+- **🔒️ Privacy-First**: Sezione dedicata ai vantaggi dell'approccio ibrido locale/cloud
+- **📱 App Mobile**: Showcase dell'app di controllo dedicata
+- **💰 Pricing**: Sezione con piani di acquisto e specifiche tecniche
+- **👤 Dashboard**: Area login e dashboard demo per gestione dispositivo
+- **⚡ Performance**: Caricamento veloce e animazioni fluide
+- **📱 Responsive**: Ottimizzato per desktop, tablet e mobile
+
+## 🚀 Prodotto: Arvify
+
+**Arvify** è un dispositivo fisico basato su:Landing Page
 
 Una moderna landing page per Smart AI Box, il primo assistente AI ibrido privacy-first basato su Raspberry Pi 5. Questo progetto presenta il dispositivo con un'interfaccia utente attraente e funzionale.
 
@@ -51,7 +75,7 @@ Una moderna landing page per Smart AI Box, il primo assistente AI ibrido privacy
 ```bash
 # Clona il repository
 git clone <repository-url>
-cd mcp-list
+cd arvify-landing
 
 # Installa le dipendenze
 npm install

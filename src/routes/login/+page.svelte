@@ -6,10 +6,10 @@
 </script>
 
 <svelte:head>
-	<title>Login - Smart AI Box | Accedi al Tuo Dispositivo</title>
+	<title>Login - Arvify.io | Accedi al Tuo Dispositivo</title>
 	<meta
 		name="description"
-		content="Accedi al dashboard del tuo Smart AI Box. Gestisci impostazioni, monitora attività e controlla il tuo assistente AI ibrido."
+		content="Accedi al dashboard del tuo Arvify. Gestisci impostazioni, monitora attività e controlla il tuo assistente AI ibrido."
 	/>
 </svelte:head>
 

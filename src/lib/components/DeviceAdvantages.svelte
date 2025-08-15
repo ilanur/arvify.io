@@ -58,7 +58,7 @@
 		<!-- Header -->
 		<div class="text-center mb-16">
 			<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-				Perché Smart AI Box è
+				Perché Arvify è
 				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">
 					Rivoluzionario
 				</span>

@@ -6,10 +6,10 @@
 </script>
 
 <svelte:head>
-	<title>Pricing - Smart AI Box | Scegli il Tuo Piano</title>
+	<title>Pricing - Arvify.io | Scegli il Tuo Piano</title>
 	<meta
 		name="description"
-		content="Scopri i piani di Smart AI Box: Starter €299, Pro €449, Enterprise €799. Dispositivo AI ibrido con Raspberry Pi 5 e Ollama integrato."
+		content="Scopri i piani di Arvify: Starter €299, Pro €449, Enterprise €799. Dispositivo AI ibrido con Raspberry Pi 5 e Ollama integrato."
 	/>
 </svelte:head>
 
@@ -23,7 +23,7 @@
 			<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
 				Scegli il Tuo
 				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-					Smart AI Box
+					Arvify
 				</span>
 			</h1>
 			<p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
@@ -110,8 +110,8 @@
 						Posso usare i miei modelli AI personalizzati?
 					</h3>
 					<p class="text-gray-600">
-						Sì, Smart AI Box supporta modelli Ollama personalizzati. Nel piano Enterprise includiamo
-						anche supporto per setup personalizzati.
+						Sì, Arvify supporta modelli Ollama personalizzati. Nel piano Enterprise includiamo anche
+						supporto per setup personalizzati.
 					</p>
 				</div>
 			</div>

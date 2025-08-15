@@ -23,7 +23,7 @@
 				</div>
 
 				<h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-					Smart AI Box
+					Arvify
 					<span
 						class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
 					>
@@ -126,7 +126,7 @@
 				>
 					<div class="p-2">
 						<div class="w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl p-3">
-							<div class="text-white text-xs text-center mb-2">Smart AI Control</div>
+							<div class="text-white text-xs text-center mb-2">Arvify Control</div>
 							<div class="space-y-2">
 								{#each Array(3) as _, i}
 									<div class="h-2 bg-white/30 rounded-full">

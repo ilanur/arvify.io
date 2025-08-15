@@ -78,7 +78,7 @@
 			<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
 				Scegli il Tuo
 				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">
-					Smart AI Box
+					Arvify
 				</span>
 			</h2>
 			<p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
@@ -204,8 +204,8 @@
 			<Shield class="w-16 h-16 text-emerald-600 mx-auto mb-4" />
 			<h3 class="text-2xl font-bold text-gray-900 mb-3">Garanzia Soddisfatti o Rimborsati</h3>
 			<p class="text-gray-600 text-lg max-w-2xl mx-auto">
-				Prova Smart AI Box per 30 giorni. Se non sei completamente soddisfatto, ti rimborsiamo il
-				100% del prezzo pagato.
+				Prova Arvify per 30 giorni. Se non sei completamente soddisfatto, ti rimborsiamo il 100% del
+				prezzo pagato.
 			</p>
 		</div>
 	</div>
