@@ -5,7 +5,7 @@
 
 	// Funzione per ottenere il colore del badge
 	/**
-	 * @param {string | number} badge
+	 * @param {any} badge
 	 */
 	function getBadgeColor(badge) {
 		const colors = {
@@ -22,10 +22,15 @@
 			'☕': 'bg-amber-100 text-amber-800',
 			'#️⃣': 'bg-purple-100 text-purple-800'
 		};
-		return colors[badge] || 'bg-gray-100 text-gray-800';
+		const badgeKey = String(badge);
+		// @ts-ignore
+		return badgeKey in colors ? colors[badgeKey] : 'bg-gray-100 text-gray-800';
 	}
 
 	// Funzione per ottenere il colore della categoria
+	/**
+	 * @param {string | number} category
+	 */
 	function getCategoryColor(category) {
 		const colors = {
 			'🔗 Aggregators': 'bg-purple-50 border-purple-200',
@@ -49,7 +54,9 @@
 			'🚆 Travel & Transportation': 'bg-indigo-50 border-indigo-200',
 			'🛠️ Other Tools and Integrations': 'bg-gray-50 border-gray-200'
 		};
-		return colors[category] || 'bg-gray-50 border-gray-200';
+		const categoryKey = String(category);
+		// @ts-ignore
+		return categoryKey in colors ? colors[categoryKey] : 'bg-gray-50 border-gray-200';
 	}
 
 	const categoryColor = getCategoryColor(server.category);

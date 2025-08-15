@@ -1,17 +1,44 @@
-# MCP Servers Showcase
+# Smart AI Box - Landing Page
 
-Una moderna interfaccia web per esplorare e scoprire server Model Context Protocol (MCP). Questo progetto presenta una collezione curata di server MCP con un'interfaccia utente bella e funzionale.
+Una moderna landing page per Smart AI Box, il primo assistente AI ibrido privacy-first basato su Raspberry Pi 5. Questo progetto presenta il dispositivo con un'interfaccia utente attraente e funzionale.
 
 ## ✨ Caratteristiche
 
-- **🎨 Design Moderno**: Interfaccia pulita e responsive costruita con SvelteKit 5 e Tailwind CSS
-- **🔍 Ricerca Avanzata**: Cerca server per nome, descrizione o funzionalità
-- **🏷️ Filtri per Categoria**: Filtra per categorie specifiche (Database, Cloud, AI, ecc.)
-- **📊 Statistiche**: Panoramica completa dei server disponibili
+- **🎨 Design Moderno**: Landing page responsive costruita con SvelteKit 5 e Tailwind CSS
+- **�️ Privacy-First**: Sezione dedicata ai vantaggi dell'approccio ibrido locale/cloud
+- **📱 App Mobile**: Showcase dell'app di controllo dedicata
+- **💰 Pricing**: Sezione con piani di acquisto e specifiche tecniche
+- **👤 Dashboard**: Area login e dashboard demo per gestione dispositivo
 - **⚡ Performance**: Caricamento veloce e animazioni fluide
 - **📱 Responsive**: Ottimizzato per desktop, tablet e mobile
 
-## 🚀 Tecnologie Utilizzate
+## 🚀 Prodotto: Smart AI Box
+
+**Smart AI Box** è un dispositivo fisico basato su:
+
+### Hardware
+
+- **Raspberry Pi 5 (8GB)** - Processore dedicato per AI
+- **Ollama integrato** - Modelli AI locali preinstallati
+- **sqlite-vec** - Database vettoriale per indicizzazione semantica
+- **Storage espandibile** - MicroSD + SSD opzionale
+
+### Software
+
+- **Router AI ibrido** - Sceglie automaticamente tra locale e cloud
+- **App mobile dedicata** - Controllo totale da iOS/Android
+- **MCP Server** - Supporto completo Model Context Protocol
+- **Privacy by design** - Dati locali, cloud solo su approvazione
+
+### Vantaggi Chiave
+
+1. **Privacy totale** - Elaborazione locale quando possibile
+2. **Potenza cloud** - Accesso a GPT-4, Claude, Gemini quando serve
+3. **Controllo granulare** - Approvi cosa condividere e per quanto tempo
+4. **Auto-cancellazione** - TTL automatico per tutti i dati cloud
+5. **Tracciabilità completa** - Log di ogni operazione
+
+## �️ Tecnologie Landing Page
 
 - **SvelteKit 5**: Framework moderno con Svelte Runes
 - **Tailwind CSS 4**: Sistema di design atomico
@@ -61,50 +88,66 @@ npm run check
 src/
 ├── lib/
 │   └── components/
-│       ├── Hero.svelte           # Sezione hero
-│       ├── McpCard.svelte        # Card per server MCP
-│       ├── SearchBar.svelte      # Barra di ricerca
-│       ├── CategoryFilter.svelte # Filtri categoria
-│       └── StatsCard.svelte      # Card statistiche
+│       ├── DeviceHero.svelte        # Hero section dispositivo
+│       ├── DeviceAdvantages.svelte  # Vantaggi approccio ibrido
+│       ├── TechSpecs.svelte         # Specifiche tecniche
+│       ├── HowItWorks.svelte        # Workflow e funzionamento
+│       ├── Pricing.svelte           # Piani di acquisto
+│       ├── DeviceLogin.svelte       # Login e dashboard
+│       └── DeviceFooter.svelte      # Footer dedicato
 ├── routes/
-│   └── +page.svelte             # Pagina principale
-├── app.css                      # Stili globali
-└── app.html                     # Template HTML
+│   └── +page.svelte                 # Landing page principale
+├── app.css                          # Stili globali e device-specific
+└── app.html                         # Template HTML
 ```
 
 ## 🎨 Sistema di Design
 
-Il progetto utilizza un sistema di design atomico con:
+Il progetto utilizza un sistema di design moderno con:
 
-- **Colori**: Palette di colori consistente con variazioni primary/gray
-- **Componenti**: Card, badge, bottoni e form riutilizzabili
-- **Animazioni**: Transizioni fluide e micro-interazioni
-- **Typography**: Gerarchia tipografica chiara
-- **Spacing**: Sistema di spaziatura consistente
+- **Gradients**: Blu/emerald per tech, slate/indigo per eleganza
+- **Glass effects**: Backdrop blur per modernità
+- **Animazioni**: Slide-up, fade-in, bounce per interattività
+- **Typography**: Gerarchia chiara con focus su leggibilità
+- **Spacing**: Sistema consistente per layout armonioso
 
-## 📊 Dati dei Server
+## � Modelli di Prezzo
 
-I dati dei server MCP sono memorizzati in `mcp-servers.json` e includono:
+### Starter - €299
 
-```json
-{
-	"id": "server-id",
-	"name": "Organization/Repository",
-	"description": "Descrizione del server",
-	"category": "🔗 Aggregators",
-	"url": "https://github.com/...",
-	"badges": ["📇", "☁️", "🏠"],
-	"features": ["Feature 1", "Feature 2"]
-}
-```
+- Raspberry Pi 5 (8GB)
+- Setup base con 3 modelli Ollama
+- App mobile inclusa
 
-## 🤝 Contribuire
+### Pro - €449 (Più venduto)
 
-1. Fork del repository
-2. Crea un branch per la tua feature (`git checkout -b feature/amazing-feature`)
-3. Commit delle modifiche (`git commit -m 'Add amazing feature'`)
-4. Push al branch (`git push origin feature/amazing-feature`)
-5. Apri una Pull Request
+- Include tutto dello Starter
+- SSD 256GB + case premium
+- Cloud credits per 6 mesi
+- Supporto prioritario
+
+### Enterprise - €799
+
+- Include tutto del Pro
+- SSD 1TB + backup cloud
+- API personalizzate + consulenza
+- Cloud credits illimitati primo anno
+
+## 🔒 Privacy e Sicurezza
+
+- **Elaborazione locale** per massima privacy
+- **Approvazione manuale** per ogni condivisione cloud
+- **TTL automatico** - cancellazione garantita dei dati
+- **Log completi** - tracciabilità totale delle operazioni
+- **Control granulare** - scegli cosa, quando e per quanto
+
+## 🤝 Supporto
+
+- Centro assistenza online
+- Community forum attiva
+- Documentazione completa
+- Video tutorial
+- Supporto email/telefono
 
 ## 📄 Licenza
 
@@ -112,7 +155,8 @@ Questo progetto è sotto licenza MIT. Vedi il file `LICENSE` per dettagli.
 
 ## 🙏 Riconoscimenti
 
-- Dati originali da [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
+- Ispirato dal progetto [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
 - Icone da [Lucide](https://lucide.dev/)
 - Framework da [SvelteKit](https://kit.svelte.dev/)
 - Styling da [Tailwind CSS](https://tailwindcss.com/)
+- Hardware da [Raspberry Pi Foundation](https://www.raspberrypi.org/)
