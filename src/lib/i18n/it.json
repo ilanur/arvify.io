@@ -1,0 +1,13 @@
+{
+	"nav": {
+		"mcpServers": "MCP Servers",
+		"pricing": "Prezzi",
+		"login": "Login",
+		"home": "\u2190 Torna alla Home",
+		"cta": {
+			"from": "A partire da €299",
+			"orderNow": "Ordina Ora",
+			"choosePlan": "Scegli Piano"
+		}
+	}
+}

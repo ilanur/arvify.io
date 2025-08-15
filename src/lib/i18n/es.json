@@ -1,0 +1,13 @@
+{
+	"nav": {
+		"mcpServers": "Servidores MCP",
+		"pricing": "Precios",
+		"login": "Iniciar sesi\u00f3n",
+		"home": "\u2190 Volver al Inicio",
+		"cta": {
+			"from": "Desde €299",
+			"orderNow": "Ordenar Ahora",
+			"choosePlan": "Elegir Plan"
+		}
+	}
+}
