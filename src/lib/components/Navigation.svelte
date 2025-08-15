@@ -1,11 +1,17 @@
 <script>
-	import { Shield, Code } from 'lucide-svelte';
+	// @ts-nocheck
+	import { Shield } from 'lucide-svelte';
 	import { page } from '$app/stores';
+	import { t, useCurrentLanguage, useLanguageSwitcher } from '$lib/utils/translations.js';
 
 	let { variant = 'default', showCTA = true } = $props();
 
 	// variant can be: 'default', 'transparent', 'dark'
 	let currentPath = $derived($page?.url?.pathname || '/');
+
+	// Track lingua corrente e switcher
+	const currentLanguage = useCurrentLanguage();
+	const { setLanguage, getAvailableLanguages } = useLanguageSwitcher();
 </script>
 
 <nav
@@ -59,7 +65,7 @@
 							transition-colors
 						"
 					>
-						MCP Servers
+						{t('nav.mcpServers')}
 					</a>
 					<a
 						href="/pricing"
@@ -78,7 +84,7 @@
 							transition-colors
 						"
 					>
-						Pricing
+						{t('nav.pricing')}
 					</a>
 					<a
 						href="/login"
@@ -97,7 +103,7 @@
 							transition-colors
 						"
 					>
-						Login
+						{t('nav.login')}
 					</a>
 				</div>
 			</div>
@@ -116,7 +122,7 @@
 								text-sm transition-colors
 							"
 						>
-							A partire da €299
+							{t('nav.cta.from')}
 						</a>
 					{/if}
 					<a
@@ -130,7 +136,7 @@
 							px-4 py-2 rounded-lg font-medium transition-all
 						"
 					>
-						{currentPath === '/pricing' ? 'Scegli Piano' : 'Ordina Ora'}
+						{currentPath === '/pricing' ? t('nav.cta.choosePlan') : t('nav.cta.orderNow')}
 					</a>
 				</div>
 			{:else}
@@ -145,9 +151,19 @@
 						text-sm transition-colors
 					"
 				>
-					← Torna alla Home
+					{t('nav.home')}
 				</a>
 			{/if}
+			<!-- Language Switcher -->
+			<select
+				value={currentLanguage}
+				onchange={(e) => setLanguage(/** @type {HTMLSelectElement} */ (e.target).value)}
+				class="ml-4 bg-transparent text-sm border border-current rounded px-2 py-1"
+			>
+				{#each getAvailableLanguages() as lang}
+					<option value={lang}>{lang.toUpperCase()}</option>
+				{/each}
+			</select>
 		</div>
 	</div>
 </nav>
