@@ -1,0 +1,21 @@
+name = "mcp-list"
+compatibility_date = "2024-08-16"
+compatibility_flags = ["nodejs_compat"]
+
+# SvelteKit build output
+pages_build_output_dir = "build"
+
+# Environment variables (if needed)
+[vars]
+# Add any environment variables here
+
+# D1 Database bindings (if you want to add a database later)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "mcp-list-db"
+# database_id = "your-database-id"
+
+# KV namespaces (if needed)
+# [[kv_namespaces]]
+# binding = "KV"
+# id = "your-kv-namespace-id"

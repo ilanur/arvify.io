@@ -75,7 +75,7 @@ Una moderna landing page per Smart AI Box, il primo assistente AI ibrido privacy
 ```bash
 # Clona il repository
 git clone <repository-url>
-cd arvify-landing
+cd mcp-list
 
 # Installa le dipendenze
 npm install
@@ -95,8 +95,20 @@ npm run dev
 # Build per produzione
 npm run build
 
-# Anteprima build
+# Anteprima build locale
 npm run preview
+
+# Deploy su Cloudflare Pages
+npm run deploy
+
+# Deploy preview su Cloudflare Pages
+npm run deploy:preview
+
+# Build per Cloudflare
+npm run cf:build
+
+# Dev locale con Cloudflare
+npm run cf:dev
 
 # Linting e formattazione
 npm run lint
@@ -105,6 +117,60 @@ npm run format
 # Type checking
 npm run check
 ```
+
+## ☁️ Deploy su Cloudflare
+
+Questo progetto è configurato per essere deployato su **Cloudflare Pages/Workers**:
+
+### Deployment Automatico via Git
+
+1. **Fai push del codice** su GitHub/GitLab
+2. **Connetti il repository** a [Cloudflare Pages](https://pages.cloudflare.com/)
+3. **Configura le build settings**:
+   - **Build command**: `npm run build`
+   - **Output directory**: `build`
+   - **Node.js version**: `18` o superiore
+
+### Deployment Manuale via CLI
+
+```bash
+# Installa Wrangler CLI (se non già installato)
+npm install -g wrangler
+
+# Login a Cloudflare
+wrangler login
+
+# Build e deploy
+npm run deploy
+```
+
+### Variabili d'Ambiente
+
+Copia `.env.example` in `.env.local` e configura:
+
+```bash
+# Per deployment automatico
+CLOUDFLARE_API_TOKEN=your_api_token
+CLOUDFLARE_ACCOUNT_ID=your_account_id
+```
+
+### Configurazione Avanzata
+
+Il file `wrangler.toml` contiene la configurazione per:
+
+- **Routing**: Gestione delle route statiche e dinamiche
+- **Assets**: Servizio di file statici ottimizzato
+- **D1 Database**: (Opzionale) Database SQL serverless
+- **KV Storage**: (Opzionale) Key-Value storage
+- **Environment Variables**: Variabili di ambiente sicure
+
+### Vantaggi Cloudflare
+
+- ⚡ **Edge Computing**: Deploy globale su 200+ datacenter
+- 🛡️ **DDoS Protection**: Protezione automatica inclusa
+- 📊 **Analytics**: Metriche avanzate di performance
+- 🌐 **CDN Globale**: Cache distribuita automatica
+- 💰 **Pricing Conveniente**: Piano free generoso
 
 ## 📁 Struttura del Progetto
 

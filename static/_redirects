@@ -1,0 +1,8 @@
+# Cloudflare Pages Redirects Configuration
+# Gestisce i redirect e le regole di routing
+
+# Redirect per compatibilità (se necessario)
+# /old-path/* /new-path/:splat 301
+
+# Fallback per SPA routing - deve essere l'ultimo
+/* /index.html 200
