@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-gray-50 text-gray-900;
+	}
+}
+
+@layer components {
+	.card {
+		@apply bg-white rounded-xl shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
+	}
+
+	.badge {
+		@apply inline-flex items-center justify-center px-2 py-1 rounded-full text-xs font-medium;
+	}
+
+	.btn-primary {
+		@apply bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+	}
+
+	.search-input {
+		@apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+	}
+
+	.category-pill {
+		@apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
+	}
+
+	.category-pill.active {
+		@apply bg-primary-100 text-primary-800;
+	}
+}

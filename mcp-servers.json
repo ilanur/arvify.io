@@ -1,0 +1,646 @@
+[
+	{
+		"id": "1mcp-agent",
+		"name": "1mcp/agent",
+		"description": "A unified Model Context Protocol server implementation that aggregates multiple MCP servers into one.",
+		"category": "🔗 Aggregators",
+		"url": "https://github.com/1mcp-app/agent",
+		"badges": ["📇", "☁️", "🏠", "🍎", "🪟", "🐧"],
+		"features": ["Unified server aggregation", "Multi-platform support"]
+	},
+	{
+		"id": "duaraghav8-mcpjungle",
+		"name": "duaraghav8/MCPJungle",
+		"description": "Self-hosted MCP Server registry for enterprise AI Agents",
+		"category": "🔗 Aggregators",
+		"url": "https://github.com/duaraghav8/MCPJungle",
+		"badges": ["🏎️", "🏠"],
+		"features": ["Self-hosted registry", "Enterprise AI support"]
+	},
+	{
+		"id": "glenngillen-mcpmcp-server",
+		"name": "glenngillen/mcpmcp-server",
+		"description": "A list of MCP servers so you can ask your client which servers you can use to improve your daily workflow.",
+		"category": "🔗 Aggregators",
+		"url": "https://github.com/glenngillen/mcpmcp-server",
+		"badges": ["☁️", "📇", "🍎", "🪟", "🐧"],
+		"features": ["Server discovery", "Workflow improvement"]
+	},
+	{
+		"id": "hamflx-imagen3-mcp",
+		"name": "hamflx/imagen3-mcp",
+		"description": "A powerful image generation tool using Google's Imagen 3.0 API through MCP. Generate high-quality images from text prompts with advanced photography, artistic, and photorealistic controls.",
+		"category": "🔗 Aggregators",
+		"url": "https://github.com/hamflx/imagen3-mcp",
+		"badges": ["📇", "🏠", "🪟", "🍎", "🐧"],
+		"features": ["Image generation", "Google Imagen 3.0", "Photorealistic controls"]
+	},
+	{
+		"id": "julien040-anyquery",
+		"name": "julien040/anyquery",
+		"description": "Query more than 40 apps with one binary using SQL. It can also connect to your PostgreSQL, MySQL, or SQLite compatible database. Local-first and private by design.",
+		"category": "🔗 Aggregators",
+		"url": "https://github.com/julien040/anyquery",
+		"badges": ["🏎️", "🏠", "☁️"],
+		"features": ["SQL querying", "40+ app integration", "Local-first design"]
+	},
+	{
+		"id": "metatool-ai-metatool-app",
+		"name": "metatool-ai/metatool-app",
+		"description": "MetaMCP is the one unified middleware MCP server that manages your MCP connections with GUI.",
+		"category": "🔗 Aggregators",
+		"url": "https://github.com/metatool-ai/metatool-app",
+		"badges": ["📇", "☁️", "🏠", "🍎", "🪟", "🐧"],
+		"features": ["GUI management", "Unified middleware", "Connection management"]
+	},
+	{
+		"id": "mindsdb-mindsdb",
+		"name": "mindsdb/mindsdb",
+		"description": "Connect and unify data across various platforms and databases with MindsDB as a single MCP server.",
+		"category": "🔗 Aggregators",
+		"url": "https://github.com/mindsdb/mindsdb",
+		"badges": [],
+		"features": ["Data unification", "Multi-platform support", "Database connectivity"]
+	},
+	{
+		"id": "particlefuture-mcpdiscovery",
+		"name": "particlefuture/MCPDiscovery",
+		"description": "MCP of MCPs. A central hub for MCP servers. Helps you discover available MCP servers and learn how to install and use them.",
+		"category": "🔗 Aggregators",
+		"url": "https://github.com/particlefuture/MCPDiscovery",
+		"badges": [],
+		"features": ["Server discovery", "Installation guides", "Central hub"]
+	},
+	{
+		"id": "8ensmith-mcp-open-library",
+		"name": "8enSmith/mcp-open-library",
+		"description": "A MCP server for the Open Library API that enables AI assistants to search for book information.",
+		"category": "🎨 Art & Culture",
+		"url": "https://github.com/8enSmith/mcp-open-library",
+		"badges": ["📇", "☁️"],
+		"features": ["Book search", "Open Library API", "Literary information"]
+	},
+	{
+		"id": "abhiemj-manim-mcp-server",
+		"name": "abhiemj/manim-mcp-server",
+		"description": "A local MCP server that generates animations using Manim.",
+		"category": "🎨 Art & Culture",
+		"url": "https://github.com/abhiemj/manim-mcp-server",
+		"badges": ["🐍", "🏠", "🪟", "🐧"],
+		"features": ["Animation generation", "Manim integration", "Local processing"]
+	},
+	{
+		"id": "ahujasid-blender-mcp",
+		"name": "ahujasid/blender-mcp",
+		"description": "MCP server for working with Blender",
+		"category": "🎨 Art & Culture",
+		"url": "https://github.com/ahujasid/blender-mcp",
+		"badges": ["🐍"],
+		"features": ["3D modeling", "Blender integration", "Creative tools"]
+	},
+	{
+		"id": "burningion-video-editing-mcp",
+		"name": "burningion/video-editing-mcp",
+		"description": "Add, Analyze, Search, and Generate Video Edits from your Video Jungle Collection",
+		"category": "🎨 Art & Culture",
+		"url": "https://github.com/burningion/video-editing-mcp",
+		"badges": ["🐍"],
+		"features": ["Video editing", "Video analysis", "Collection management"]
+	},
+	{
+		"id": "cantian-ai-bazi-mcp",
+		"name": "cantian-ai/bazi-mcp",
+		"description": "Provides comprehensive and accurate Bazi (Chinese Astrology) charting and analysis",
+		"category": "🎨 Art & Culture",
+		"url": "https://github.com/cantian-ai/bazi-mcp",
+		"badges": ["📇", "🏠", "☁️", "🍎", "🪟"],
+		"features": ["Chinese astrology", "Bazi charting", "Astrological analysis"]
+	},
+	{
+		"id": "browserbase-mcp-server",
+		"name": "browserbase/mcp-server-browserbase",
+		"description": "Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling, and more)",
+		"category": "📂 Browser Automation",
+		"url": "https://github.com/browserbase/mcp-server-browserbase",
+		"badges": ["🎖️", "📇"],
+		"features": ["Cloud automation", "Web navigation", "Data extraction", "Form filling"]
+	},
+	{
+		"id": "browsermcp-mcp",
+		"name": "browsermcp/mcp",
+		"description": "Automate your local Chrome browser",
+		"category": "📂 Browser Automation",
+		"url": "https://github.com/browsermcp/mcp",
+		"badges": ["📇", "🏠"],
+		"features": ["Chrome automation", "Local browser control", "Web automation"]
+	},
+	{
+		"id": "eyalzh-browser-control-mcp",
+		"name": "eyalzh/browser-control-mcp",
+		"description": "An MCP server paired with a browser extension that enables LLM clients to control the user's browser (Firefox).",
+		"category": "📂 Browser Automation",
+		"url": "https://github.com/eyalzh/browser-control-mcp",
+		"badges": ["📇", "🏠"],
+		"features": ["Firefox control", "Browser extension", "LLM integration"]
+	},
+	{
+		"id": "lightpanda-io-gomcp",
+		"name": "lightpanda-io/gomcp",
+		"description": "An MCP server in Go for Lightpanda, the ultra fast headless browser",
+		"category": "📂 Browser Automation",
+		"url": "https://github.com/lightpanda-io/gomcp",
+		"badges": ["🏎", "🏠/☁️", "🐧/🍎"],
+		"features": ["Go implementation", "Headless browser", "High performance"]
+	},
+	{
+		"id": "cloudflare-mcp-server",
+		"name": "cloudflare/mcp-server-cloudflare",
+		"description": "Integration with Cloudflare services including Workers, KV, R2, and D1",
+		"category": "☁️ Cloud Platforms",
+		"url": "https://github.com/cloudflare/mcp-server-cloudflare",
+		"badges": ["🎖️", "📇", "☁️"],
+		"features": ["Cloudflare Workers", "KV storage", "R2 storage", "D1 database"]
+	},
+	{
+		"id": "awslabs-mcp",
+		"name": "awslabs/mcp",
+		"description": "AWS MCP servers for seamless integration with AWS services and resources.",
+		"category": "☁️ Cloud Platforms",
+		"url": "https://github.com/awslabs/mcp",
+		"badges": ["🎖️", "☁️"],
+		"features": ["AWS integration", "Cloud services", "Resource management"]
+	},
+	{
+		"id": "kubernetes-mcp-server",
+		"name": "manusa/Kubernetes MCP Server",
+		"description": "A powerful Kubernetes MCP server with additional support for OpenShift. Besides providing CRUD operations for any Kubernetes resource, this server provides specialized tools to interact with your cluster.",
+		"category": "☁️ Cloud Platforms",
+		"url": "https://github.com/manusa/kubernetes-mcp-server",
+		"badges": ["🏎️", "🏠"],
+		"features": ["Kubernetes CRUD", "OpenShift support", "Cluster interaction"]
+	},
+	{
+		"id": "chroma-core-chroma-mcp",
+		"name": "chroma-core/chroma-mcp",
+		"description": "Chroma MCP server to access local and cloud Chroma instances for retrieval capabilities",
+		"category": "🗄️ Databases",
+		"url": "https://github.com/chroma-core/chroma-mcp",
+		"badges": ["🎖️", "🐍", "☁️", "🏠"],
+		"features": ["Vector database", "Retrieval capabilities", "Local and cloud support"]
+	},
+	{
+		"id": "supabase-community-supabase-mcp",
+		"name": "supabase-community/supabase-mcp",
+		"description": "Official Supabase MCP server to connect AI assistants directly with your Supabase project and allows them to perform tasks like managing tables, fetching config, and querying data.",
+		"category": "🗄️ Databases",
+		"url": "https://github.com/supabase-community/supabase-mcp",
+		"badges": ["🎖️", "📇", "☁️"],
+		"features": ["Supabase integration", "Table management", "Data querying"]
+	},
+	{
+		"id": "redis-mcp-redis",
+		"name": "redis/mcp-redis",
+		"description": "The Redis official MCP Server offers an interface to manage and search data in Redis.",
+		"category": "🗄️ Databases",
+		"url": "https://github.com/redis/mcp-redis",
+		"badges": ["🐍", "🏠"],
+		"features": ["Redis integration", "Data management", "Search capabilities"]
+	},
+	{
+		"id": "neondatabase-mcp-server-neon",
+		"name": "neondatabase/mcp-server-neon",
+		"description": "An MCP Server for creating and managing Postgres databases using Neon Serverless Postgres",
+		"category": "🗄️ Databases",
+		"url": "https://github.com/neondatabase/mcp-server-neon",
+		"badges": ["📇", "☁️"],
+		"features": ["Postgres serverless", "Database creation", "Neon platform"]
+	},
+	{
+		"id": "CircleCI-mcp-server-circleci",
+		"name": "CircleCI/mcp-server-circleci",
+		"description": "Enable AI Agents to fix build failures from CircleCI.",
+		"category": "💻 Developer Tools",
+		"url": "https://github.com/CircleCI-Public/mcp-server-circleci",
+		"badges": ["📇", "☁️"],
+		"features": ["CI/CD integration", "Build failure analysis", "Automated fixes"]
+	},
+	{
+		"id": "docker-hub-mcp",
+		"name": "docker/hub-mcp",
+		"description": "Official MCP server to interact with Docker Hub, providing access to repositories, hub search and Docker Hardened Images",
+		"category": "💻 Developer Tools",
+		"url": "https://github.com/docker/hub-mcp",
+		"badges": ["🎖️", "📇", "☁️", "🏠"],
+		"features": ["Docker Hub integration", "Repository search", "Hardened images"]
+	},
+	{
+		"id": "jetbrains-mcpproxy",
+		"name": "jetbrains/mcpProxy",
+		"description": "Connect to JetBrains IDE",
+		"category": "💻 Developer Tools",
+		"url": "https://github.com/JetBrains/mcpProxy",
+		"badges": ["🎖️", "📇", "🏠"],
+		"features": ["IDE integration", "JetBrains support", "Development workflow"]
+	},
+	{
+		"id": "vscode-mcp-server",
+		"name": "juehang/vscode-mcp-server",
+		"description": "A MCP Server that allows AI such as Claude to read from the directory structure in a VS Code workspace, see problems picked up by linter(s) and the language server, read code files, and make edits.",
+		"category": "💻 Developer Tools",
+		"url": "https://github.com/juehang/vscode-mcp-server",
+		"badges": ["📇", "🏠"],
+		"features": ["VS Code integration", "Code analysis", "Linter support", "File editing"]
+	},
+	{
+		"id": "atlassian-jira-mcp",
+		"name": "aashari/mcp-server-atlassian-jira",
+		"description": "Atlassian Jira Cloud integration. Enables AI systems to interact with Jira projects, issues, comments, and related development information in real time.",
+		"category": "💻 Developer Tools",
+		"url": "https://github.com/aashari/mcp-server-atlassian-jira",
+		"badges": ["📇", "☁️"],
+		"features": ["Jira integration", "Issue management", "Project tracking", "Real-time data"]
+	},
+	{
+		"id": "finance-alpaca-mcp",
+		"name": "laukikk/alpaca-mcp",
+		"description": "An MCP Server for the Alpaca trading API to manage stock and crypto portfolios, place trades, and access market data.",
+		"category": "💰 Finance & Fintech",
+		"url": "https://github.com/laukikk/alpaca-mcp",
+		"badges": ["🐍", "☁️"],
+		"features": ["Trading API", "Portfolio management", "Market data", "Crypto support"]
+	},
+	{
+		"id": "finance-polygon-mcp",
+		"name": "polygon-io/mcp_polygon",
+		"description": "An MCP server that provides access to Polygon.io financial market data APIs for stocks, indices, forex, options, and more.",
+		"category": "💰 Finance & Fintech",
+		"url": "https://github.com/polygon-io/mcp_polygon",
+		"badges": ["🐍", "☁️"],
+		"features": ["Market data", "Stocks", "Forex", "Options", "Real-time data"]
+	},
+	{
+		"id": "base-mcp",
+		"name": "base/base-mcp",
+		"description": "Base Network integration for onchain tools, allowing interaction with Base Network and Coinbase API for wallet management, fund transfers, smart contracts, and DeFi operations",
+		"category": "💰 Finance & Fintech",
+		"url": "https://github.com/base/base-mcp",
+		"badges": ["🎖️", "📇", "☁️"],
+		"features": [
+			"Blockchain integration",
+			"Wallet management",
+			"Smart contracts",
+			"DeFi operations"
+		]
+	},
+	{
+		"id": "chess-mcp",
+		"name": "jiayao/mcp-chess",
+		"description": "A MCP server playing chess against LLMs.",
+		"category": "🎮 Gaming",
+		"url": "https://github.com/jiayao/mcp-chess",
+		"badges": ["🐍", "🏠"],
+		"features": ["Chess gameplay", "LLM opponent", "Interactive gaming"]
+	},
+	{
+		"id": "unity-mcp",
+		"name": "CoderGamester/mcp-unity",
+		"description": "MCP Server for Unity3d Game Engine integration for game development",
+		"category": "🎮 Gaming",
+		"url": "https://github.com/CoderGamester/mcp-unity",
+		"badges": ["#️⃣", "🏠"],
+		"features": ["Unity integration", "Game development", "3D engine support"]
+	},
+	{
+		"id": "godot-mcp",
+		"name": "Coding-Solo/godot-mcp",
+		"description": "A MCP server for interacting with the Godot game engine, providing tools for editing, running, debugging, and managing scenes in Godot projects.",
+		"category": "🎮 Gaming",
+		"url": "https://github.com/Coding-Solo/godot-mcp",
+		"badges": ["📇", "🏠"],
+		"features": ["Godot integration", "Scene management", "Debugging tools", "Project editing"]
+	},
+	{
+		"id": "mem0ai-mem0-mcp",
+		"name": "mem0ai/mem0-mcp",
+		"description": "A Model Context Protocol server for Mem0 that helps manage coding preferences and patterns, providing tools for storing, retrieving and semantically searching memories.",
+		"category": "🧠 Knowledge & Memory",
+		"url": "https://github.com/mem0ai/mem0-mcp",
+		"badges": ["🐍", "🏠"],
+		"features": ["Memory management", "Coding patterns", "Semantic search", "Preference storage"]
+	},
+	{
+		"id": "ragie-mcp-server",
+		"name": "ragieai/mcp-server",
+		"description": "Retrieve context from your Ragie (RAG) knowledge base connected to integrations like Google Drive, Notion, JIRA and more.",
+		"category": "🧠 Knowledge & Memory",
+		"url": "https://github.com/ragieai/ragie-mcp-server",
+		"badges": ["📇", "☁️"],
+		"features": [
+			"RAG knowledge base",
+			"Google Drive integration",
+			"Notion support",
+			"Context retrieval"
+		]
+	},
+	{
+		"id": "weather-mcp-server",
+		"name": "devilcoder01/weather-mcp-server",
+		"description": "Access real-time weather data for any location using the WeatherAPI.com API, providing detailed forecasts and current conditions.",
+		"category": "🗺️ Location Services",
+		"url": "https://github.com/devilcoder01/weather-mcp-server",
+		"badges": ["🐍", "☁️"],
+		"features": ["Weather data", "Real-time forecasts", "Location-based", "Current conditions"]
+	},
+	{
+		"id": "google-maps-mcp",
+		"name": "modelcontextprotocol/server-google-maps",
+		"description": "Google Maps integration for location services, routing, and place details",
+		"category": "🗺️ Location Services",
+		"url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/google-maps",
+		"badges": ["📇", "☁️"],
+		"features": ["Google Maps API", "Location services", "Routing", "Place details"]
+	},
+	{
+		"id": "stadia-maps-mcp",
+		"name": "stadiamaps/stadiamaps-mcp-server-ts",
+		"description": "A MCP server for Stadia Maps' Location APIs - Lookup addresses, places with geocoding, find time zones, create routes and static maps",
+		"category": "🗺️ Location Services",
+		"url": "https://github.com/stadiamaps/stadiamaps-mcp-server-ts",
+		"badges": ["📇", "☁️"],
+		"features": ["Geocoding", "Time zones", "Route creation", "Static maps"]
+	},
+	{
+		"id": "facebook-ads-mcp",
+		"name": "gomarble-ai/facebook-ads-mcp-server",
+		"description": "MCP server acting as an interface to the Facebook Ads, enabling programmatic access to Facebook Ads data and management features.",
+		"category": "🎯 Marketing",
+		"url": "https://github.com/gomarble-ai/facebook-ads-mcp-server",
+		"badges": ["🐍", "☁️"],
+		"features": ["Facebook Ads API", "Campaign management", "Ad analytics", "Programmatic access"]
+	},
+	{
+		"id": "google-ads-mcp",
+		"name": "gomarble-ai/google-ads-mcp-server",
+		"description": "MCP server acting as an interface to the Google Ads, enabling programmatic access to Google Ads data and management features.",
+		"category": "🎯 Marketing",
+		"url": "https://github.com/gomarble-ai/google-ads-mcp-server",
+		"badges": ["🐍", "☁️"],
+		"features": ["Google Ads API", "Campaign optimization", "Ad performance", "Marketing analytics"]
+	},
+	{
+		"id": "sentry-mcp",
+		"name": "modelcontextprotocol/server-sentry",
+		"description": "Sentry.io integration for error tracking and performance monitoring",
+		"category": "📊 Monitoring",
+		"url": "https://github.com/modelcontextprotocol/servers/tree/main/src/sentry",
+		"badges": ["🐍", "☁️"],
+		"features": ["Error tracking", "Performance monitoring", "Issue management", "Real-time alerts"]
+	},
+	{
+		"id": "grafana-mcp",
+		"name": "grafana/mcp-grafana",
+		"description": "Search dashboards, investigate incidents and query datasources in your Grafana instance",
+		"category": "📊 Monitoring",
+		"url": "https://github.com/grafana/mcp-grafana",
+		"badges": ["🎖️", "🐍", "🏠", "☁️"],
+		"features": [
+			"Dashboard search",
+			"Incident investigation",
+			"Data source queries",
+			"Monitoring analytics"
+		]
+	},
+	{
+		"id": "posthog-mcp",
+		"name": "posthog/mcp",
+		"description": "An MCP server for interacting with PostHog analytics, feature flags, error tracking and more.",
+		"category": "📊 Monitoring",
+		"url": "https://github.com/posthog/mcp",
+		"badges": ["🎖️", "📇", "☁️"],
+		"features": ["Analytics", "Feature flags", "Error tracking", "User behavior"]
+	},
+	{
+		"id": "web-search-mcp",
+		"name": "pskill9/web-search",
+		"description": "An MCP server that enables free web searching using Google search results, with no API keys required.",
+		"category": "🔎 Search & Data Extraction",
+		"url": "https://github.com/pskill9/web-search",
+		"badges": ["📇", "🏠"],
+		"features": ["Free web search", "Google results", "No API keys", "Search extraction"]
+	},
+	{
+		"id": "tavily-mcp",
+		"name": "kshern/mcp-tavily",
+		"description": "Tavily AI search API",
+		"category": "🔎 Search & Data Extraction",
+		"url": "https://github.com/kshern/mcp-tavily.git",
+		"badges": ["☁️", "📇"],
+		"features": ["AI search", "Tavily API", "Smart results", "Search intelligence"]
+	},
+	{
+		"id": "arxiv-mcp",
+		"name": "blazickjp/arxiv-mcp-server",
+		"description": "Search ArXiv research papers",
+		"category": "🔎 Search & Data Extraction",
+		"url": "https://github.com/blazickjp/arxiv-mcp-server",
+		"badges": ["☁️", "🐍"],
+		"features": ["Research papers", "ArXiv search", "Academic content", "Scientific literature"]
+	},
+	{
+		"id": "duckduckgo-mcp",
+		"name": "nickclyde/duckduckgo-mcp-server",
+		"description": "Web search using DuckDuckGo",
+		"category": "🔎 Search & Data Extraction",
+		"url": "https://github.com/nickclyde/duckduckgo-mcp-server",
+		"badges": ["🐍", "☁️"],
+		"features": ["Privacy search", "DuckDuckGo API", "Web search", "Anonymous browsing"]
+	},
+	{
+		"id": "shodan-mcp",
+		"name": "BurtTheCoder/mcp-shodan",
+		"description": "MCP server for querying the Shodan API and Shodan CVEDB. This server provides tools for IP lookups, device searches, DNS lookups, vulnerability queries, CPE lookups, and more.",
+		"category": "🔒 Security",
+		"url": "https://github.com/BurtTheCoder/mcp-shodan",
+		"badges": ["📇", "🪟", "☁️"],
+		"features": ["IP lookups", "Device searches", "Vulnerability queries", "Security analysis"]
+	},
+	{
+		"id": "virustotal-mcp",
+		"name": "BurtTheCoder/mcp-virustotal",
+		"description": "MCP server for querying the VirusTotal API. This server provides tools for scanning URLs, analyzing file hashes, and retrieving IP address reports.",
+		"category": "🔒 Security",
+		"url": "https://github.com/BurtTheCoder/mcp-virustotal",
+		"badges": ["📇", "🪟", "☁️"],
+		"features": ["URL scanning", "File hash analysis", "IP reports", "Malware detection"]
+	},
+	{
+		"id": "ghidra-mcp",
+		"name": "13bm/GhidraMCP",
+		"description": "MCP server for integrating Ghidra with AI assistants. This plugin enables binary analysis, providing tools for function inspection, decompilation, memory exploration, and import/export analysis via the Model Context Protocol.",
+		"category": "🔒 Security",
+		"url": "https://github.com/13bm/GhidraMCP",
+		"badges": ["🐍", "☕", "🏠"],
+		"features": ["Binary analysis", "Decompilation", "Memory exploration", "Reverse engineering"]
+	},
+	{
+		"id": "bluesky-mcp",
+		"name": "gwbischof/bluesky-social-mcp",
+		"description": "An MCP server for interacting with Bluesky via the atproto client.",
+		"category": "🌐 Social Media",
+		"url": "https://github.com/gwbischof/bluesky-social-mcp",
+		"badges": ["🐍", "🏠"],
+		"features": ["Bluesky integration", "Social media", "AT Protocol", "Decentralized social"]
+	},
+	{
+		"id": "twitter-mcp",
+		"name": "kunallunia/twitter-mcp",
+		"description": "All-in-one Twitter management solution providing timeline access, user tweet retrieval, hashtag monitoring, conversation analysis, direct messaging, sentiment analysis of a post, and complete post lifecycle control - all through a streamlined API.",
+		"category": "🌐 Social Media",
+		"url": "https://github.com/LuniaKunal/mcp-twitter",
+		"badges": ["🐍", "🏠"],
+		"features": [
+			"Twitter API",
+			"Timeline access",
+			"Hashtag monitoring",
+			"Sentiment analysis",
+			"Direct messaging"
+		]
+	},
+	{
+		"id": "strava-mcp",
+		"name": "r-huijts/strava-mcp",
+		"description": "A Model Context Protocol (MCP) server that connects to Strava API, providing tools to access Strava data through LLMs",
+		"category": "🏃 Sports",
+		"url": "https://github.com/r-huijts/strava-mcp",
+		"badges": ["📇", "☁️"],
+		"features": ["Strava API", "Fitness tracking", "Activity data", "Sports analytics"]
+	},
+	{
+		"id": "chess-stockfish-mcp",
+		"name": "sonirico/mpc-stockfish",
+		"description": "MCP server connecting AI systems to Stockfish chess engine.",
+		"category": "🏃 Sports",
+		"url": "https://github.com/sonirico/mcp-stockfish",
+		"badges": ["🏎️", "🏠", "🍎", "🪟", "🐧️"],
+		"features": ["Chess engine", "Stockfish integration", "Game analysis", "Strategic gameplay"]
+	},
+	{
+		"id": "jira-mcp",
+		"name": "sooperset/mcp-atlassian",
+		"description": "MCP server for Atlassian products (Confluence and Jira). Supports Confluence Cloud, Jira Cloud, and Jira Server/Data Center. Provides comprehensive tools for searching, reading, creating, and managing content across Atlassian workspaces.",
+		"category": "🎧 Support & Service Management",
+		"url": "https://github.com/sooperset/mcp-atlassian",
+		"badges": ["🐍", "☁️"],
+		"features": ["Jira integration", "Confluence support", "Issue management", "Content management"]
+	},
+	{
+		"id": "freshdesk-mcp",
+		"name": "effytech/freshdesk-mcp",
+		"description": "MCP server that integrates with Freshdesk, enabling AI models to interact with Freshdesk modules and perform various support operations.",
+		"category": "🎧 Support & Service Management",
+		"url": "https://github.com/effytech/freshdesk_mcp",
+		"badges": ["🐍", "☁️"],
+		"features": [
+			"Freshdesk integration",
+			"Support operations",
+			"Ticket management",
+			"Customer service"
+		]
+	},
+	{
+		"id": "weblate-mcp",
+		"name": "mmntm/weblate-mcp",
+		"description": "Comprehensive Model Context Protocol server for Weblate translation management, enabling AI assistants to perform translation tasks, project management, and content discovery with smart format transformations.",
+		"category": "🌎 Translation Services",
+		"url": "https://github.com/mmntm/weblate-mcp",
+		"badges": ["📇", "☁️"],
+		"features": [
+			"Translation management",
+			"Project management",
+			"Content discovery",
+			"Format transformations"
+		]
+	},
+	{
+		"id": "lara-mcp",
+		"name": "translated/lara-mcp",
+		"description": "MCP Server for Lara Translate API, enabling powerful translation capabilities with support for language detection and context-aware translations.",
+		"category": "🌎 Translation Services",
+		"url": "https://github.com/translated/lara-mcp",
+		"badges": ["🎖️", "📇", "☁️"],
+		"features": [
+			"Translation API",
+			"Language detection",
+			"Context-aware translation",
+			"Multi-language support"
+		]
+	},
+	{
+		"id": "airbnb-mcp",
+		"name": "openbnb-org/mcp-server-airbnb",
+		"description": "Provides tools to search Airbnb and get listing details.",
+		"category": "🚆 Travel & Transportation",
+		"url": "https://github.com/openbnb-org/mcp-server-airbnb",
+		"badges": ["📇", "☁️"],
+		"features": ["Airbnb search", "Listing details", "Accommodation booking", "Travel planning"]
+	},
+	{
+		"id": "national-rail-mcp",
+		"name": "lucygoodchild/mcp-national-rail",
+		"description": "An MCP server for UK National Rail trains service, providing train schedules and live travel information, intergrating the Realtime Trains API",
+		"category": "🚆 Travel & Transportation",
+		"url": "https://github.com/lucygoodchild/mcp-national-rail",
+		"badges": ["📇", "☁️"],
+		"features": ["Train schedules", "Live travel info", "UK National Rail", "Real-time updates"]
+	},
+	{
+		"id": "aviationstack-mcp",
+		"name": "Pradumnasaraf/aviationstack-mcp",
+		"description": "An MCP server using the AviationStack API to fetch real-time flight data including airline flights, airport schedules, future flights and aircraft types.",
+		"category": "🚆 Travel & Transportation",
+		"url": "https://github.com/Pradumnasaraf/aviationstack-mcp",
+		"badges": ["🐍", "☁️", "🍎", "🪟", "🐧"],
+		"features": ["Flight data", "Airport schedules", "Real-time tracking", "Aircraft information"]
+	},
+	{
+		"id": "bear-notes-mcp",
+		"name": "akseyh/bear-mcp-server",
+		"description": "Allows the AI to read from your Bear Notes (macOS only)",
+		"category": "🛠️ Other Tools and Integrations",
+		"url": "https://github.com/akseyh/bear-mcp-server",
+		"badges": [],
+		"features": ["Bear Notes integration", "macOS support", "Note reading", "Personal productivity"]
+	},
+	{
+		"id": "home-assistant-mcp",
+		"name": "allenporter/mcp-server-home-assistant",
+		"description": "Expose all Home Assistant voice intents through a Model Context Protocol Server allowing home control.",
+		"category": "🛠️ Other Tools and Integrations",
+		"url": "https://github.com/allenporter/mcp-server-home-assistant",
+		"badges": ["🐍", "🏠"],
+		"features": ["Home automation", "Voice intents", "Smart home control", "IoT integration"]
+	},
+	{
+		"id": "notion-mcp",
+		"name": "Badhansen/notion-mcp",
+		"description": "A Model Context Protocol (MCP) server that integrates with Notion's API to manage personal todo lists efficiently.",
+		"category": "🛠️ Other Tools and Integrations",
+		"url": "https://github.com/Badhansen/notion-mcp",
+		"badges": ["🐍", "☁️"],
+		"features": ["Notion integration", "Todo management", "Task organization", "Productivity tools"]
+	},
+	{
+		"id": "calculator-mcp",
+		"name": "githejie/mcp-server-calculator",
+		"description": "This server enables LLMs to use calculator for precise numerical calculations",
+		"category": "🛠️ Other Tools and Integrations",
+		"url": "https://github.com/githejie/mcp-server-calculator",
+		"badges": ["🐍", "🏠"],
+		"features": [
+			"Mathematical calculations",
+			"Precise arithmetic",
+			"Numerical operations",
+			"Computing tools"
+		]
+	}
+]
