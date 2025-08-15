@@ -3,7 +3,8 @@
 		"mcpServers": "MCP Servers",
 		"pricing": "Pricing",
 		"login": "Login",
-		"home": "\u2190 Back to Home",
+		"home": "← Back to Home",
+		"language": "Language",
 		"cta": {
 			"from": "Starting at €299",
 			"orderNow": "Order Now",
