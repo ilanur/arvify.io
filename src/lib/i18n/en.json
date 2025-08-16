@@ -1,14 +1,47 @@
 {
-	"nav": {
-		"mcpServers": "MCP Servers",
-		"pricing": "Pricing",
-		"login": "Login",
-		"home": "← Back to Home",
-		"language": "Language",
-		"cta": {
-			"from": "Starting at €299",
-			"orderNow": "Order Now",
-			"choosePlan": "Choose Plan"
-		}
-	}
+        "nav": {
+                "mcpServers": "MCP Servers",
+                "pricing": "Pricing",
+                "login": "Login",
+                "home": "← Back to Home",
+                "language": "Language",
+                "cta": {
+                        "from": "Starting at €299",
+                        "orderNow": "Order Now",
+                        "choosePlan": "Choose Plan"
+                }
+        },
+        "home": {
+                "hero": {
+                        "tagline": "Privacy-First AI Assistant",
+                        "highlight": "Hybrid Intelligence",
+                        "description": "The first hybrid AI device that combines cloud power with local privacy. Raspberry Pi 5 with built-in Ollama, controlled from your mobile app.",
+                        "features": {
+                                "localProcessing": "Local processing for maximum privacy",
+                                "hybridCloud": "Hybrid cloud when extra power is needed",
+                                "mobileControl": "Total control via mobile app"
+                        },
+                        "cta": {
+                                "order": "Order Now",
+                                "demo": "Watch Demo"
+                        },
+                        "pricing": {
+                                "startingFrom": "Starting from",
+                                "vat": "VAT included"
+                        }
+                },
+                "cta": {
+                        "headline": "Ready for the Future of AI?",
+                        "description": "Join thousands of users who already chose Arvify for a truly private and powerful AI experience.",
+                        "buttons": {
+                                "plans": "See All Plans",
+                                "mcp": "Explore MCP Servers"
+                        },
+                        "trust": {
+                                "garanzia": "30-day guarantee",
+                                "spedizione": "Free shipping",
+                                "madeInItaly": "Made in Italy"
+                        }
+                }
+        }
 }

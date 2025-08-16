@@ -1,14 +1,47 @@
 {
-	"nav": {
-		"mcpServers": "MCP Servers",
-		"pricing": "Prezzi",
-		"login": "Login",
-		"home": "← Torna alla Home",
-		"language": "Lingua",
-		"cta": {
-			"from": "A partire da €299",
-			"orderNow": "Ordina Ora",
-			"choosePlan": "Scegli Piano"
-		}
-	}
+        "nav": {
+                "mcpServers": "MCP Servers",
+                "pricing": "Prezzi",
+                "login": "Login",
+                "home": "← Torna alla Home",
+                "language": "Lingua",
+                "cta": {
+                        "from": "A partire da €299",
+                        "orderNow": "Ordina Ora",
+                        "choosePlan": "Scegli Piano"
+                }
+        },
+        "home": {
+                "hero": {
+                        "tagline": "Assistente AI Privacy-First",
+                        "highlight": "Intelligenza Ibrida",
+                        "description": "Il primo dispositivo AI ibrido che combina la potenza del cloud con la privacy del locale. Raspberry Pi 5 con Ollama integrato, controllato dalla tua app mobile.",
+                        "features": {
+                                "localProcessing": "Elaborazione locale per massima privacy",
+                                "hybridCloud": "Cloud ibrido quando serve potenza extra",
+                                "mobileControl": "Controllo totale via app mobile"
+                        },
+                        "cta": {
+                                "order": "Ordina Ora",
+                                "demo": "Guarda Demo"
+                        },
+                        "pricing": {
+                                "startingFrom": "A partire da",
+                                "vat": "IVA inclusa"
+                        }
+                },
+                "cta": {
+                        "headline": "Pronto per il Futuro dell'AI?",
+                        "description": "Unisciti a migliaia di utenti che hanno già scelto Arvify per un'esperienza AI davvero privata e potente.",
+                        "buttons": {
+                                "plans": "Vedi Tutti i Piani",
+                                "mcp": "Esplora MCP Servers"
+                        },
+                        "trust": {
+                                "garanzia": "30 giorni garanzia",
+                                "spedizione": "Spedizione gratuita",
+                                "madeInItaly": "Made in Italy"
+                        }
+                }
+        }
 }

@@ -1,5 +1,6 @@
 <script>
-	import { Shield, Zap, Smartphone, Wifi, ChevronRight, Play } from 'lucide-svelte';
+        import { Shield, Zap, Smartphone, Wifi, ChevronRight, Play } from 'lucide-svelte';
+        import { t } from '$lib/utils/translations.js';
 </script>
 
 <section class="relative py-20 overflow-hidden">
@@ -18,23 +19,22 @@
 				<div
 					class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6"
 				>
-					<Shield class="w-4 h-4 mr-2 text-green-400" />
-					Privacy-First AI Assistant
+                                        <Shield class="w-4 h-4 mr-2 text-green-400" />
+                                        {t('home.hero.tagline')}
 				</div>
 
 				<h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-					Arvify
-					<span
-						class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
-					>
-						Hybrid Intelligence
-					</span>
+                                                Arvify
+                                                <span
+                                                        class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
+                                                >
+                                                        {t('home.hero.highlight')}
+                                                </span>
 				</h1>
 
-				<p class="text-xl text-gray-300 mb-8 leading-relaxed">
-					Il primo dispositivo AI ibrido che combina la potenza del cloud con la privacy del locale.
-					Raspberry Pi 5 con Ollama integrato, controllato dalla tua app mobile.
-				</p>
+                                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                                        {t('home.hero.description')}
+                                </p>
 
 				<!-- Key Features -->
 				<div class="space-y-4 mb-8">
@@ -42,19 +42,19 @@
 						<div class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
 							<Zap class="w-4 h-4 text-blue-400" />
 						</div>
-						<span class="text-gray-200">Elaborazione locale per massima privacy</span>
+                                                <span class="text-gray-200">{t('home.hero.features.localProcessing')}</span>
 					</div>
 					<div class="flex items-center space-x-3">
 						<div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center">
 							<Wifi class="w-4 h-4 text-emerald-400" />
 						</div>
-						<span class="text-gray-200">Cloud ibrido quando serve potenza extra</span>
+                                                <span class="text-gray-200">{t('home.hero.features.hybridCloud')}</span>
 					</div>
 					<div class="flex items-center space-x-3">
 						<div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center">
 							<Smartphone class="w-4 h-4 text-purple-400" />
 						</div>
-						<span class="text-gray-200">Controllo totale via app mobile</span>
+                                                <span class="text-gray-200">{t('home.hero.features.mobileControl')}</span>
 					</div>
 				</div>
 
@@ -63,24 +63,24 @@
 					<button
 						class="btn-primary px-8 py-4 text-lg inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
 					>
-						<span>Ordina Ora</span>
+                                                <span>{t('home.hero.cta.order')}</span>
 						<ChevronRight class="w-5 h-5" />
 					</button>
 
 					<button
 						class="inline-flex items-center space-x-2 px-6 py-4 text-lg text-white border-2 border-white/20 rounded-xl hover:bg-white/10 transition-all"
 					>
-						<Play class="w-5 h-5" />
-						<span>Guarda Demo</span>
+                                                <Play class="w-5 h-5" />
+                                                <span>{t('home.hero.cta.demo')}</span>
 					</button>
 				</div>
 
 				<!-- Pricing Preview -->
 				<div class="mt-8 pt-8 border-t border-white/10">
 					<div class="flex items-center space-x-4">
-						<span class="text-gray-400">A partire da</span>
-						<span class="text-3xl font-bold text-white">€299</span>
-						<span class="text-gray-400">IVA inclusa</span>
+                                                <span class="text-gray-400">{t('home.hero.pricing.startingFrom')}</span>
+                                                <span class="text-3xl font-bold text-white">€299</span>
+                                                <span class="text-gray-400">{t('home.hero.pricing.vat')}</span>
 					</div>
 				</div>
 			</div>
