@@ -1,4 +1,5 @@
 <script>
+	import '../app.css';
 	import TranslationProvider from '$lib/components/TranslationProvider.svelte';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
 	let { children } = $props();
