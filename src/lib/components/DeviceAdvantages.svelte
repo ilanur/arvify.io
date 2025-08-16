@@ -1,54 +1,54 @@
 <script>
-	import { Shield, Zap, Cloud, Smartphone, Database, Lock, Cpu, Wifi } from 'lucide-svelte';
+	import { Shield, Zap, Fingerprint, Smartphone, Clock, Lock, Heart, Battery } from 'lucide-svelte';
 
 	const advantages = [
 		{
-			icon: Shield,
-			title: 'Privacy First',
+			icon: Fingerprint,
+			title: 'Controllo Biometrico',
 			description:
-				'I tuoi dati rimangono sul dispositivo. Solo i chunk selezionati vanno in cloud quando necessario.',
+				"Solo la tua impronta digitale può autorizzare l'accesso ai tuoi dati. Sicurezza fisica impossibile da hackerare.",
+			color: 'blue',
+			highlight: 'Autenticazione al 100%'
+		},
+		{
+			icon: Shield,
+			title: 'Privacy Assoluta',
+			description:
+				'Nessun dato condiviso senza il tuo consenso esplicito. Ogni richiesta AI viene approvata dal tuo dito.',
 			color: 'emerald',
-			highlight: '100% controllo dei dati'
+			highlight: 'Zero compromessi'
 		},
 		{
 			icon: Zap,
-			title: 'Velocità Ibrida',
+			title: 'Consenso Istantaneo',
 			description:
-				'Ollama locale per risposte istantanee, cloud premium solo quando serve potenza extra.',
-			color: 'blue',
-			highlight: 'Latenza <100ms locale'
-		},
-		{
-			icon: Smartphone,
-			title: 'Controllo Mobile',
-			description:
-				'App dedicata per approvare condivisioni, monitorare attività e gestire impostazioni.',
+				"Un tocco sul sensore e l'AI può accedere ai dati per il tempo stabilito. Veloce come un battito di ciglia.",
 			color: 'purple',
-			highlight: 'Controllo granulare'
+			highlight: 'Risposta <1 secondo'
 		},
 		{
-			icon: Database,
-			title: 'Vector Database',
+			icon: Clock,
+			title: 'TTL Automatico',
 			description:
-				'sqlite-vec integrato per indicizzazione semantica e recupero contestuale intelligente.',
+				'I dati condivisi si auto-cancellano dopo il tempo prestabilito. Nessuna traccia permanente.',
 			color: 'amber',
-			highlight: 'Ricerca semantica'
-		},
-		{
-			icon: Lock,
-			title: 'Scadenza TTL',
-			description:
-				'Ogni condivisione cloud ha una scadenza automatica. Nessun dato permanente sui server.',
-			color: 'red',
 			highlight: 'Auto-cancellazione'
 		},
 		{
-			icon: Cpu,
-			title: 'Raspberry Pi 5',
+			icon: Smartphone,
+			title: 'App Universale',
 			description:
-				'8GB RAM, ARM Cortex-A76, perfetto per modelli AI leggeri e elaborazione locale.',
+				'Compatibile con tutti i provider AI: OpenAI, Anthropic, Google, Microsoft. Un bracciale per tutto.',
+			color: 'red',
+			highlight: 'Supporto universale'
+		},
+		{
+			icon: Battery,
+			title: 'Autonomia Settimane',
+			description:
+				'Batteria a lunga durata con ricarica magnetica. 5-7 giorni di utilizzo continuo.',
 			color: 'green',
-			highlight: 'Prestazioni dedicate'
+			highlight: 'Sempre pronto'
 		}
 	];
 </script>
@@ -58,14 +58,14 @@
 		<!-- Header -->
 		<div class="text-center mb-16">
 			<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-				Perché Arvify è
+				Il Controllo dell'AI
 				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">
-					Rivoluzionario
+					È nelle Tue Mani
 				</span>
 			</h2>
 			<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-				Il primo assistente AI che rispetta davvero la tua privacy, senza rinunciare alle
-				prestazioni del cloud quando necessario.
+				Il primo bracciale al mondo che ti dà controllo totale sui tuoi dati AI. Approva con un
+				tocco, nega con un gesto.
 			</p>
 		</div>
 
@@ -112,9 +112,9 @@
 			<div
 				class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-emerald-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all cursor-pointer"
 			>
-				<Cloud class="w-5 h-5 mr-2" />
-				<span>Approccio Ibrido = Meglio del Solo Cloud</span>
-				<Wifi class="w-5 h-5 ml-2" />
+				<Fingerprint class="w-5 h-5 mr-2" />
+				<span>Your Fingerprint. Your AI. Your Rules.</span>
+				<Heart class="w-5 h-5 ml-2" />
 			</div>
 		</div>
 	</div>

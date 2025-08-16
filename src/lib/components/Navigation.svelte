@@ -50,9 +50,9 @@
 
 				<div class="hidden md:flex items-center space-x-6">
 					<a
-						href="/mcp-servers"
+						href="/tecnologia"
 						class="
-							{currentPath === '/mcp-servers'
+							{currentPath === '/tecnologia'
 							? variant === 'transparent'
 								? 'text-white font-medium'
 								: variant === 'dark'
@@ -86,6 +86,25 @@
 						"
 					>
 						{t('nav.pricing')}
+					</a>
+					<a
+						href="/roadmap"
+						class="
+							{currentPath === '/roadmap'
+							? variant === 'transparent'
+								? 'text-white font-medium'
+								: variant === 'dark'
+									? 'text-blue-400 font-medium'
+									: 'text-blue-600 font-medium'
+							: variant === 'transparent'
+								? 'text-white/70 hover:text-white'
+								: variant === 'dark'
+									? 'text-gray-300 hover:text-white'
+									: 'text-gray-700 hover:text-blue-600'} 
+							transition-colors
+						"
+					>
+						Roadmap
 					</a>
 					<a
 						href="/login"
@@ -212,8 +231,8 @@
 		>
 			<div class="px-4 pt-2 pb-4 space-y-2">
 				<a
-					href="/mcp-servers"
-					class="block py-2 px-3 rounded-md text-base font-medium {currentPath === '/mcp-servers'
+					href="/tecnologia"
+					class="block py-2 px-3 rounded-md text-base font-medium {currentPath === '/tecnologia'
 						? variant === 'transparent'
 							? 'text-gray-900 bg-gray-100'
 							: variant === 'dark'
@@ -244,6 +263,23 @@
 					onclick={toggleMobileMenu}
 				>
 					{t('nav.pricing')}
+				</a>
+				<a
+					href="/roadmap"
+					class="block py-2 px-3 rounded-md text-base font-medium {currentPath === '/roadmap'
+						? variant === 'transparent'
+							? 'text-gray-900 bg-gray-100'
+							: variant === 'dark'
+								? 'text-blue-400 bg-gray-800'
+								: 'text-blue-600 bg-blue-50'
+						: variant === 'transparent'
+							? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+							: variant === 'dark'
+								? 'text-gray-300 hover:text-white hover:bg-gray-800'
+								: 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'} transition-colors"
+					onclick={toggleMobileMenu}
+				>
+					Roadmap
 				</a>
 				<a
 					href="/login"

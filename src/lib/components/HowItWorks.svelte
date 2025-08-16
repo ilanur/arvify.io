@@ -1,46 +1,46 @@
 <script>
-	import { Smartphone, MessageSquare, Shield, Zap, Clock, CheckCircle } from 'lucide-svelte';
+	import { Smartphone, MessageSquare, Fingerprint, Zap, Clock, CheckCircle } from 'lucide-svelte';
 
 	const steps = [
 		{
 			number: 1,
 			icon: MessageSquare,
-			title: 'Fai la tua domanda',
-			description: "Usa l'app mobile per inviare la tua richiesta ad Arvify",
+			title: 'Richiesta AI',
+			description: 'Chiedi qualcosa a ChatGPT, Claude o qualsiasi AI',
 			color: 'blue',
-			details: 'Voice-to-text, digitazione o upload file'
+			details: 'Funziona con ogni provider AI'
 		},
 		{
 			number: 2,
-			icon: Shield,
-			title: 'Analisi locale',
-			description: 'Il dispositivo analizza la richiesta con Ollama e il vector database',
+			icon: Zap,
+			title: 'Intercettazione',
+			description: 'Il backend Bolt rileva la richiesta e prepara i dati rilevanti',
 			color: 'emerald',
-			details: '100% privato, elaborazione on-device'
+			details: 'Analisi semantica automatica'
 		},
 		{
 			number: 3,
-			icon: Zap,
-			title: 'Decisione intelligente',
-			description: 'Il sistema decide se rispondere localmente o utilizzare il cloud',
+			icon: Fingerprint,
+			title: 'Richiesta Consenso',
+			description: 'Il bracciale vibra e chiede il consenso per condividere i dati',
 			color: 'amber',
-			details: 'Basato su complessità e modelli disponibili'
+			details: 'Mostra TTL e tipologia dati'
 		},
 		{
 			number: 4,
 			icon: CheckCircle,
-			title: 'Approvazione utente',
-			description: "Se serve il cloud, l'app ti chiede conferma mostrando cosa verrà condiviso",
+			title: 'Consenso Biometrico',
+			description: 'Posizioni il dito sul sensore per approvare o nega con un gesto',
 			color: 'purple',
-			details: 'TTL personalizzabile, chunk selezionati'
+			details: 'Sicurezza fisica impossibile da hackerare'
 		},
 		{
 			number: 5,
 			icon: Clock,
-			title: 'Risposta veloce',
-			description: 'Ricevi la risposta ottimizzata, con log completo delle operazioni',
+			title: 'Risposta e Cleanup',
+			description: "L'AI risponde con i dati autorizzati, poi tutto viene cancellato",
 			color: 'red',
-			details: 'Tracciabilità completa e auto-cancellazione'
+			details: 'TTL automatico, zero persistenza'
 		}
 	];
 </script>
@@ -50,13 +50,13 @@
 		<!-- Header -->
 		<div class="text-center mb-16">
 			<h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-				Come Funziona
+				Come Funziona il
 				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-					Arvify
+					Controllo Biometrico
 				</span>
 			</h2>
 			<p class="text-xl text-blue-100 max-w-3xl mx-auto">
-				Un workflow intelligente che bilancia privacy e prestazioni, sempre sotto il tuo controllo
+				Un workflow semplice che mette il controllo totale dei tuoi dati nelle tue mani
 			</p>
 		</div>
 
@@ -128,34 +128,51 @@
 			</div>
 		</div>
 
-		<!-- Mobile App Showcase -->
+		<!-- Wearable Showcase -->
 		<div class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-			<!-- Left - App Mockup -->
+			<!-- Left - Wearable Mockup -->
 			<div class="relative">
-				<div class="bg-gray-900 rounded-3xl p-4 shadow-2xl max-w-sm mx-auto">
-					<div class="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-6 h-96">
-						<!-- App Header -->
-						<div class="flex items-center justify-between mb-6">
-							<div class="flex items-center space-x-2">
-								<div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-									<Smartphone class="w-4 h-4 text-white" />
+				<div class="bg-gray-900 rounded-3xl p-8 shadow-2xl max-w-sm mx-auto">
+					<!-- Wearable Visual -->
+					<div class="flex justify-center mb-8">
+						<div class="relative">
+							<!-- Watch Band -->
+							<div class="w-48 h-16 bg-gray-700 rounded-full relative">
+								<!-- Wearable Device Center -->
+								<div
+									class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-20 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-blue-500 shadow-xl animate-pulse"
+								>
+									<!-- Screen -->
+									<div class="w-full h-full bg-black rounded-2xl p-2">
+										<div
+											class="w-full h-full bg-gradient-to-br from-amber-500 to-red-600 rounded-xl flex flex-col items-center justify-center"
+										>
+											<Fingerprint class="w-6 h-6 text-white mb-1" />
+											<div class="text-white text-xs">Consent?</div>
+										</div>
+									</div>
 								</div>
-								<span class="text-white font-semibold">Arvify Control</span>
 							</div>
-							<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-						</div>
 
-						<!-- Conversation Preview -->
+							<!-- Vibration Effect -->
+							<div
+								class="absolute -top-2 -left-2 w-52 h-20 border-2 border-amber-400 rounded-full animate-ping opacity-30"
+							></div>
+						</div>
+					</div>
+
+					<!-- App Control Panel -->
+					<div class="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-6">
+						<!-- Request Preview -->
 						<div class="space-y-4 mb-6">
 							<div class="bg-white/20 rounded-lg p-3">
-								<p class="text-white text-sm">"Analizza questo documento PDF..."</p>
+								<p class="text-white text-sm">"Analizza le mie email per trovare..."</p>
 							</div>
-							<div class="bg-white/10 rounded-lg p-3 border border-yellow-400/50">
-								<p class="text-yellow-200 text-xs mb-1">⚠️ Richiede Cloud</p>
-								<p class="text-white text-sm">Condividere 3 chunk (scadenza: 1h)?</p>
-								<div class="flex space-x-2 mt-2">
-									<button class="px-3 py-1 bg-green-500 text-white rounded text-xs">Approva</button>
-									<button class="px-3 py-1 bg-red-500 text-white rounded text-xs">Rifiuta</button>
+							<div class="bg-amber-500/20 rounded-lg p-3 border border-amber-400">
+								<p class="text-amber-200 text-xs mb-1">🔔 Consenso Richiesto</p>
+								<p class="text-white text-sm">6 estratti email - TTL: 120s</p>
+								<div class="mt-2 text-xs text-gray-300">
+									Metti il dito sul sensore per approvare
 								</div>
 							</div>
 						</div>
@@ -163,16 +180,16 @@
 						<!-- Status Indicators -->
 						<div class="space-y-2">
 							<div class="flex justify-between text-white text-xs">
-								<span>Locale (Ollama)</span>
+								<span>Bracciale Connesso</span>
 								<span class="text-green-400">●</span>
 							</div>
 							<div class="flex justify-between text-white text-xs">
-								<span>Vector DB</span>
-								<span class="text-blue-400">●</span>
+								<span>Richiesta in Attesa</span>
+								<span class="text-amber-400 animate-pulse">●</span>
 							</div>
 							<div class="flex justify-between text-white text-xs">
-								<span>Cloud Providers</span>
-								<span class="text-purple-400">●</span>
+								<span>Backend Bolt</span>
+								<span class="text-blue-400">●</span>
 							</div>
 						</div>
 					</div>
@@ -181,30 +198,29 @@
 
 			<!-- Right - Features -->
 			<div class="text-white">
-				<h3 class="text-3xl font-bold mb-6">App Mobile Dedicata</h3>
+				<h3 class="text-3xl font-bold mb-6">Controllo Fisico dell'AI</h3>
 				<p class="text-blue-100 text-lg mb-8 leading-relaxed">
-					Il controllo completo nelle tue mani. Ogni decisione passa attraverso te, ogni
-					condivisione è trasparente e tracciabile.
+					Il tuo dito è la chiave. Nessun software può aggirare il tuo consenso biometrico.
 				</p>
 
 				<div class="space-y-6">
 					<div class="flex items-start space-x-4">
 						<div class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center mt-1">
-							<Shield class="w-4 h-4 text-blue-400" />
+							<Fingerprint class="w-4 h-4 text-blue-400" />
 						</div>
 						<div>
-							<h4 class="font-semibold mb-1">Controllo Granulare</h4>
-							<p class="text-blue-100 text-sm">Decidi cosa condividere e per quanto tempo</p>
+							<h4 class="font-semibold mb-1">Biometria Sicura</h4>
+							<p class="text-blue-100 text-sm">Template criptati, mai condivisi online</p>
 						</div>
 					</div>
 
 					<div class="flex items-start space-x-4">
 						<div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center mt-1">
-							<MessageSquare class="w-4 h-4 text-emerald-400" />
+							<Zap class="w-4 h-4 text-emerald-400" />
 						</div>
 						<div>
-							<h4 class="font-semibold mb-1">Interfaccia Intuitiva</h4>
-							<p class="text-blue-100 text-sm">Voice, testo, file - comunica come preferisci</p>
+							<h4 class="font-semibold mb-1">Feedback Immediato</h4>
+							<p class="text-blue-100 text-sm">LED e vibrazione per ogni stato</p>
 						</div>
 					</div>
 
@@ -213,8 +229,8 @@
 							<Clock class="w-4 h-4 text-purple-400" />
 						</div>
 						<div>
-							<h4 class="font-semibold mb-1">Log Completi</h4>
-							<p class="text-blue-100 text-sm">Traccia ogni operazione e condivisione</p>
+							<h4 class="font-semibold mb-1">TTL Garantito</h4>
+							<p class="text-blue-100 text-sm">Cancellazione automatica dopo scadenza</p>
 						</div>
 					</div>
 				</div>

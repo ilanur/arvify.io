@@ -1,19 +1,11 @@
 # Arvify.io - Landing Page
 
-Una moderna landing ### Vantaggi Chiave
-
-1. **Privacy totale** - Elaborazione locale quando possibile
-2. **Potenza cloud** - Accesso a GPT-4, Claude, Gemini quando serve
-3. **Controllo granulare** - Approvi cosa condividere e per quanto tempo
-4. **Auto-cancellazione** - TTL automatico per tutti i dati cloud
-5. **Tracciabilità completa** - Log di ogni operazione
-
-## 🛠️ Tecnologie Landing PageArvify.io, il primo assistente AI ibrido privacy-first basato su Raspberry Pi 5. Questo progetto presenta il dispositivo Arvify con un'interfaccia utente attraente e funzionale.
+Una moderna landing page per Arvify, il primo bracciale biometrico per il controllo del consenso AI. Questo progetto presenta il dispositivo wearable con un'interfaccia utente attraente e funzionale.
 
 ## ✨ Caratteristiche
 
 - **🎨 Design Moderno**: Landing page responsive costruita con SvelteKit 5 e Tailwind CSS
-- **🔒️ Privacy-First**: Sezione dedicata ai vantaggi dell'approccio ibrido locale/cloud
+- **🔒 Privacy-First**: Sezione dedicata al controllo biometrico dell'AI
 - **📱 App Mobile**: Showcase dell'app di controllo dedicata
 - **💰 Pricing**: Sezione con piani di acquisto e specifiche tecniche
 - **👤 Dashboard**: Area login e dashboard demo per gestione dispositivo
@@ -22,45 +14,40 @@ Una moderna landing ### Vantaggi Chiave
 
 ## 🚀 Prodotto: Arvify
 
-**Arvify** è un dispositivo fisico basato su:Landing Page
-
-Una moderna landing page per Smart AI Box, il primo assistente AI ibrido privacy-first basato su Raspberry Pi 5. Questo progetto presenta il dispositivo con un'interfaccia utente attraente e funzionale.
-
-## ✨ Caratteristiche
-
-- **🎨 Design Moderno**: Landing page responsive costruita con SvelteKit 5 e Tailwind CSS
-- **�️ Privacy-First**: Sezione dedicata ai vantaggi dell'approccio ibrido locale/cloud
-- **📱 App Mobile**: Showcase dell'app di controllo dedicata
-- **💰 Pricing**: Sezione con piani di acquisto e specifiche tecniche
-- **👤 Dashboard**: Area login e dashboard demo per gestione dispositivo
-- **⚡ Performance**: Caricamento veloce e animazioni fluide
-- **📱 Responsive**: Ottimizzato per desktop, tablet e mobile
-
-## 🚀 Prodotto: Smart AI Box
-
-**Smart AI Box** è un dispositivo fisico basato su:
+**Arvify** è un bracciale biometrico rivoluzionario basato su:
 
 ### Hardware
 
-- **Raspberry Pi 5 (8GB)** - Processore dedicato per AI
-- **Ollama integrato** - Modelli AI locali preinstallati
-- **sqlite-vec** - Database vettoriale per indicizzazione semantica
-- **Storage espandibile** - MicroSD + SSD opzionale
+- **Sensore Fingerprint** - Riconoscimento biometrico sicuro
+- **Secure Element** - Chip crittografico per firme ECDSA
+- **MCU ESP32-C6** - Connettività BLE/Wi-Fi a basso consumo
+- **LED RGB** - Notifiche visive dello stato
+- **Vibrazione** - Feedback tattile per richieste di consenso
+- **Batteria LiPo** - Autonomia 5-7 giorni, ricarica magnetica
 
 ### Software
 
-- **Router AI ibrido** - Sceglie automaticamente tra locale e cloud
-- **App mobile dedicata** - Controllo totale da iOS/Android
-- **MCP Server** - Supporto completo Model Context Protocol
-- **Privacy by design** - Dati locali, cloud solo su approvazione
+- **Firmware dedicato** - Gestione biometrica e consenso
+- **App mobile iOS/Android** - Controllo completo da smartphone
+- **Backend Bolt** - Server cloud per gestione dati AI
+- **API MCP** - Supporto Model Context Protocol
+- **Consenso biometrico** - Approvazione fisica per ogni richiesta AI
 
 ### Vantaggi Chiave
 
-1. **Privacy totale** - Elaborazione locale quando possibile
-2. **Potenza cloud** - Accesso a GPT-4, Claude, Gemini quando serve
-3. **Controllo granulare** - Approvi cosa condividere e per quanto tempo
-4. **Auto-cancellazione** - TTL automatico per tutti i dati cloud
-5. **Tracciabilità completa** - Log di ogni operazione
+1. **Controllo fisico** - Il tuo dito approva ogni uso dei tuoi dati
+2. **Privacy garantita** - Solo tu puoi autorizzare l'AI
+3. **TTL automatico** - I dati condivisi si auto-cancellano
+4. **Audit completo** - Log di ogni operazione
+5. **Universale** - Compatibile con qualsiasi AI provider
+
+## 🔄 Come Funziona
+
+1. **Richiesta AI** - Chiedi qualcosa a ChatGPT, Claude o qualsiasi AI
+2. **Intercettazione** - Il backend Bolt rileva la richiesta e prepara i dati
+3. **Richiesta Consenso** - Il bracciale vibra e mostra cosa vuoi condividere
+4. **Consenso Biometrico** - Posizioni il dito sul sensore per approvare
+5. **Risposta e Cleanup** - L'AI risponde, poi i dati vengono cancellati automaticamente
 
 ## �️ Tecnologie Landing Page
 
@@ -178,16 +165,16 @@ Il file `wrangler.toml` contiene la configurazione per:
 src/
 ├── lib/
 │   └── components/
-│       ├── DeviceHero.svelte        # Hero section dispositivo
-│       ├── DeviceAdvantages.svelte  # Vantaggi approccio ibrido
-│       ├── TechSpecs.svelte         # Specifiche tecniche
-│       ├── HowItWorks.svelte        # Workflow e funzionamento
-│       ├── Pricing.svelte           # Piani di acquisto
+│       ├── DeviceHero.svelte        # Hero section bracciale
+│       ├── DeviceAdvantages.svelte  # Vantaggi controllo biometrico
+│       ├── TechSpecs.svelte         # Specifiche hardware bracciale
+│       ├── HowItWorks.svelte        # Workflow consenso biometrico
+│       ├── Pricing.svelte           # Modelli e prezzi bracciale
 │       ├── DeviceLogin.svelte       # Login e dashboard
 │       └── DeviceFooter.svelte      # Footer dedicato
 ├── routes/
 │   └── +page.svelte                 # Landing page principale
-├── app.css                          # Stili globali e device-specific
+├── app.css                          # Stili globali e wearable-specific
 └── app.html                         # Template HTML
 ```
 
@@ -201,35 +188,45 @@ Il progetto utilizza un sistema di design moderno con:
 - **Typography**: Gerarchia chiara con focus su leggibilità
 - **Spacing**: Sistema consistente per layout armonioso
 
-## � Modelli di Prezzo
+## 🏷️ Modelli di Prezzo
 
-### Starter - €299
+### Starter - €149
 
-- Raspberry Pi 5 (8GB)
-- Setup base con 3 modelli Ollama
+- Bracciale base con sensore fingerprint
 - App mobile inclusa
+- Connettività BLE
 
-### Pro - €449 (Più venduto)
+### Pro - €249 (Più venduto)
 
 - Include tutto dello Starter
-- SSD 256GB + case premium
+- Secure element integrato
+- Ricarica magnetica
 - Cloud credits per 6 mesi
-- Supporto prioritario
 
-### Enterprise - €799
+### Enterprise - €399
 
 - Include tutto del Pro
-- SSD 1TB + backup cloud
+- Materiali premium (titanio)
+- Certificazione IP68
 - API personalizzate + consulenza
 - Cloud credits illimitati primo anno
 
+## 🎯 Design e Materiali
+
+- **Form Factor**: Elegante e discreto, simile a smartwatch premium
+- **Materiali**: Alluminio anodizzato (Pro) | Titanio grado medico (Enterprise)
+- **Cinturino**: Sport silicone + opzione pelle premium
+- **Resistenza**: IP67 standard | IP68 Enterprise
+- **Colori**: Nero siderale, Argento, Oro rosa (Pro+)
+
 ## 🔒 Privacy e Sicurezza
 
-- **Elaborazione locale** per massima privacy
-- **Approvazione manuale** per ogni condivisione cloud
-- **TTL automatico** - cancellazione garantita dei dati
-- **Log completi** - tracciabilità totale delle operazioni
-- **Control granulare** - scegli cosa, quando e per quanto
+- **Biometria on-device** - Template fingerprint mai condivisi online
+- **Secure Element** - Chip crittografico ATECC608A per firme ECDSA
+- **Consenso fisico** - Impossibile aggirare via software
+- **TTL automatico** - Cancellazione garantita dei dati condivisi
+- **Audit trail** - Log completo di ogni operazione
+- **Zero persistenza** - Nessun dato permanente sui server cloud
 
 ## 🤝 Supporto
 

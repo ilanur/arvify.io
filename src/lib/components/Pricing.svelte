@@ -1,40 +1,52 @@
 <script>
-	import { Check, Star, Zap, Shield, Smartphone, Package, CreditCard, Truck } from 'lucide-svelte';
+	import {
+		Check,
+		Star,
+		Zap,
+		Shield,
+		Smartphone,
+		Package,
+		CreditCard,
+		Truck,
+		Fingerprint,
+		Battery,
+		Cpu
+	} from 'lucide-svelte';
 
 	const packages = [
 		{
 			name: 'Starter',
-			price: '299',
-			originalPrice: '349',
+			price: '149',
+			originalPrice: '179',
 			popular: false,
-			description: "Perfetto per iniziare con l'AI privata",
+			description: 'Il controllo biometrico AI essenziale',
 			color: 'blue',
 			features: [
-				'Raspberry Pi 5 (8GB)',
-				'MicroSD 64GB inclusa',
-				'Setup guidato',
-				'App mobile inclusa',
-				'3 modelli Ollama preinstallati',
-				'Supporto email',
+				'Bracciale con sensore fingerprint',
+				'MCU ESP32-C6 con WiFi 6',
+				'Display OLED + LED RGB',
+				'App mobile iOS/Android',
+				'Connettività BLE/WiFi',
+				'Cinturino sport incluso',
 				'Garanzia 1 anno'
 			],
-			limits: ['Modelli fino a 7B parametri', 'Storage base 64GB']
+			limits: ['Autonomia 3-5 giorni', 'Ricarica USB-C standard']
 		},
 		{
 			name: 'Pro',
-			price: '449',
-			originalPrice: '529',
+			price: '249',
+			originalPrice: '299',
 			popular: true,
-			description: 'La scelta migliore per utenti avanzati',
+			description: 'La scelta migliore per utenti esigenti',
 			color: 'emerald',
 			features: [
 				'Tutto del piano Starter',
-				'SSD esterno 256GB',
-				'Case premium alluminio',
-				'Raffreddamento attivo',
-				'5 modelli Ollama ottimizzati',
-				'Cloud credits inclusi (10€/mese per 6 mesi)',
-				'Setup prioritario',
+				'Secure Element ATECC608A',
+				'Autonomia 5-7 giorni',
+				'Ricarica magnetica wireless',
+				'Materiali premium (alluminio)',
+				'Cloud credits inclusi (€15/mese per 6 mesi)',
+				'Cinturino pelle + sport',
 				'Supporto prioritario',
 				'Garanzia 2 anni'
 			],
@@ -42,21 +54,22 @@
 		},
 		{
 			name: 'Enterprise',
-			price: '799',
-			originalPrice: '949',
+			price: '399',
+			originalPrice: '479',
 			popular: false,
-			description: 'Per aziende e sviluppatori',
+			description: 'Per aziende e massima sicurezza',
 			color: 'purple',
 			features: [
 				'Tutto del piano Pro',
-				'SSD esterno 1TB',
-				'Backup automatico cloud',
-				'API personalizzate',
-				'Multi-device management',
+				'Materiali titanio grado medico',
+				'Certificazione IP68',
+				'Autonomia fino a 10 giorni',
+				'API aziendali personalizzate',
+				'Gestione multi-dispositivo',
 				'Cloud credits illimitati primo anno',
-				'Consulenza tecnica dedicata',
-				'Setup on-site disponibile',
-				'SLA garantito',
+				'Consulenza sicurezza dedicata',
+				'Setup aziendale on-site',
+				'SLA garantito 99.9%',
 				'Garanzia 3 anni'
 			],
 			limits: []
@@ -64,8 +77,8 @@
 	];
 
 	const included = [
-		{ icon: Package, text: 'Spedizione gratuita in Italia' },
-		{ icon: Truck, text: 'Consegna in 3-5 giorni lavorativi' },
+		{ icon: Package, text: 'Spedizione gratuita mondiale' },
+		{ icon: Truck, text: 'Consegna in 7-10 giorni lavorativi' },
 		{ icon: Shield, text: 'Garanzia soddisfatti o rimborsati 30gg' },
 		{ icon: Smartphone, text: 'App mobile per iOS e Android' }
 	];
@@ -82,7 +95,7 @@
 				</span>
 			</h2>
 			<p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-				Tutti i piani includono hardware dedicato, software preconfigurato e supporto completo
+				Tutti i modelli includono controllo biometrico, app mobile e supporto completo
 			</p>
 
 			<!-- Limited Time Offer -->
@@ -90,7 +103,7 @@
 				class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full font-semibold shadow-lg"
 			>
 				<Zap class="w-5 h-5 mr-2" />
-				<span>Offerta lancio: -15% fino al 31 Agosto</span>
+				<span>Preordine: -17% fino al 31 Agosto</span>
 			</div>
 		</div>
 
@@ -157,7 +170,7 @@
 								: ''} transition-all"
 						>
 							<CreditCard class="w-5 h-5 mr-2 inline" />
-							Ordina {pkg.name}
+							Preordina {pkg.name}
 						</button>
 					</div>
 				</div>
@@ -204,8 +217,8 @@
 			<Shield class="w-16 h-16 text-emerald-600 mx-auto mb-4" />
 			<h3 class="text-2xl font-bold text-gray-900 mb-3">Garanzia Soddisfatti o Rimborsati</h3>
 			<p class="text-gray-600 text-lg max-w-2xl mx-auto">
-				Prova Arvify per 30 giorni. Se non sei completamente soddisfatto, ti rimborsiamo il 100% del
-				prezzo pagato.
+				Prova Arvify per 30 giorni. Se il controllo biometrico dell'AI non ti convince al 100%, ti
+				rimborsiamo l'intero importo senza domande.
 			</p>
 		</div>
 	</div>

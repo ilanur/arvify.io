@@ -3,11 +3,11 @@
 	import DeviceAdvantages from '$lib/components/DeviceAdvantages.svelte';
 	import TechSpecs from '$lib/components/TechSpecs.svelte';
 	import HowItWorks from '$lib/components/HowItWorks.svelte';
-        import DeviceFooter from '$lib/components/DeviceFooter.svelte';
-        import Navigation from '$lib/components/Navigation.svelte';
-        import { Shield } from 'lucide-svelte';
-        import { onMount } from 'svelte';
-        import { t } from '$lib/utils/translations.js';
+	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
+	import Navigation from '$lib/components/Navigation.svelte';
+	import { Shield } from 'lucide-svelte';
+	import { onMount } from 'svelte';
+	import { t } from '$lib/utils/translations.js';
 
 	let isLoaded = $state(false);
 
@@ -17,19 +17,19 @@
 </script>
 
 <svelte:head>
-	<title>Arvify.io - Il Primo Assistente AI Ibrido Privacy-First</title>
+	<title>Arvify.io - Il Primo Bracciale Biometrico per Controllo AI</title>
 	<meta
 		name="description"
-		content="Arvify: Raspberry Pi 5 con Ollama integrato per AI locale e cloud ibrido. Massima privacy, controllo totale via app mobile. Ordinalo ora!"
+		content="Arvify: Il bracciale che mette il controllo dell'AI nelle tue mani. Approva o nega con la tua impronta digitale. Preordinalo ora!"
 	/>
 	<meta
 		name="keywords"
-		content="Arvify, AI Box, Raspberry Pi, Ollama, Privacy AI, Hybrid AI, Model Context Protocol, MCP"
+		content="Arvify, Bracciale AI, Controllo Biometrico, Privacy AI, Fingerprint, Consenso AI, Wearable AI"
 	/>
-	<meta property="og:title" content="Arvify.io - Assistente AI Ibrido Privacy-First" />
+	<meta property="og:title" content="Arvify.io - Bracciale Biometrico per Controllo AI" />
 	<meta
 		property="og:description"
-		content="Il primo dispositivo AI che combina elaborazione locale e cloud con controllo totale dei tuoi dati"
+		content="Il primo bracciale al mondo che ti dà controllo totale sull'AI con la tua impronta digitale"
 	/>
 	<meta property="og:type" content="website" />
 </svelte:head>
@@ -53,23 +53,23 @@
 	<!-- Call to Action Section -->
 	<section class="py-20 bg-gradient-to-r from-blue-600 to-emerald-600">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">{t('home.cta.headline')}</h2>
-                        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                                {t('home.cta.description')}
-                        </p>
+			<h2 class="text-4xl md:text-5xl font-bold text-white mb-6">{t('home.cta.headline')}</h2>
+			<p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+				{t('home.cta.description')}
+			</p>
 
 			<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
 				<a
 					href="/pricing"
 					class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
 				>
-                                        {t('home.cta.buttons.plans')}
+					{t('home.cta.buttons.plans')}
 				</a>
 				<a
-					href="/mcp-servers"
+					href="/tecnologia"
 					class="text-white border-2 border-white/30 hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all"
 				>
-                                        {t('home.cta.buttons.mcp')}
+					{t('home.cta.buttons.mcp')}
 				</a>
 			</div>
 
@@ -77,15 +77,15 @@
 			<div class="mt-12 flex flex-wrap justify-center items-center gap-8 text-blue-100">
 				<div class="flex items-center space-x-2">
 					<Shield class="w-5 h-5" />
-                                        <span>{t('home.cta.trust.garanzia')}</span>
+					<span>{t('home.cta.trust.garanzia')}</span>
 				</div>
 				<div class="flex items-center space-x-2">
 					<span class="text-lg">🚚</span>
-                                        <span>{t('home.cta.trust.spedizione')}</span>
+					<span>{t('home.cta.trust.spedizione')}</span>
 				</div>
 				<div class="flex items-center space-x-2">
 					<span class="text-lg">🇮🇹</span>
-                                        <span>{t('home.cta.trust.madeInItaly')}</span>
+					<span>{t('home.cta.trust.madeInItaly')}</span>
 				</div>
 			</div>
 		</div>
