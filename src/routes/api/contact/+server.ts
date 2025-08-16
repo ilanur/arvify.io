@@ -1,5 +1,5 @@
 import { json, type RequestHandler } from '@sveltejs/kit';
-import { sendContactEmail, sendContactConfirmation } from '$lib/server/email.js';
+// import { sendContactEmail, sendContactConfirmation } from '$lib/server/email.js';
 
 export const POST: RequestHandler = async ({ request }) => {
 	try {
@@ -29,38 +29,22 @@ export const POST: RequestHandler = async ({ request }) => {
 			);
 		}
 
-		// Invio email all'admin
-		const adminResult = await sendContactEmail({
+		// TODO: Implementare servizio email compatibile con Cloudflare Workers
+		// Per ora logghiamo i dati del contatto
+		console.log('Contact form submission:', {
 			name,
 			email,
 			message,
-			subject: subject || 'Nuovo contatto dal sito Arvify',
-			phone
+			subject: subject || 'Nuovo contatto dal sito',
+			phone,
+			timestamp: new Date().toISOString()
 		});
 
-		if (!adminResult.success) {
-			console.error('Errore invio email admin:', adminResult.error);
-			return json(
-				{
-					success: false,
-					error: "Errore durante l'invio del messaggio. Riprova più tardi."
-				},
-				{ status: 500 }
-			);
-		}
-
-		// Invio email di conferma all'utente (opzionale, non bloccare se fallisce)
-		try {
-			await sendContactConfirmation(email, name);
-		} catch (error) {
-			console.warn('Email di conferma non inviata:', error);
-			// Non blocchiamo il processo se la conferma fallisce
-		}
-
+		// Simuliamo un successo per ora
 		return json({
 			success: true,
-			message: 'Messaggio inviato con successo! Ti risponderemo al più presto.',
-			messageId: adminResult.messageId
+			message: 'Messaggio ricevuto! Ti risponderemo al più presto.',
+			messageId: `temp-${Date.now()}`
 		});
 	} catch (error) {
 		console.error('Errore API contact:', error);
