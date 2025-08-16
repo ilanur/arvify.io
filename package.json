@@ -38,6 +38,7 @@
 		"wrangler": "^4.30.0"
 	},
 	"dependencies": {
+		"@sendgrid/mail": "^8.1.5",
 		"lucide-svelte": "^0.460.0"
 	}
 }

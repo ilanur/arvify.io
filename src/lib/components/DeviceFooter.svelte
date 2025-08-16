@@ -9,6 +9,7 @@
 		MessageCircle,
 		ExternalLink
 	} from 'lucide-svelte';
+	import ContactForm from './ContactForm.svelte';
 
 	const contactInfo = [
 		{ icon: Mail, label: 'Email', value: 'info@arvify.io' },
@@ -137,18 +138,7 @@
 					<p class="text-gray-300">Ricevi le ultime novità su Arvify e aggiornamenti software</p>
 				</div>
 
-				<div class="flex space-x-3 w-full md:w-auto">
-					<input
-						type="email"
-						placeholder="il-tuo@email.com"
-						class="flex-1 md:w-64 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
-					/>
-					<button
-						class="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg font-medium transition-all"
-					>
-						Iscriviti
-					</button>
-				</div>
+				<ContactForm variant="newsletter" />
 			</div>
 		</div>
 	</div>
