@@ -16,6 +16,7 @@
 			"tagline": "Il Tuo Dito. La Tua Chiave. I Tuoi Dati.",
 			"highlight": "Your Digital Vault",
 			"description": "Il tuo dito diventa la chiave del tuo vault digitale. Tutte le informazioni che vuoi usare con l'AI, sempre sotto il tuo controllo biometrico.",
+			"deviceLabel": "Bracciale Biometrico",
 			"features": {
 				"localProcessing": "Il tuo dito è la chiave del vault",
 				"hybridCloud": "Controllo totale su ogni dato condiviso",

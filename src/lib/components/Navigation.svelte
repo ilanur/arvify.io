@@ -3,6 +3,7 @@
 	import { Shield, Menu, X } from 'lucide-svelte';
 	import { page } from '$app/stores';
 	import { t } from '$lib/utils/translations.js';
+	import ArvifyLogo from '$lib/components/ArvifyLogo.svelte';
 
 	let { variant = 'default', showCTA = true } = $props();
 
@@ -27,25 +28,28 @@
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex justify-between h-16 items-center">
 			<div class="flex items-center space-x-8">
-				<a href="/" class="flex items-center space-x-2">
-					<div
-						class="w-8 h-8 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-lg flex items-center justify-center"
-					>
-						{#if variant === 'default' || variant === 'dark'}
-							<Shield class="w-5 h-5 text-white" />
-						{:else}
-							<Shield class="w-5 h-5 text-white" />
-						{/if}
-					</div>
-					<span
-						class="text-xl font-bold {variant === 'transparent'
+				<a href="/" class="flex items-center">
+					<ArvifyLogo
+						size="lg"
+						showText={true}
+						textColor={variant === 'transparent'
 							? 'text-white'
 							: variant === 'dark'
 								? 'text-white'
-								: 'text-gray-900'}"
-					>
-						Arvify {currentPath === '/mcp-servers' ? 'MCP' : ''}
-					</span>
+								: 'text-gray-900'}
+						className="hover:opacity-80 transition-opacity"
+					/>
+					{#if currentPath === '/mcp-servers'}
+						<span
+							class="ml-2 text-sm font-medium {variant === 'transparent'
+								? 'text-blue-200'
+								: variant === 'dark'
+									? 'text-blue-400'
+									: 'text-blue-600'}"
+						>
+							MCP
+						</span>
+					{/if}
 				</a>
 
 				<div class="hidden md:flex items-center space-x-6">

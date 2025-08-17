@@ -1,47 +1,48 @@
 {
-        "nav": {
-                "mcpServers": "Servidores MCP",
-                "pricing": "Precios",
-                "login": "Iniciar sesión",
-                "home": "← Volver al Inicio",
-                "language": "Idioma",
-                "cta": {
-                        "from": "Desde €299",
-                        "orderNow": "Ordenar Ahora",
-                        "choosePlan": "Elegir Plan"
-                }
-        },
-        "home": {
-                "hero": {
-                        "tagline": "Asistente de IA centrado en la privacidad",
-                        "highlight": "Inteligencia Híbrida",
-                        "description": "El primer dispositivo de IA híbrido que combina la potencia de la nube con la privacidad local. Raspberry Pi 5 con Ollama integrado, controlado desde tu app móvil.",
-                        "features": {
-                                "localProcessing": "Procesamiento local para máxima privacidad",
-                                "hybridCloud": "Nube híbrida cuando se necesita potencia extra",
-                                "mobileControl": "Control total vía app móvil"
-                        },
-                        "cta": {
-                                "order": "Ordenar Ahora",
-                                "demo": "Ver Demo"
-                        },
-                        "pricing": {
-                                "startingFrom": "Desde",
-                                "vat": "IVA incluida"
-                        }
-                },
-                "cta": {
-                        "headline": "¿Listo para el Futuro de la IA?",
-                        "description": "Únete a miles de usuarios que ya eligieron Arvify para una experiencia de IA realmente privada y potente.",
-                        "buttons": {
-                                "plans": "Ver Todos los Planes",
-                                "mcp": "Explorar Servidores MCP"
-                        },
-                        "trust": {
-                                "garanzia": "Garantía de 30 días",
-                                "spedizione": "Envío gratis",
-                                "madeInItaly": "Hecho en Italia"
-                        }
-                }
-        }
+	"nav": {
+		"mcpServers": "Servidores MCP",
+		"pricing": "Precios",
+		"login": "Iniciar sesión",
+		"home": "← Volver al Inicio",
+		"language": "Idioma",
+		"cta": {
+			"from": "Desde €299",
+			"orderNow": "Ordenar Ahora",
+			"choosePlan": "Elegir Plan"
+		}
+	},
+	"home": {
+		"hero": {
+			"tagline": "Asistente de IA centrado en la privacidad",
+			"highlight": "Inteligencia Híbrida",
+			"description": "El primer dispositivo de IA híbrido que combina la potencia de la nube con la privacidad local. Raspberry Pi 5 con Ollama integrado, controlado desde tu app móvil.",
+			"deviceLabel": "Dispositivo Biométrico",
+			"features": {
+				"localProcessing": "Procesamiento local para máxima privacidad",
+				"hybridCloud": "Nube híbrida cuando se necesita potencia extra",
+				"mobileControl": "Control total vía app móvil"
+			},
+			"cta": {
+				"order": "Ordenar Ahora",
+				"demo": "Ver Demo"
+			},
+			"pricing": {
+				"startingFrom": "Desde",
+				"vat": "IVA incluida"
+			}
+		},
+		"cta": {
+			"headline": "¿Listo para el Futuro de la IA?",
+			"description": "Únete a miles de usuarios que ya eligieron Arvify para una experiencia de IA realmente privada y potente.",
+			"buttons": {
+				"plans": "Ver Todos los Planes",
+				"mcp": "Explorar Servidores MCP"
+			},
+			"trust": {
+				"garanzia": "Garantía de 30 días",
+				"spedizione": "Envío gratis",
+				"madeInItaly": "Hecho en Italia"
+			}
+		}
+	}
 }

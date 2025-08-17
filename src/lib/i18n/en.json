@@ -16,6 +16,7 @@
 			"tagline": "Your Finger. Your Key. Your Data.",
 			"highlight": "Your Digital Vault",
 			"description": "Your finger becomes the key to your digital vault. All the information you want to use with AI, always under your biometric control.",
+			"deviceLabel": "Biometric Wearable",
 			"features": {
 				"localProcessing": "Your finger is the vault key",
 				"hybridCloud": "Total control over every shared data",
