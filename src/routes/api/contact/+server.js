@@ -1,7 +1,7 @@
-import { json, type RequestHandler } from '@sveltejs/kit';
+import { json } from '@sveltejs/kit';
 // import { sendContactEmail, sendContactConfirmation } from '$lib/server/email.js';
 
-export const POST: RequestHandler = async ({ request }) => {
+export const POST = async ({ request }) => {
 	try {
 		const body = await request.json();
 		const { name, email, message, subject, phone } = body;
