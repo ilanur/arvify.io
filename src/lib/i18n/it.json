@@ -13,13 +13,13 @@
 	},
 	"home": {
 		"hero": {
-			"tagline": "Bracciale Biometrico AI",
-			"highlight": "Your Fingerprint. Your AI.",
-			"description": "Il primo bracciale al mondo che mette il controllo dell'AI nelle tue mani. Approva o nega l'accesso ai tuoi dati con un semplice tocco del dito.",
+			"tagline": "Il Tuo Dito. La Tua Chiave. I Tuoi Dati.",
+			"highlight": "Your Digital Vault",
+			"description": "Il tuo dito diventa la chiave del tuo vault digitale. Tutte le informazioni che vuoi usare con l'AI, sempre sotto il tuo controllo biometrico.",
 			"features": {
-				"localProcessing": "Controllo biometrico sicuro al polso",
-				"hybridCloud": "Connessione AI universale (OpenAI, Anthropic, Google)",
-				"mobileControl": "App mobile per gestione completa"
+				"localProcessing": "Il tuo dito è la chiave del vault",
+				"hybridCloud": "Controllo totale su ogni dato condiviso",
+				"mobileControl": "Gestisci, modifica, rimuovi facilmente la tua conoscenza"
 			},
 			"scenarios": {
 				"email": {
@@ -47,11 +47,48 @@
 				"vat": "IVA inclusa"
 			}
 		},
+		"vault": {
+			"title": "Il Tuo Vault Digitale",
+			"subtitle": "Tutto Sotto Controllo",
+			"description": "Il tuo dito è l'unica chiave che può sbloccare i tuoi dati. Nessun hacker, nessun software, nessuna AI può accedere senza il tuo consenso fisico.",
+			"features": {
+				"fingerprint": {
+					"title": "Dito = Chiave",
+					"description": "Template biometrici criptati localmente, mai condivisi"
+				},
+				"control": {
+					"title": "Controllo Totale",
+					"description": "Gestisci ogni singolo dato in Bolt: aggiungi, modifica, rimuovi"
+				},
+				"privacy": {
+					"title": "Privacy Assoluta",
+					"description": "TTL automatici, zero persistenza, cancellazione garantita"
+				},
+				"universal": {
+					"title": "AI Universale",
+					"description": "Funziona con qualsiasi AI: ChatGPT, Claude, Gemini, API custom"
+				}
+			},
+			"vault_items": {
+				"title": "Cosa Puoi Proteggere",
+				"subtitle": "La tua conoscenza, sempre sicura",
+				"items": {
+					"emails": "Email e conversazioni",
+					"documents": "Documenti e note",
+					"calendar": "Calendar e appuntamenti",
+					"photos": "Foto e media",
+					"contacts": "Contatti e relazioni",
+					"finance": "Dati finanziari",
+					"health": "Informazioni sanitarie",
+					"custom": "Qualsiasi dato custom"
+				}
+			}
+		},
 		"cta": {
-			"headline": "Pronto per il Controllo Totale dell'AI?",
-			"description": "Unisciti ai pionieri che stanno ridefinendo il rapporto tra umani e intelligenza artificiale.",
+			"headline": "Il Tuo Dito. La Tua Chiave. I Tuoi Dati.",
+			"description": "Diventa il custode assoluto delle tue informazioni digitali. Nessuna AI potrà mai accedere senza il tuo consenso biometrico.",
 			"buttons": {
-				"plans": "Vedi Tutti i Modelli",
+				"plans": "Scegli il Tuo Modello",
 				"mcp": "Scopri la Tecnologia"
 			},
 			"trust": {

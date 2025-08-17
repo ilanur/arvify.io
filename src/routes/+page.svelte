@@ -1,6 +1,7 @@
 <script>
 	import DeviceHero from '$lib/components/DeviceHero.svelte';
 	import DeviceAdvantages from '$lib/components/DeviceAdvantages.svelte';
+	import DigitalVault from '$lib/components/DigitalVault.svelte';
 	import TechSpecs from '$lib/components/TechSpecs.svelte';
 	import HowItWorks from '$lib/components/HowItWorks.svelte';
 	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
@@ -41,6 +42,9 @@
 	<!-- Hero Section -->
 	<DeviceHero />
 
+	<!-- Digital Vault Section -->
+	<DigitalVault />
+
 	<!-- Advantages Section -->
 	<DeviceAdvantages />
 
@@ -65,7 +69,7 @@
 					{t('home.cta.buttons.plans')}
 				</a>
 				<a
-					href="/tecnologia"
+					href="/technology"
 					class="text-white border-2 border-white/30 hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all"
 				>
 					{t('home.cta.buttons.mcp')}

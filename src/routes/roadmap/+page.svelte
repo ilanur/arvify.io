@@ -433,7 +433,7 @@
 					Preordina Arvify
 				</a>
 				<a
-					href="/tecnologia"
+					href="/technology"
 					class="text-white border-2 border-white/30 hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all"
 				>
 					Scopri la Tecnologia

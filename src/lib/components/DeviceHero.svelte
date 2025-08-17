@@ -8,7 +8,9 @@
 		Play,
 		ChevronLeft,
 		Code,
-		Plane
+		Plane,
+		Key,
+		Database
 	} from 'lucide-svelte';
 	import { t } from '$lib/utils/translations.js';
 	import ArvifyAppInterface from '$lib/components/ArvifyAppInterface.svelte';
@@ -74,7 +76,7 @@
 				<div
 					class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6"
 				>
-					<Shield class="w-4 h-4 mr-2 text-green-400" />
+					<Fingerprint class="w-4 h-4 mr-2 text-blue-400" />
 					{t('home.hero.tagline')}
 				</div>
 
@@ -95,19 +97,19 @@
 				<div class="space-y-4 mb-8">
 					<div class="flex items-center space-x-3">
 						<div class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
-							<Fingerprint class="w-4 h-4 text-blue-400" />
+							<Key class="w-4 h-4 text-blue-400" />
 						</div>
 						<span class="text-gray-200">{t('home.hero.features.localProcessing')}</span>
 					</div>
 					<div class="flex items-center space-x-3">
 						<div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center">
-							<Zap class="w-4 h-4 text-emerald-400" />
+							<Shield class="w-4 h-4 text-emerald-400" />
 						</div>
 						<span class="text-gray-200">{t('home.hero.features.hybridCloud')}</span>
 					</div>
 					<div class="flex items-center space-x-3">
 						<div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center">
-							<Smartphone class="w-4 h-4 text-purple-400" />
+							<Database class="w-4 h-4 text-purple-400" />
 						</div>
 						<span class="text-gray-200">{t('home.hero.features.mobileControl')}</span>
 					</div>

@@ -50,9 +50,9 @@
 
 				<div class="hidden md:flex items-center space-x-6">
 					<a
-						href="/tecnologia"
+						href="/technology"
 						class="
-							{currentPath === '/tecnologia'
+							{currentPath === '/technology'
 							? variant === 'transparent'
 								? 'text-white font-medium'
 								: variant === 'dark'
@@ -231,8 +231,8 @@
 		>
 			<div class="px-4 pt-2 pb-4 space-y-2">
 				<a
-					href="/tecnologia"
-					class="block py-2 px-3 rounded-md text-base font-medium {currentPath === '/tecnologia'
+					href="/technology"
+					class="block py-2 px-3 rounded-md text-base font-medium {currentPath === '/technology'
 						? variant === 'transparent'
 							? 'text-gray-900 bg-gray-100'
 							: variant === 'dark'
