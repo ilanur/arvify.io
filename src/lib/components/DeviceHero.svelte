@@ -1,6 +1,99 @@
 <script>
-	import { Shield, Zap, Smartphone, Fingerprint, ChevronRight, Play } from 'lucide-svelte';
+	import {
+		Shield,
+		Zap,
+		Smartphone,
+		Fingerprint,
+		ChevronRight,
+		Play,
+		ChevronLeft
+	} from 'lucide-svelte';
 	import { t } from '$lib/utils/translations.js';
+	import ArvifyAppInterface from '$lib/components/ArvifyAppInterface.svelte';
+
+	// Carousel state
+	let currentScenario = $state(0);
+
+	// Scenari definiti
+	const scenarios = [
+		{
+			id: 'email',
+			theme: 'blue',
+			request: 'Analizza le mie email per trovare progetti urgenti',
+			ttl: 120,
+			status: 'waiting',
+			backend: 'openai',
+			wearableColor: 'border-blue-500',
+			screenGradient: 'from-blue-500 to-purple-600',
+			icon: Fingerprint,
+			label: 'Email OK?'
+		},
+		{
+			id: 'finance',
+			theme: 'emerald',
+			request: 'Crea un budget mensile dai miei dati di spesa',
+			ttl: 90,
+			status: 'processing',
+			backend: 'anthropic',
+			wearableColor: 'border-emerald-500',
+			screenGradient: 'from-emerald-500 to-teal-600',
+			icon: Zap,
+			label: 'Budget?'
+		},
+		{
+			id: 'calendar',
+			theme: 'purple',
+			request: 'Trova il momento migliore per una riunione domani',
+			ttl: 60,
+			status: 'completed',
+			backend: 'google',
+			wearableColor: 'border-purple-500',
+			screenGradient: 'from-purple-500 to-pink-600',
+			icon: Smartphone,
+			label: 'Schedule?'
+		}
+	];
+
+	// Funzioni carousel
+	function nextScenario() {
+		currentScenario = (currentScenario + 1) % scenarios.length;
+	}
+
+	function prevScenario() {
+		currentScenario = currentScenario === 0 ? scenarios.length - 1 : currentScenario - 1;
+	}
+
+	function goToScenario(index) {
+		currentScenario = index;
+	}
+
+	// Auto-rotate carousel ogni 5 secondi
+	let autoRotateTimer = $state(null);
+
+	function startAutoRotate() {
+		if (autoRotateTimer) clearInterval(autoRotateTimer);
+		autoRotateTimer = setInterval(() => {
+			currentScenario = (currentScenario + 1) % scenarios.length;
+		}, 5000);
+	}
+
+	function stopAutoRotate() {
+		if (autoRotateTimer) {
+			clearInterval(autoRotateTimer);
+			autoRotateTimer = null;
+		}
+	}
+
+	function handleUserInteraction() {
+		stopAutoRotate();
+		setTimeout(startAutoRotate, 3000);
+	}
+
+	// Avvia auto-rotate al mount
+	$effect(() => {
+		startAutoRotate();
+		return () => stopAutoRotate();
+	});
 </script>
 
 <section class="relative py-20 overflow-hidden">
@@ -85,93 +178,157 @@
 				</div>
 			</div>
 
-			<!-- Right Content - Wearable Visualization -->
+			<!-- Right Content - Interactive Scenario Carousel -->
 			<div class="relative">
-				<!-- Main Wearable Mockup -->
-				<div
-					class="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 shadow-2xl"
-				>
-					<!-- Wearable Band Visual -->
-					<div class="flex justify-center mb-6">
-						<div class="relative">
-							<!-- Watch Band -->
-							<div class="w-48 h-12 bg-gray-700 rounded-full relative">
-								<!-- Wearable Device Center -->
+				<!-- Scenario Previews (laterali) -->
+				<div class="flex justify-center mb-6 space-x-4">
+					{#each scenarios as scenario, index}
+						<button
+							onclick={() => {
+								goToScenario(index);
+								handleUserInteraction();
+							}}
+							aria-label="Vai allo scenario {scenario.id}"
+							class="transition-all duration-300 {index === currentScenario
+								? 'scale-100 opacity-100'
+								: 'scale-75 opacity-40 hover:opacity-70'}"
+						>
+							<div
+								class="w-16 h-12 bg-gray-800 rounded-lg p-1 border-2 {index === currentScenario
+									? scenario.wearableColor
+									: 'border-gray-600'}"
+							>
 								<div
-									class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border border-gray-600 shadow-xl"
+									class="w-full h-full bg-gradient-to-br {scenario.screenGradient} rounded-md flex items-center justify-center"
 								>
-									<!-- Screen -->
-									<div class="w-full h-full bg-black rounded-2xl p-2">
-										<div
-											class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center"
-										>
-											<Fingerprint class="w-6 h-6 text-white animate-pulse" />
+									{#if scenario.icon === Fingerprint}
+										<Fingerprint class="w-3 h-3 text-white" />
+									{:else if scenario.icon === Zap}
+										<Zap class="w-3 h-3 text-white" />
+									{:else if scenario.icon === Smartphone}
+										<Smartphone class="w-3 h-3 text-white" />
+									{/if}
+								</div>
+							</div>
+						</button>
+					{/each}
+				</div>
+
+				<!-- Scenario Principale -->
+				<div class="bg-gray-900 rounded-3xl p-6 shadow-2xl relative overflow-hidden">
+					<!-- Navigation Arrows -->
+					<button
+						onclick={() => {
+							prevScenario();
+							handleUserInteraction();
+						}}
+						aria-label="Scenario precedente"
+						class="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all"
+					>
+						<ChevronLeft class="w-4 h-4" />
+					</button>
+
+					<button
+						onclick={() => {
+							nextScenario();
+							handleUserInteraction();
+						}}
+						aria-label="Scenario successivo"
+						class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all"
+					>
+						<ChevronRight class="w-4 h-4" />
+					</button>
+
+					<!-- Current Scenario Content -->
+					<div class="transition-all duration-500">
+						<!-- Wearable Visual -->
+						<div class="flex justify-center mb-6">
+							<div class="relative">
+								<!-- Watch Band -->
+								<div class="w-40 h-12 bg-gray-700 rounded-full relative">
+									<!-- Wearable Device Center -->
+									<div
+										class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 {scenarios[
+											currentScenario
+										].wearableColor} shadow-xl {scenarios[currentScenario].status === 'waiting'
+											? 'animate-pulse'
+											: ''}"
+									>
+										<!-- Screen -->
+										<div class="w-full h-full bg-black rounded-2xl p-1.5">
+											<div
+												class="w-full h-full bg-gradient-to-br {scenarios[currentScenario]
+													.screenGradient} rounded-xl flex flex-col items-center justify-center"
+											>
+												{#if scenarios[currentScenario].icon === Fingerprint}
+													<Fingerprint class="w-4 h-4 text-white mb-0.5" />
+												{:else if scenarios[currentScenario].icon === Zap}
+													<Zap class="w-4 h-4 text-white mb-0.5" />
+												{:else if scenarios[currentScenario].icon === Smartphone}
+													<Smartphone class="w-4 h-4 text-white mb-0.5" />
+												{/if}
+												<div class="text-white text-[8px]">{scenarios[currentScenario].label}</div>
+											</div>
 										</div>
 									</div>
 								</div>
-								<!-- Band Holes -->
-								{#each Array(8) as _, i}
+								<!-- Vibration Effect for waiting status -->
+								{#if scenarios[currentScenario].status === 'waiting'}
 									<div
-										class="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 bg-gray-600 rounded-full"
-										style="left: {10 + i * 8}px"
+										class="absolute -top-1 -left-1 w-42 h-14 border-2 {scenarios[currentScenario]
+											.wearableColor} rounded-full animate-ping opacity-30"
 									></div>
-									<div
-										class="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 bg-gray-600 rounded-full"
-										style="right: {10 + i * 8}px"
-									></div>
-								{/each}
+								{/if}
 							</div>
 						</div>
+
+						<!-- App Interface -->
+						{#key currentScenario}
+							<ArvifyAppInterface
+								scenario={scenarios[currentScenario].id}
+								theme={scenarios[currentScenario].theme}
+								requestText={scenarios[currentScenario].request}
+								ttlSeconds={scenarios[currentScenario].ttl}
+								showNotification={true}
+								processingStatus={scenarios[currentScenario].status}
+								backendType={scenarios[currentScenario].backend}
+							/>
+						{/key}
 					</div>
 
-					<!-- Status Indicators -->
-					<div class="space-y-3">
-						<div class="flex items-center justify-between p-3 bg-green-500/20 rounded-lg">
-							<span class="text-green-400 font-medium">Fingerprint Sensor</span>
-							<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-						</div>
-						<div class="flex items-center justify-between p-3 bg-blue-500/20 rounded-lg">
-							<span class="text-blue-400 font-medium">Secure Element</span>
-							<div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-						</div>
-						<div class="flex items-center justify-between p-3 bg-purple-500/20 rounded-lg">
-							<span class="text-purple-400 font-medium">BLE Connected</span>
-							<div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Mobile App Mockup -->
-				<div
-					class="absolute -bottom-8 -right-8 w-32 h-56 bg-gray-900 rounded-2xl shadow-xl border border-gray-700"
-				>
-					<div class="p-2">
-						<div class="w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl p-3">
-							<div class="text-white text-xs text-center mb-2">Arvify Control</div>
-							<div class="space-y-2">
-								{#each Array(3) as _, i}
-									<div class="h-2 bg-white/30 rounded-full">
-										<div
-											class="h-full bg-white rounded-full transition-all duration-1000"
-											style="width: {30 + i * 25}%"
-										></div>
-									</div>
-								{/each}
-							</div>
-						</div>
+					<!-- Scenario Indicators -->
+					<div class="flex justify-center mt-4 space-x-2">
+						{#each scenarios as _, index}
+							<button
+								onclick={() => {
+									goToScenario(index);
+									handleUserInteraction();
+								}}
+								aria-label="Vai allo scenario {index + 1}"
+								class="w-2 h-2 rounded-full transition-all {index === currentScenario
+									? 'bg-white scale-125'
+									: 'bg-white/30 hover:bg-white/50'}"
+							></button>
+						{/each}
 					</div>
 				</div>
 
-				<!-- Floating Icons -->
-				<div
-					class="absolute -top-4 -left-4 w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center animate-bounce"
-				>
-					<Fingerprint class="w-8 h-8 text-blue-400" />
-				</div>
-				<div
-					class="absolute top-8 -right-12 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center animate-pulse"
-				>
-					<Zap class="w-6 h-6 text-emerald-400" />
+				<!-- Scenario Labels -->
+				<div class="mt-4 text-center">
+					<h3 class="text-white font-semibold text-lg mb-2">
+						{scenarios[currentScenario].id === 'email'
+							? '📧 Analisi Email'
+							: scenarios[currentScenario].id === 'finance'
+								? '💰 Budget Intelligente'
+								: '📅 Pianificazione Smart'}
+					</h3>
+					<p class="text-gray-400 text-sm">
+						{scenarios[currentScenario].id === 'email'
+							? "L'AI accede alle tue email solo con il tuo consenso biometrico"
+							: scenarios[currentScenario].id === 'finance'
+								? 'Gestione finanziaria automatica con privacy garantita'
+								: 'Ottimizzazione calendario basata sui tuoi pattern'}
+					</p>
 				</div>
 			</div>
 		</div>

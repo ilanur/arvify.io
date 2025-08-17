@@ -21,6 +21,23 @@
 				"hybridCloud": "Connessione AI universale (OpenAI, Anthropic, Google)",
 				"mobileControl": "App mobile per gestione completa"
 			},
+			"scenarios": {
+				"email": {
+					"title": "Analisi Email",
+					"request": "Analizza le mie email per trovare progetti urgenti",
+					"description": "L'AI accede alle tue email solo con il tuo consenso biometrico"
+				},
+				"finance": {
+					"title": "Budget Intelligente",
+					"request": "Crea un budget mensile dai miei dati di spesa",
+					"description": "Gestione finanziaria automatica con privacy garantita"
+				},
+				"calendar": {
+					"title": "Pianificazione Smart",
+					"request": "Trova il momento migliore per una riunione domani",
+					"description": "Ottimizzazione calendario basata sui tuoi pattern"
+				}
+			},
 			"cta": {
 				"order": "Preordina Ora",
 				"demo": "Guarda Demo"
