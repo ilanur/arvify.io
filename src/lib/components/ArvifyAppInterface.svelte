@@ -1,27 +1,28 @@
 <script>
 	import { Settings, Clock, Shield, Eye, MoreHorizontal } from 'lucide-svelte';
+	import { getScenario, getScenarioDataTypes } from '$lib/scenarios.js';
 
 	// Props per personalizzare completamente l'interfaccia
 	let {
 		// Scenario configuration
-		scenario = 'email',
-		requestText = 'Analizza le mie email per trovare...',
+		scenario = 'development',
+		requestText = null, // Se null, usa quello dal scenario
 
 		// Display options
-		theme = 'blue', // 'blue', 'emerald', 'purple', 'amber'
+		theme = null, // Se null, usa quello dal scenario
 		size = 'normal', // 'compact', 'normal', 'expanded'
 
 		// Data configuration
 		dataTypes = null, // Array personalizzato o null per default
-		ttlSeconds = 120,
+		ttlSeconds = null, // Se null, usa quello dal scenario
 
 		// State management
 		showNotification = true,
 		isWaitingConsent = true,
-		processingStatus = 'waiting', // 'waiting', 'processing', 'completed', 'denied'
+		processingStatus = null, // Se null, usa quello dal scenario
 
 		// Backend configuration
-		backendType = 'bolt', // 'openai', 'anthropic', 'google', 'bolt', 'local'
+		backendType = null, // Se null, usa quello dal scenario
 
 		// Privacy settings
 		encryptionLevel = 'AES-256',
@@ -29,34 +30,16 @@
 		auditLog = true
 	} = $props();
 
-	// Predefined scenarios con dati specifici
-	const scenarios = {
-		email: [
-			{ name: '📧 Email threads', status: 'approved', sensitive: false },
-			{ name: '📅 Meeting notes', status: 'approved', sensitive: false },
-			{ name: '👤 Contact info', status: 'denied', sensitive: true },
-			{ name: '📊 Email analytics', status: 'pending', sensitive: true }
-		],
-		finance: [
-			{ name: '💳 Transaction history', status: 'approved', sensitive: true },
-			{ name: '� Spending patterns', status: 'approved', sensitive: true },
-			{ name: '🏦 Bank accounts', status: 'denied', sensitive: true },
-			{ name: '� Investment data', status: 'pending', sensitive: true },
-			{ name: '🧾 Receipt data', status: 'approved', sensitive: false }
-		],
-		calendar: [
-			{ name: '📅 Calendar events', status: 'approved', sensitive: false },
-			{ name: '👥 Meeting participants', status: 'approved', sensitive: true },
-			{ name: '📍 Location data', status: 'denied', sensitive: true },
-			{ name: '� Notification prefs', status: 'approved', sensitive: false }
-		],
-		health: [
-			{ name: '❤️ Heart rate data', status: 'approved', sensitive: true },
-			{ name: '🏃 Activity logs', status: 'approved', sensitive: true },
-			{ name: '😴 Sleep patterns', status: 'pending', sensitive: true },
-			{ name: '💊 Medication data', status: 'denied', sensitive: true }
-		]
-	};
+	// Ottieni configurazione scenario
+	const scenarioConfig = getScenario(scenario);
+
+	// Usa valori del scenario come fallback
+	const currentRequestText = requestText || scenarioConfig.request;
+	const currentTheme = theme || scenarioConfig.theme;
+	const currentTtl = ttlSeconds || scenarioConfig.ttl;
+	const currentStatus = processingStatus || scenarioConfig.status;
+	const currentBackend = backendType || scenarioConfig.backend;
+	const currentDataTypes = dataTypes || scenarioConfig.dataTypes;
 
 	// Configurazioni tema
 	const themes = {
@@ -75,16 +58,13 @@
 		local: { icon: '🏠', color: 'text-gray-400', name: 'Local' }
 	};
 
-	// Usa dataTypes personalizzati o scenario predefinito
-	const currentDataTypes = dataTypes || scenarios[scenario] || scenarios.email;
-
 	const approvedCount = currentDataTypes.filter((d) => d.status === 'approved').length;
 	const deniedCount = currentDataTypes.filter((d) => d.status === 'denied').length;
 	const pendingCount = currentDataTypes.filter((d) => d.status === 'pending').length;
 	const dataCount = currentDataTypes.length;
 </script>
 
-<div class="bg-gradient-to-br {themes[theme]} rounded-2xl p-6 h-full">
+<div class="bg-gradient-to-br {themes[currentTheme]} rounded-2xl p-6 h-full">
 	<!-- Header -->
 	<div class="flex items-center justify-between mb-6">
 		<div class="flex items-center space-x-2">
@@ -102,7 +82,7 @@
 	<div class="mb-4">
 		<div class="bg-white/20 rounded-lg p-3 mb-3">
 			<div class="flex items-start justify-between">
-				<p class="text-white text-sm flex-1">"{requestText}"</p>
+				<p class="text-white text-sm flex-1">"{currentRequestText}"</p>
 				<button class="text-white/70 hover:text-white ml-2">
 					<MoreHorizontal class="w-4 h-4" />
 				</button>
@@ -116,19 +96,19 @@
 					<div class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
 					<p class="text-amber-200 text-xs font-medium">🔔 Consenso Richiesto</p>
 					<div class="flex-1"></div>
-					<span class="text-amber-300 text-xs">{ttlSeconds}s</span>
+					<span class="text-amber-300 text-xs">{currentTtl}s</span>
 				</div>
 				<p class="text-white text-sm mb-2">
 					{approvedCount} approvati • {deniedCount} negati • {pendingCount} in attesa
 				</p>
 				<div class="text-xs text-gray-300">
-					{#if processingStatus === 'waiting'}
+					{#if currentStatus === 'waiting'}
 						Metti il dito sul sensore per approvare
-					{:else if processingStatus === 'processing'}
+					{:else if currentStatus === 'processing'}
 						Processando richiesta...
-					{:else if processingStatus === 'completed'}
+					{:else if currentStatus === 'completed'}
 						✅ Richiesta completata con successo
-					{:else if processingStatus === 'denied'}
+					{:else if currentStatus === 'denied'}
 						❌ Richiesta negata dall'utente
 					{/if}
 				</div>
@@ -222,33 +202,33 @@
 		</div>
 		<div class="bg-amber-500/20 rounded-lg p-2 text-center border border-amber-500/30">
 			<div class="text-amber-400 text-xs font-medium mb-1">Consenso</div>
-			<div class="text-amber-400 text-lg {processingStatus === 'waiting' ? 'animate-pulse' : ''}">
-				{#if processingStatus === 'waiting'}
+			<div class="text-amber-400 text-lg {currentStatus === 'waiting' ? 'animate-pulse' : ''}">
+				{#if currentStatus === 'waiting'}
 					⏳
-				{:else if processingStatus === 'processing'}
+				{:else if currentStatus === 'processing'}
 					🔄
-				{:else if processingStatus === 'completed'}
+				{:else if currentStatus === 'completed'}
 					✅
-				{:else if processingStatus === 'denied'}
+				{:else if currentStatus === 'denied'}
 					❌
 				{/if}
 			</div>
 			<div class="text-amber-300 text-xs">
-				{#if processingStatus === 'waiting'}
+				{#if currentStatus === 'waiting'}
 					Waiting
-				{:else if processingStatus === 'processing'}
+				{:else if currentStatus === 'processing'}
 					Processing
-				{:else if processingStatus === 'completed'}
+				{:else if currentStatus === 'completed'}
 					Approved
-				{:else if processingStatus === 'denied'}
+				{:else if currentStatus === 'denied'}
 					Denied
 				{/if}
 			</div>
 		</div>
 		<div class="bg-blue-500/20 rounded-lg p-2 text-center border border-blue-500/30">
 			<div class="text-blue-400 text-xs font-medium mb-1">Backend</div>
-			<div class="{backends[backendType].color} text-lg">{backends[backendType].icon}</div>
-			<div class="text-blue-300 text-xs">{backends[backendType].name}</div>
+			<div class="{backends[currentBackend].color} text-lg">{backends[currentBackend].icon}</div>
+			<div class="text-blue-300 text-xs">{backends[currentBackend].name}</div>
 		</div>
 	</div>
 
