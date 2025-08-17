@@ -1,84 +1,80 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer base {
-	html {
-		scroll-behavior: smooth;
-	}
-
-	body {
-		@apply bg-gray-50 text-gray-900;
-	}
+/* Base styles */
+html {
+	scroll-behavior: smooth;
 }
 
-@layer components {
-	.card {
-		@apply bg-white rounded-xl shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
-	}
-
-	.badge {
-		@apply inline-flex items-center justify-center px-2 py-1 rounded-full text-xs font-medium;
-	}
-
-	.btn-primary {
-		@apply bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
-	}
-
-	.btn-blue {
-		@apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
-	}
-
-	.btn-emerald {
-		@apply bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
-	}
-
-	.btn-purple {
-		@apply bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
-	}
-
-	.search-input {
-		@apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
-	}
-
-	.category-pill {
-		@apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
-	}
-
-	.category-pill.active {
-		@apply bg-primary-100 text-primary-800;
-	}
-
-	/* Device specific styles */
-	.gradient-text {
-		@apply text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600;
-	}
-
-	.device-card {
-		@apply bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 transition-all duration-300 hover:bg-white/20;
-	}
-
-	.glass-effect {
-		@apply bg-white/10 backdrop-blur-sm border border-white/20;
-	}
+body {
+	@apply bg-gray-50 text-gray-900;
 }
 
-@layer utilities {
-	.animate-slide-up {
-		animation: slideUp 0.6s ease-out forwards;
-		opacity: 0;
-		transform: translateY(30px);
-	}
-
-	.animate-fade-in {
-		animation: fadeIn 0.8s ease-out forwards;
-	}
-
-	.animate-bounce-in {
-		animation: bounceIn 0.6s ease-out forwards;
-	}
+/* Component styles con @apply */
+.card {
+	@apply bg-white rounded-xl shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
 }
 
+.badge {
+	@apply inline-flex items-center justify-center px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.btn-primary {
+	@apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+}
+
+.btn-blue {
+	@apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+}
+
+.btn-emerald {
+	@apply bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+}
+
+.btn-purple {
+	@apply bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+}
+
+.search-input {
+	@apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
+}
+
+.category-pill {
+	@apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-200 cursor-pointer;
+}
+
+.category-pill.active {
+	@apply bg-blue-100 text-blue-800;
+}
+
+/* Device specific styles */
+.gradient-text {
+	@apply text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600;
+}
+
+.device-card {
+	@apply bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 transition-all duration-300 hover:bg-white/20;
+}
+
+.glass-effect {
+	@apply bg-white/10 backdrop-blur-sm border border-white/20;
+}
+
+/* Utility animations */
+.animate-slide-up {
+	animation: slideUp 0.6s ease-out forwards;
+	opacity: 0;
+	transform: translateY(30px);
+}
+
+.animate-fade-in {
+	animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-bounce-in {
+	animation: bounceIn 0.6s ease-out forwards;
+}
+
+/* Keyframes */
 @keyframes slideUp {
 	to {
 		opacity: 1;

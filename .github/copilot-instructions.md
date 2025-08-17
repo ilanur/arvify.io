@@ -14,7 +14,7 @@
 1. `README.md` (root) - Visione d'insieme del progetto
 2. `src/lib/mcp-servers.js` - Database dei server MCP
 3. `/LLMs-docs/sveltekit-llms-small.txt` - Riferimenti tecnici SvelteKit
-4. `/LLMs-docs/tailwind-llm.txt` - Riferimenti tecnici Tailwind CSS
+4. `/LLMs-docs/tailwind-llm.txt` - Riferimenti tecnici Tailwind 4
 
 **Prima di scrivere HTML/CSS:**
 
@@ -52,7 +52,7 @@ Modifiche totali: [n]
 ## STACK TECNOLOGICO
 
 - **SvelteKit** con Svelte 5 (runes) - Framework principale
-- **Tailwind CSS 3.4** + design atomico con componenti riutilizzabili
+- **Tailwind 4** + design atomico con componenti riutilizzabili
 - **Lucide Svelte** - Set di icone moderne e consistenti
 - **TypeScript** - Tipizzazione statica
 - **Vite** - Build tool veloce e moderno
@@ -83,7 +83,7 @@ Modifiche totali: [n]
 **CSS:**
 
 - Usa `@apply` per ridurre verbosità
-- Design system atomico basato su Tailwind CSS 3.4
+- Design system atomico basato su Tailwind 4
 - Gradient backgrounds e backdrop-blur per effetti moderni
 - Animazioni fluide con transition e transform
 - Mobile-first responsive design
