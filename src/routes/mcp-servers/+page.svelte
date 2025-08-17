@@ -185,10 +185,20 @@
 					<span class="text-xl font-bold">MCP Servers Showcase</span>
 				</div>
 				<p class="text-gray-400 max-w-2xl mx-auto mb-6">
-					Discover and explore the amazing ecosystem of Model Context Protocol servers. Built with
-					❤️ using SvelteKit and Tailwind CSS.
+					Una collezione curata di server Model Context Protocol per espandere le capacità dei tuoi
+					LLM. Progetto open source creato con ❤️ da Emanuele Iurilli.
 				</p>
 				<div class="flex items-center justify-center space-x-6">
+					<a
+						href="https://github.com/ilanur/mcp-list"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
+					>
+						<Github class="h-5 w-5" />
+						<span>Repository del Progetto</span>
+						<ExternalLink class="h-4 w-4" />
+					</a>
 					<a
 						href="https://github.com/punkpeye/awesome-mcp-servers"
 						target="_blank"
@@ -196,7 +206,7 @@
 						class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
 					>
 						<Github class="h-5 w-5" />
-						<span>Original Repository</span>
+						<span>Fonte Dati</span>
 						<ExternalLink class="h-4 w-4" />
 					</a>
 				</div>

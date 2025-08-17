@@ -1,36 +1,10 @@
 <script>
-	import {
-		Shield,
-		Mail,
-		Phone,
-		MapPin,
-		Github,
-		Twitter,
-		MessageCircle,
-		ExternalLink
-	} from 'lucide-svelte';
-	import ContactForm from './ContactForm.svelte';
+	import { Shield, Mail, MapPin, Github, ExternalLink } from 'lucide-svelte';
 
 	const contactInfo = [
-		{ icon: Mail, label: 'Email', value: 'info@arvify.io' },
-		{ icon: Phone, label: 'Telefono', value: '+39 02 1234 5678' },
-		{ icon: MapPin, label: 'Indirizzo', value: "Via dell'Innovazione 42, Milano" }
-	];
-
-	const legalLinks = [
-		'Privacy Policy',
-		'Termini di Servizio',
-		'Garanzia',
-		'Reso e Rimborsi',
-		'Cookie Policy'
-	];
-
-	const supportLinks = [
-		'Centro Assistenza',
-		'Documentazione',
-		'Video Tutorial',
-		'Community Forum',
-		'Contattaci'
+		{ icon: Mail, label: 'Email', value: 'ilanurs@gmail.com' },
+		{ icon: Github, label: 'GitHub', value: 'github.com/ilanur' },
+		{ icon: MapPin, label: 'Location', value: 'Open Source Developer' }
 	];
 </script>
 
@@ -67,63 +41,71 @@
 				<!-- Social Links -->
 				<div class="flex items-center space-x-4 mt-6">
 					<a
-						href="https://twitter.com/arvifyio"
-						class="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
-						aria-label="Twitter"
-					>
-						<Twitter class="w-5 h-5" />
-					</a>
-					<a
-						href="https://github.com/arvify"
+						href="https://github.com/ilanur"
 						class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
 						aria-label="GitHub"
 					>
 						<Github class="w-5 h-5" />
 					</a>
 					<a
-						href="https://discord.gg/arvify"
-						class="w-10 h-10 bg-gray-800 hover:bg-green-600 rounded-lg flex items-center justify-center transition-colors"
-						aria-label="Discord"
+						href="mailto:ilanurs@gmail.com"
+						class="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
+						aria-label="Email"
 					>
-						<MessageCircle class="w-5 h-5" />
+						<Mail class="w-5 h-5" />
 					</a>
 				</div>
 			</div>
 
 			<!-- Support Links -->
 			<div>
-				<h3 class="text-lg font-semibold mb-6">Supporto</h3>
+				<h3 class="text-lg font-semibold mb-6">Risorse</h3>
 				<ul class="space-y-3">
-					{#each supportLinks as link}
-						<li>
-							<a
-								href="/support/{link.toLowerCase().replace(/\s+/g, '-')}"
-								class="text-gray-300 hover:text-white transition-colors flex items-center space-x-1"
-							>
-								<span>{link}</span>
-								{#if link === 'Centro Assistenza'}
-									<ExternalLink class="w-3 h-3" />
-								{/if}
-							</a>
-						</li>
-					{/each}
+					<li>
+						<a href="/mcp-servers" class="text-gray-300 hover:text-white transition-colors">
+							Server MCP
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://modelcontextprotocol.io"
+							class="text-gray-300 hover:text-white transition-colors flex items-center space-x-1"
+						>
+							<span>Documentazione MCP</span>
+							<ExternalLink class="w-3 h-3" />
+						</a>
+					</li>
 				</ul>
 			</div>
 
-			<!-- Legal Links -->
+			<!-- Project Links -->
 			<div>
-				<h3 class="text-lg font-semibold mb-6">Legale</h3>
+				<h3 class="text-lg font-semibold mb-6">Progetto</h3>
 				<ul class="space-y-3">
-					{#each legalLinks as link}
-						<li>
-							<a
-								href="/legal/{link.toLowerCase().replace(/\s+/g, '-')}"
-								class="text-gray-300 hover:text-white transition-colors"
-							>
-								{link}
-							</a>
-						</li>
-					{/each}
+					<li>
+						<a
+							href="https://github.com/ilanur/mcp-list/blob/main/README.md"
+							class="text-gray-300 hover:text-white transition-colors"
+						>
+							Come contribuire
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://github.com/ilanur/mcp-list/issues"
+							class="text-gray-300 hover:text-white transition-colors"
+						>
+							Segnala un problema
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://github.com/ilanur"
+							class="text-gray-300 hover:text-white transition-colors"
+						>
+							Altri progetti
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -135,10 +117,18 @@
 			<div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
 				<div>
 					<h3 class="text-lg font-semibold mb-2">Resta aggiornato</h3>
-					<p class="text-gray-300">Ricevi le ultime novità su Arvify e aggiornamenti software</p>
+					<p class="text-gray-300">Seguimi su GitHub per nuovi aggiornamenti del progetto</p>
 				</div>
 
-				<ContactForm variant="newsletter" />
+				<div class="flex items-center space-x-4">
+					<a
+						href="https://github.com/ilanur"
+						class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2"
+					>
+						<Github class="w-4 h-4" />
+						<span>Segui su GitHub</span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -149,11 +139,13 @@
 			<div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
 				<div class="flex items-center space-x-6 text-sm text-gray-400">
 					<span>© 2025 Arvify.io. Tutti i diritti riservati.</span>
-					<span>Made in Italy 🇮🇹</span>
+					<span>Made in Italy 🇮🇹 by Emanuele Strano (+ AI assistants <span>🤖</span>)</span>
 				</div>
 
 				<div class="flex items-center space-x-6 text-sm text-gray-400">
-					<span>Raspberry Pi® è un marchio registrato di Raspberry Pi Foundation</span>
+					<a href="https://github.com/ilanur/mcp-list" class="hover:text-white transition-colors">
+						Disponibile su GitHub
+					</a>
 				</div>
 			</div>
 		</div>
