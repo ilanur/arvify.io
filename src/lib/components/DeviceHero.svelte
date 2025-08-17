@@ -68,31 +68,27 @@
 	}
 
 	// Auto-rotate carousel ogni 5 secondi
-	let autoRotateTimer = $state(null);
-
-	function startAutoRotate() {
-		if (autoRotateTimer) clearInterval(autoRotateTimer);
-		autoRotateTimer = setInterval(() => {
-			currentScenario = (currentScenario + 1) % scenarios.length;
-		}, 5000);
-	}
-
-	function stopAutoRotate() {
-		if (autoRotateTimer) {
-			clearInterval(autoRotateTimer);
-			autoRotateTimer = null;
-		}
-	}
+	let isAutoRotating = $state(true);
 
 	function handleUserInteraction() {
-		stopAutoRotate();
-		setTimeout(startAutoRotate, 3000);
+		isAutoRotating = false;
+		setTimeout(() => {
+			isAutoRotating = true;
+		}, 3000);
 	}
 
-	// Avvia auto-rotate al mount
+	// Avvia auto-rotate al mount - usando un effect separato che non dipende da currentScenario
 	$effect(() => {
-		startAutoRotate();
-		return () => stopAutoRotate();
+		// Start auto-rotate on mount
+		const timer = setInterval(() => {
+			if (isAutoRotating) {
+				currentScenario = (currentScenario + 1) % scenarios.length;
+			}
+		}, 5000);
+
+		return () => {
+			if (timer) clearInterval(timer);
+		};
 	});
 </script>
 
