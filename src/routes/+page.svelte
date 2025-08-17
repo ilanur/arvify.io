@@ -45,7 +45,6 @@
 	<DeviceAdvantages />
 
 	<!-- Technical Specifications -->
-	<TechSpecs />
 
 	<!-- How It Works -->
 	<HowItWorks />

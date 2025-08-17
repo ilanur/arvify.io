@@ -19,34 +19,34 @@
 			price: '149',
 			originalPrice: '179',
 			popular: false,
-			description: 'Il controllo biometrico AI essenziale',
+			description: 'Essenziale, leggero, senza schermo',
 			color: 'blue',
 			features: [
 				'Bracciale con sensore fingerprint',
-				'MCU ESP32-C6 con WiFi 6',
-				'Display OLED + LED RGB',
+				'MCU ESP32-C6 con Wi-Fi 6 (BLE + tether)',
+				'LED RGB discreto (niente schermo)',
 				'App mobile iOS/Android',
-				'Connettività BLE/WiFi',
-				'Cinturino sport incluso',
+				'Connettività BLE/Wi-Fi via telefono',
+				'Cinturino sport in silicone',
 				'Garanzia 1 anno'
 			],
-			limits: ['Autonomia 3-5 giorni', 'Ricarica USB-C standard']
+			limits: ['Autonomia 3–5 giorni', 'Ricarica USB-C standard']
 		},
 		{
 			name: 'Pro',
 			price: '249',
 			originalPrice: '299',
 			popular: true,
-			description: 'La scelta migliore per utenti esigenti',
+			description: 'Secure Element e autonomia estesa',
 			color: 'emerald',
 			features: [
 				'Tutto del piano Starter',
-				'Secure Element ATECC608A',
-				'Autonomia 5-7 giorni',
+				'Secure Element ATECC608A (chiavi on-device)',
+				'Autonomia 5–7 giorni',
 				'Ricarica magnetica wireless',
-				'Materiali premium (alluminio)',
-				'Cloud credits inclusi (€15/mese per 6 mesi)',
-				'Cinturino pelle + sport',
+				'Cassa in alluminio anodizzato',
+				'Credit cloud inclusi (€15/mese × 6 mesi)',
+				'Doppio cinturino: pelle + sport',
 				'Supporto prioritario',
 				'Garanzia 2 anni'
 			],
@@ -57,19 +57,19 @@
 			price: '399',
 			originalPrice: '479',
 			popular: false,
-			description: 'Per aziende e massima sicurezza',
+			description: 'Fleet management e massima robustezza',
 			color: 'purple',
 			features: [
 				'Tutto del piano Pro',
-				'Materiali titanio grado medico',
-				'Certificazione IP68',
+				'Titanio grado medicale, anti-corrosione',
+				'Certificazione IP68 (polvere/acqua)',
 				'Autonomia fino a 10 giorni',
-				'API aziendali personalizzate',
-				'Gestione multi-dispositivo',
-				'Cloud credits illimitati primo anno',
+				'API aziendali e SSO (SAML/OIDC)',
+				'Gestione multi-dispositivo e policy',
+				'Credit cloud illimitati primo anno',
 				'Consulenza sicurezza dedicata',
 				'Setup aziendale on-site',
-				'SLA garantito 99.9%',
+				'SLA 99.9% e supporto 24/7',
 				'Garanzia 3 anni'
 			],
 			limits: []
@@ -78,8 +78,8 @@
 
 	const included = [
 		{ icon: Package, text: 'Spedizione gratuita mondiale' },
-		{ icon: Truck, text: 'Consegna in 7-10 giorni lavorativi' },
-		{ icon: Shield, text: 'Garanzia soddisfatti o rimborsati 30gg' },
+		{ icon: Truck, text: 'Consegna in 7–10 giorni lavorativi' },
+		{ icon: Shield, text: 'Reso facile 30 giorni' },
 		{ icon: Smartphone, text: 'App mobile per iOS e Android' }
 	];
 </script>
@@ -113,7 +113,7 @@
 				<div class="p-8">
 					<div class="text-center mb-8">
 						<h3 class="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
-						<p class="text-gray-600 mb-6">Il controllo biometrico AI essenziale</p>
+						<p class="text-gray-600 mb-6">Essenziale, leggero, senza schermo</p>
 						<div class="flex items-center justify-center space-x-2 mb-2">
 							<span class="text-4xl font-bold text-gray-900">€149</span>
 							<span class="text-lg text-gray-500 line-through">€179</span>
@@ -127,11 +127,11 @@
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">MCU ESP32-C6 con WiFi 6</span>
+							<span class="text-gray-700">MCU ESP32-C6 con Wi-Fi 6 (BLE + tether)</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Display OLED + LED RGB</span>
+							<span class="text-gray-700">LED RGB discreto (niente schermo)</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
@@ -139,11 +139,11 @@
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Connettività BLE/WiFi</span>
+							<span class="text-gray-700">Connettività BLE/Wi-Fi via telefono</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Cinturino sport incluso</span>
+							<span class="text-gray-700">Cinturino sport in silicone</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
@@ -152,7 +152,7 @@
 						<div class="pt-4 border-t border-gray-200">
 							<div class="flex items-start space-x-3 text-sm text-gray-500">
 								<span class="w-5 h-5 text-center mt-0.5">•</span>
-								<span>Autonomia 3-5 giorni</span>
+								<span>Autonomia 3–5 giorni</span>
 							</div>
 							<div class="flex items-start space-x-3 text-sm text-gray-500">
 								<span class="w-5 h-5 text-center mt-0.5">•</span>
@@ -183,7 +183,7 @@
 				<div class="p-8">
 					<div class="text-center mb-8">
 						<h3 class="text-2xl font-bold text-gray-900 mb-2">Pro</h3>
-						<p class="text-gray-600 mb-6">La scelta migliore per utenti esigenti</p>
+						<p class="text-gray-600 mb-6">Secure Element e autonomia estesa</p>
 						<div class="flex items-center justify-center space-x-2 mb-2">
 							<span class="text-4xl font-bold text-gray-900">€249</span>
 							<span class="text-lg text-gray-500 line-through">€299</span>
@@ -197,11 +197,11 @@
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Secure Element ATECC608A</span>
+							<span class="text-gray-700">Secure Element ATECC608A (chiavi on-device)</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Autonomia 5-7 giorni</span>
+							<span class="text-gray-700">Autonomia 5–7 giorni</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
@@ -209,15 +209,15 @@
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Materiali premium (alluminio)</span>
+							<span class="text-gray-700">Cassa in alluminio anodizzato</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Cloud credits inclusi (€15/mese per 6 mesi)</span>
+							<span class="text-gray-700">Credit cloud inclusi (€15/mese × 6 mesi)</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Cinturino pelle + sport</span>
+							<span class="text-gray-700">Doppio cinturino: pelle + sport</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
@@ -259,11 +259,11 @@
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Materiali titanio grado medico</span>
+							<span class="text-gray-700">Titanio grado medicale, anti-corrosione</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Certificazione IP68</span>
+							<span class="text-gray-700">Certificazione IP68 (polvere/acqua)</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
@@ -271,15 +271,15 @@
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">API aziendali personalizzate</span>
+							<span class="text-gray-700">API aziendali e SSO (SAML/OIDC)</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Gestione multi-dispositivo</span>
+							<span class="text-gray-700">Gestione multi-dispositivo e policy</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">Cloud credits illimitati primo anno</span>
+							<span class="text-gray-700">Credit cloud illimitati primo anno</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
@@ -291,7 +291,7 @@
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
-							<span class="text-gray-700">SLA garantito 99.9%</span>
+							<span class="text-gray-700">SLA 99.9% e supporto 24/7</span>
 						</div>
 						<div class="flex items-start space-x-3">
 							<Check class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
@@ -319,13 +319,13 @@
 					<div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
 						<Truck class="w-5 h-5 text-blue-600" />
 					</div>
-					<span class="text-gray-700 font-medium">Consegna in 7-10 giorni lavorativi</span>
+					<span class="text-gray-700 font-medium">Consegna in 7–10 giorni lavorativi</span>
 				</div>
 				<div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
 					<div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
 						<Shield class="w-5 h-5 text-blue-600" />
 					</div>
-					<span class="text-gray-700 font-medium">Garanzia soddisfatti o rimborsati 30gg</span>
+					<span class="text-gray-700 font-medium">Reso facile 30 giorni</span>
 				</div>
 				<div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
 					<div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">

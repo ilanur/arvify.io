@@ -18,53 +18,6 @@
 	<Navigation />
 
 	<!-- Header Section -->
-	<section class="py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900">
-		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-				Scegli il Tuo
-				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-					Arvify
-				</span>
-			</h1>
-			<p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-				Il primo assistente AI ibrido che rispetta la tua privacy senza rinunciare alle prestazioni.
-				Tutti i piani includono hardware dedicato e supporto completo.
-			</p>
-
-			<!-- Key Benefits -->
-			<div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-				<div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-					<div
-						class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-3"
-					>
-						<Shield class="w-6 h-6 text-green-400" />
-					</div>
-					<h3 class="text-white font-semibold mb-2">Privacy Totale</h3>
-					<p class="text-blue-100 text-sm">Elaborazione locale, cloud solo su approvazione</p>
-				</div>
-
-				<div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-					<div
-						class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-3"
-					>
-						<Code class="w-6 h-6 text-blue-400" />
-					</div>
-					<h3 class="text-white font-semibold mb-2">Raspberry Pi 5</h3>
-					<p class="text-blue-100 text-sm">8GB RAM, ARM Cortex-A76, ottimizzato per AI</p>
-				</div>
-
-				<div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-					<div
-						class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-3"
-					>
-						<span class="text-2xl">📱</span>
-					</div>
-					<h3 class="text-white font-semibold mb-2">App Mobile</h3>
-					<p class="text-blue-100 text-sm">Controllo totale da iOS e Android</p>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<!-- Pricing Section -->
 	<Pricing />
