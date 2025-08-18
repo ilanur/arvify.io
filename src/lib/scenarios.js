@@ -1,4 +1,4 @@
-import { Fingerprint, Zap, Smartphone, Code, Plane } from 'lucide-svelte';
+import { Fingerprint, Zap, Code, Plane, Heart, Home } from 'lucide-svelte';
 
 /**
  * Configurazione centralizzata degli scenari Arvify
@@ -90,13 +90,55 @@ export const scenarios = {
 			{ name: '📊 Investment data', status: 'pending', sensitive: true },
 			{ name: '🧾 Receipt data', status: 'approved', sensitive: false }
 		]
+	},
+
+	health: {
+		id: 'health',
+		name: '❤️ Benessere Personale',
+		description: 'Monitora parametri vitali e condividi dati con il tuo medico solo quando vuoi tu',
+		theme: 'purple',
+		request: 'Analizza i miei parametri cardiaci delle ultime 24 ore...',
+		ttl: 60,
+		status: 'waiting',
+		backend: 'google',
+		wearableColor: 'border-purple-500',
+		screenGradient: 'from-purple-500 to-pink-600',
+		icon: Heart,
+		label: 'Health?',
+		dataTypes: [
+			{ name: '❤️ Heart rate', status: 'approved', sensitive: true },
+			{ name: '🩺 Blood pressure', status: 'pending', sensitive: true },
+			{ name: '🏃‍♂️ Activity logs', status: 'approved', sensitive: false },
+			{ name: '🧬 Genetic data', status: 'denied', sensitive: true }
+		]
+	},
+
+	smarthome: {
+		id: 'smarthome',
+		name: '🏠 Casa Intelligente',
+		description: 'Controlla dispositivi smart home con consenso biometrico',
+		theme: 'blue',
+		request: 'Accendi le luci del salotto e imposta il termostato a 22°C...',
+		ttl: 45,
+		status: 'processing',
+		backend: 'local',
+		wearableColor: 'border-blue-500',
+		screenGradient: 'from-blue-500 to-purple-600',
+		icon: Home,
+		label: 'Home?',
+		dataTypes: [
+			{ name: '💡 Lighting control', status: 'approved', sensitive: false },
+			{ name: '🌡️ Thermostat', status: 'approved', sensitive: false },
+			{ name: '📹 Security cameras', status: 'denied', sensitive: true },
+			{ name: '🔐 Door locks', status: 'pending', sensitive: true }
+		]
 	}
 };
 
 /**
  * Array ordinato degli scenari per il carousel
  */
-export const scenarioOrder = ['development', 'travel', 'email', 'finance'];
+export const scenarioOrder = ['development', 'travel', 'email', 'finance', 'health', 'smarthome'];
 
 /**
  * Ottieni un scenario specifico
