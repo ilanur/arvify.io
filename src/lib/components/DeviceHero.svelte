@@ -145,35 +145,6 @@
 
 			<!-- Right Content - Device Showcase -->
 			<div class="relative">
-				<!-- Scenario Previews (sopra) -->
-				<div class="flex justify-center space-x-4 mb-8">
-					{#each scenarios as scenario, index}
-						{@const IconComponent = scenario.icon}
-						<button
-							onclick={() => {
-								goToScenario(index);
-								handleUserInteraction();
-							}}
-							aria-label="Vai allo scenario {scenario.id}"
-							class="transition-all duration-300 {index === currentScenario
-								? 'scale-100 opacity-100'
-								: 'scale-75 opacity-40 hover:opacity-70'}"
-						>
-							<div
-								class="w-16 h-12 bg-gray-800 rounded-lg p-1 border-2 {index === currentScenario
-									? scenario.wearableColor
-									: 'border-gray-600'}"
-							>
-								<div
-									class="w-full h-full bg-gradient-to-br {scenario.screenGradient} rounded-md flex items-center justify-center"
-								>
-									<IconComponent class="w-3 h-3 text-white" />
-								</div>
-							</div>
-						</button>
-					{/each}
-				</div>
-
 				<!-- Layout orizzontale: Braccio + Smartphone -->
 				<div class="flex items-center justify-center space-x-12">
 					<!-- Polso con Bracciale Arvify -->
@@ -338,7 +309,9 @@
 
 						<!-- Label Smartphone -->
 						<div class="text-center mt-3">
-							<div class="text-gray-300 text-sm">Arvify App</div>
+							<div class="text-gray-300 text-sm">
+								Demo! Prova l'app Arvify qui sopra, funziona proprio così.
+							</div>
 						</div>
 					</div>
 				</div>
