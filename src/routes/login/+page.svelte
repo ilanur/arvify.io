@@ -1,7 +1,5 @@
 <script>
 	import DeviceLogin from '$lib/components/DeviceLogin.svelte';
-	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
-	import Navigation from '$lib/components/Navigation.svelte';
 </script>
 
 <svelte:head>
@@ -23,12 +21,5 @@
 </svelte:head>
 
 <div class="min-h-screen">
-	<!-- Navigation -->
-	<Navigation variant="transparent" showCTA={false} />
-
-	<!-- Login/Dashboard Content -->
 	<DeviceLogin />
-
-	<!-- Footer -->
-	<DeviceFooter />
 </div>
