@@ -1,48 +1,85 @@
 {
-	"nav": {
-		"mcpServers": "Servidores MCP",
-		"pricing": "Precios",
-		"login": "Iniciar sesión",
-		"home": "← Volver al Inicio",
-		"language": "Idioma",
-		"cta": {
-			"from": "Desde €299",
-			"orderNow": "Ordenar Ahora",
-			"choosePlan": "Elegir Plan"
-		}
-	},
-	"home": {
-		"hero": {
-			"tagline": "Asistente de IA centrado en la privacidad",
-			"highlight": "Inteligencia Híbrida",
-			"description": "El primer dispositivo de IA híbrido que combina la potencia de la nube con la privacidad local. Raspberry Pi 5 con Ollama integrado, controlado desde tu app móvil.",
-			"deviceLabel": "Dispositivo Biométrico",
-			"features": {
-				"localProcessing": "Procesamiento local para máxima privacidad",
-				"hybridCloud": "Nube híbrida cuando se necesita potencia extra",
-				"mobileControl": "Control total vía app móvil"
-			},
-			"cta": {
-				"order": "Ordenar Ahora",
-				"demo": "Ver Demo"
-			},
-			"pricing": {
-				"startingFrom": "Desde",
-				"vat": "IVA incluida"
-			}
-		},
-		"cta": {
-			"headline": "¿Listo para el Futuro de la IA?",
-			"description": "Únete a miles de usuarios que ya eligieron Arvify para una experiencia de IA realmente privada y potente.",
-			"buttons": {
-				"plans": "Ver Todos los Planes",
-				"mcp": "Explorar Servidores MCP"
-			},
-			"trust": {
-				"garanzia": "Garantía de 30 días",
-				"spedizione": "Envío gratis",
-				"madeInItaly": "Hecho en Italia"
-			}
-		}
-	}
+  "home": {
+    "cta": {
+      "buttons": {
+        "mcp": "Explorar Servidores MCP",
+        "plans": "Ver Todos los Planes"
+      },
+      "description": "Únete a miles de usuarios que ya eligieron Arvify para una experiencia de IA realmente privada y potente.",
+      "headline": "¿Listo para el Futuro de la IA?",
+      "trust": {
+        "garanzia": "Garantía de 30 días",
+        "madeInItaly": "Hecho en Italia",
+        "spedizione": "Envío gratis"
+      }
+    },
+    "hero": {
+      "cta": {
+        "demo": "Ver Demo",
+        "order": "Ordenar Ahora"
+      },
+      "description": "El primer dispositivo de IA híbrido que combina la potencia de la nube con la privacidad local. Raspberry Pi 5 con Ollama integrado, controlado desde tu app móvil.",
+      "deviceLabel": "Dispositivo Biométrico",
+      "features": {
+        "hybridCloud": "Nube híbrida cuando se necesita potencia extra",
+        "localProcessing": "Procesamiento local para máxima privacidad",
+        "mobileControl": "Control total vía app móvil"
+      },
+      "highlight": "Inteligencia Híbrida",
+      "pricing": {
+        "startingFrom": "Desde",
+        "vat": "IVA incluida"
+      },
+      "tagline": "Asistente de IA centrado en la privacidad"
+    },
+    "vault": {
+      "description": "home.vault.description",
+      "features": {
+        "control": {
+          "description": "home.vault.features.control.description",
+          "title": "home.vault.features.control.title"
+        },
+        "fingerprint": {
+          "description": "home.vault.features.fingerprint.description",
+          "title": "home.vault.features.fingerprint.title"
+        },
+        "privacy": {
+          "description": "home.vault.features.privacy.description",
+          "title": "home.vault.features.privacy.title"
+        },
+        "universal": {
+          "description": "home.vault.features.universal.description",
+          "title": "home.vault.features.universal.title"
+        }
+      },
+      "subtitle": "home.vault.subtitle",
+      "title": "home.vault.title",
+      "vault_items": {
+        "items": {
+          "calendar": "home.vault.vault_items.items.calendar",
+          "contacts": "home.vault.vault_items.items.contacts",
+          "custom": "home.vault.vault_items.items.custom",
+          "documents": "home.vault.vault_items.items.documents",
+          "emails": "home.vault.vault_items.items.emails",
+          "finance": "home.vault.vault_items.items.finance",
+          "health": "home.vault.vault_items.items.health",
+          "photos": "home.vault.vault_items.items.photos"
+        },
+        "subtitle": "home.vault.vault_items.subtitle",
+        "title": "home.vault.vault_items.title"
+      }
+    }
+  },
+  "nav": {
+    "cta": {
+      "choosePlan": "Elegir Plan",
+      "from": "Desde €299",
+      "orderNow": "Ordenar Ahora"
+    },
+    "home": "← Volver al Inicio",
+    "language": "Idioma",
+    "login": "Iniciar sesión",
+    "mcpServers": "Servidores MCP",
+    "pricing": "Precios"
+  }
 }

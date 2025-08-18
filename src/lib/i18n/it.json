@@ -1,102 +1,102 @@
 {
-	"nav": {
-		"mcpServers": "Tecnologia",
-		"pricing": "Prezzi",
-		"login": "Login",
-		"home": "← Torna alla Home",
-		"language": "Lingua",
-		"cta": {
-			"from": "A partire da €149",
-			"orderNow": "Preordina Ora",
-			"choosePlan": "Scegli Modello"
-		}
-	},
-	"home": {
-		"hero": {
-			"tagline": "Il Tuo Dito. La Tua Chiave. I Tuoi Dati.",
-			"highlight": "Your Digital Vault",
-			"description": "Il tuo dito diventa la chiave del tuo vault digitale. Tutte le informazioni che vuoi usare con l'AI, sempre sotto il tuo controllo biometrico.",
-			"deviceLabel": "Bracciale Biometrico",
-			"features": {
-				"localProcessing": "Il tuo dito è la chiave del vault",
-				"hybridCloud": "Controllo totale su ogni dato condiviso",
-				"mobileControl": "Gestisci, modifica, rimuovi facilmente la tua conoscenza"
-			},
-			"scenarios": {
-				"email": {
-					"title": "Analisi Email",
-					"request": "Analizza le mie email per trovare progetti urgenti",
-					"description": "L'AI accede alle tue email solo con il tuo consenso biometrico"
-				},
-				"finance": {
-					"title": "Budget Intelligente",
-					"request": "Crea un budget mensile dai miei dati di spesa",
-					"description": "Gestione finanziaria automatica con privacy garantita"
-				},
-				"calendar": {
-					"title": "Pianificazione Smart",
-					"request": "Trova il momento migliore per una riunione domani",
-					"description": "Ottimizzazione calendario basata sui tuoi pattern"
-				}
-			},
-			"cta": {
-				"order": "Preordina Ora",
-				"demo": "Guarda Demo"
-			},
-			"pricing": {
-				"startingFrom": "A partire da",
-				"vat": "IVA inclusa"
-			}
-		},
-		"vault": {
-			"title": "Il Tuo Vault Digitale",
-			"subtitle": "Tutto Sotto Controllo",
-			"description": "Il tuo dito è l'unica chiave che può sbloccare i tuoi dati. Nessun hacker, nessun software, nessuna AI può accedere senza il tuo consenso fisico.",
-			"features": {
-				"fingerprint": {
-					"title": "Dito = Chiave",
-					"description": "Template biometrici criptati localmente, mai condivisi"
-				},
-				"control": {
-					"title": "Controllo Totale",
-					"description": "Gestisci ogni singolo dato in Bolt: aggiungi, modifica, rimuovi"
-				},
-				"privacy": {
-					"title": "Privacy Assoluta",
-					"description": "TTL automatici, zero persistenza, cancellazione garantita"
-				},
-				"universal": {
-					"title": "AI Universale",
-					"description": "Funziona con qualsiasi AI: ChatGPT, Claude, Gemini, API custom"
-				}
-			},
-			"vault_items": {
-				"title": "Cosa Puoi Proteggere",
-				"subtitle": "La tua conoscenza, sempre sicura",
-				"items": {
-					"emails": "Email e conversazioni",
-					"documents": "Documenti e note",
-					"calendar": "Calendar e appuntamenti",
-					"photos": "Foto e media",
-					"contacts": "Contatti e relazioni",
-					"finance": "Dati finanziari",
-					"health": "Informazioni sanitarie",
-					"custom": "Qualsiasi dato custom"
-				}
-			}
-		},
-		"cta": {
-			"headline": "Il Tuo Dito. La Tua Chiave. I Tuoi Dati.",
-			"description": "Diventa il custode assoluto delle tue informazioni digitali. Nessuna AI potrà mai accedere senza il tuo consenso biometrico.",
-			"buttons": {
-				"plans": "Scegli il Tuo Modello",
-				"mcp": "Scopri la Tecnologia"
-			},
-			"trust": {
-				"garanzia": "30 giorni garanzia",
-				"spedizione": "Spedizione gratuita",
-				"madeInItaly": "Made in Italy"
-			}
-		}
-	}
+  "home": {
+    "cta": {
+      "buttons": {
+        "mcp": "Scopri la Tecnologia",
+        "plans": "Scegli il Tuo Modello"
+      },
+      "description": "Diventa il custode assoluto delle tue informazioni digitali. Nessuna AI potrà mai accedere senza il tuo consenso biometrico.",
+      "headline": "Il Tuo Dito. La Tua Chiave. I Tuoi Dati.",
+      "trust": {
+        "garanzia": "30 giorni garanzia",
+        "madeInItaly": "Made in Italy",
+        "spedizione": "Spedizione gratuita"
+      }
+    },
+    "hero": {
+      "cta": {
+        "demo": "Guarda Demo",
+        "order": "Preordina Ora"
+      },
+      "description": "Il tuo dito diventa la chiave del tuo vault digitale. Tutte le informazioni che vuoi usare con l'AI, sempre sotto il tuo controllo biometrico.",
+      "deviceLabel": "Bracciale Biometrico",
+      "features": {
+        "hybridCloud": "Controllo totale su ogni dato condiviso",
+        "localProcessing": "Il tuo dito è la chiave del vault",
+        "mobileControl": "Gestisci, modifica, rimuovi facilmente la tua conoscenza"
+      },
+      "highlight": "Your Digital Vault",
+      "pricing": {
+        "startingFrom": "A partire da",
+        "vat": "IVA inclusa"
+      },
+      "scenarios": {
+        "calendar": {
+          "description": "Ottimizzazione calendario basata sui tuoi pattern",
+          "request": "Trova il momento migliore per una riunione domani",
+          "title": "Pianificazione Smart"
+        },
+        "email": {
+          "description": "L'AI accede alle tue email solo con il tuo consenso biometrico",
+          "request": "Analizza le mie email per trovare progetti urgenti",
+          "title": "Analisi Email"
+        },
+        "finance": {
+          "description": "Gestione finanziaria automatica con privacy garantita",
+          "request": "Crea un budget mensile dai miei dati di spesa",
+          "title": "Budget Intelligente"
+        }
+      },
+      "tagline": "Il Tuo Dito. La Tua Chiave. I Tuoi Dati."
+    },
+    "vault": {
+      "description": "Il tuo dito è l'unica chiave che può sbloccare i tuoi dati. Nessun hacker, nessun software, nessuna AI può accedere senza il tuo consenso fisico.",
+      "features": {
+        "control": {
+          "description": "Gestisci ogni singolo dato in Bolt: aggiungi, modifica, rimuovi",
+          "title": "Controllo Totale"
+        },
+        "fingerprint": {
+          "description": "Template biometrici criptati localmente, mai condivisi",
+          "title": "Dito = Chiave"
+        },
+        "privacy": {
+          "description": "TTL automatici, zero persistenza, cancellazione garantita",
+          "title": "Privacy Assoluta"
+        },
+        "universal": {
+          "description": "Funziona con qualsiasi AI: ChatGPT, Claude, Gemini, API custom",
+          "title": "AI Universale"
+        }
+      },
+      "subtitle": "Tutto Sotto Controllo",
+      "title": "Il Tuo Vault Digitale",
+      "vault_items": {
+        "items": {
+          "calendar": "Calendar e appuntamenti",
+          "contacts": "Contatti e relazioni",
+          "custom": "Qualsiasi dato custom",
+          "documents": "Documenti e note",
+          "emails": "Email e conversazioni",
+          "finance": "Dati finanziari",
+          "health": "Informazioni sanitarie",
+          "photos": "Foto e media"
+        },
+        "subtitle": "La tua conoscenza, sempre sicura",
+        "title": "Cosa Puoi Proteggere"
+      }
+    }
+  },
+  "nav": {
+    "cta": {
+      "choosePlan": "Scegli Modello",
+      "from": "A partire da €149",
+      "orderNow": "Preordina Ora"
+    },
+    "home": "← Torna alla Home",
+    "language": "Lingua",
+    "login": "Login",
+    "mcpServers": "Tecnologia",
+    "pricing": "Prezzi"
+  }
 }

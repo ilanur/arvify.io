@@ -1,85 +1,85 @@
 {
-	"nav": {
-		"mcpServers": "MCP Servers",
-		"pricing": "Pricing",
-		"login": "Login",
-		"home": "← Back to Home",
-		"language": "Language",
-		"cta": {
-			"from": "Starting at €299",
-			"orderNow": "Order Now",
-			"choosePlan": "Choose Plan"
-		}
-	},
-	"home": {
-		"hero": {
-			"tagline": "Your Finger. Your Key. Your Data.",
-			"highlight": "Your Digital Vault",
-			"description": "Your finger becomes the key to your digital vault. All the information you want to use with AI, always under your biometric control.",
-			"deviceLabel": "Biometric Wearable",
-			"features": {
-				"localProcessing": "Your finger is the vault key",
-				"hybridCloud": "Total control over every shared data",
-				"mobileControl": "Manage, edit, remove your knowledge easily"
-			},
-			"cta": {
-				"order": "Order Now",
-				"demo": "Watch Demo"
-			},
-			"pricing": {
-				"startingFrom": "Starting from",
-				"vat": "VAT included"
-			}
-		},
-		"vault": {
-			"title": "Your Digital Vault",
-			"subtitle": "Everything Under Control",
-			"description": "Your finger is the only key that can unlock your data. No hacker, no software, no AI can access without your physical consent.",
-			"features": {
-				"fingerprint": {
-					"title": "Finger = Key",
-					"description": "Biometric templates encrypted locally, never shared"
-				},
-				"control": {
-					"title": "Total Control",
-					"description": "Manage every single data in Bolt: add, edit, remove"
-				},
-				"privacy": {
-					"title": "Absolute Privacy",
-					"description": "Automatic TTL, zero persistence, guaranteed deletion"
-				},
-				"universal": {
-					"title": "Universal AI",
-					"description": "Works with any AI: ChatGPT, Claude, Gemini, custom APIs"
-				}
-			},
-			"vault_items": {
-				"title": "What You Can Protect",
-				"subtitle": "Your knowledge, always secure",
-				"items": {
-					"emails": "Emails and conversations",
-					"documents": "Documents and notes",
-					"calendar": "Calendar and appointments",
-					"photos": "Photos and media",
-					"contacts": "Contacts and relationships",
-					"finance": "Financial data",
-					"health": "Health information",
-					"custom": "Any custom data"
-				}
-			}
-		},
-		"cta": {
-			"headline": "Your Finger. Your Key. Your Data.",
-			"description": "Become the absolute guardian of your digital information. No AI will ever access without your biometric consent.",
-			"buttons": {
-				"plans": "Choose Your Model",
-				"mcp": "Discover Technology"
-			},
-			"trust": {
-				"garanzia": "30-day guarantee",
-				"spedizione": "Free shipping",
-				"madeInItaly": "Made in Italy"
-			}
-		}
-	}
+  "home": {
+    "cta": {
+      "buttons": {
+        "mcp": "Discover Technology",
+        "plans": "Choose Your Model"
+      },
+      "description": "Become the absolute guardian of your digital information. No AI will ever access without your biometric consent.",
+      "headline": "Your Finger. Your Key. Your Data.",
+      "trust": {
+        "garanzia": "30-day guarantee",
+        "madeInItaly": "Made in Italy",
+        "spedizione": "Free shipping"
+      }
+    },
+    "hero": {
+      "cta": {
+        "demo": "Watch Demo",
+        "order": "Order Now"
+      },
+      "description": "Your finger becomes the key to your digital vault. All the information you want to use with AI, always under your biometric control.",
+      "deviceLabel": "Biometric Wearable",
+      "features": {
+        "hybridCloud": "Total control over every shared data",
+        "localProcessing": "Your finger is the vault key",
+        "mobileControl": "Manage, edit, remove your knowledge easily"
+      },
+      "highlight": "Your Digital Vault",
+      "pricing": {
+        "startingFrom": "Starting from",
+        "vat": "VAT included"
+      },
+      "tagline": "Your Finger. Your Key. Your Data."
+    },
+    "vault": {
+      "description": "Your finger is the only key that can unlock your data. No hacker, no software, no AI can access without your physical consent.",
+      "features": {
+        "control": {
+          "description": "Manage every single data in Bolt: add, edit, remove",
+          "title": "Total Control"
+        },
+        "fingerprint": {
+          "description": "Biometric templates encrypted locally, never shared",
+          "title": "Finger = Key"
+        },
+        "privacy": {
+          "description": "Automatic TTL, zero persistence, guaranteed deletion",
+          "title": "Absolute Privacy"
+        },
+        "universal": {
+          "description": "Works with any AI: ChatGPT, Claude, Gemini, custom APIs",
+          "title": "Universal AI"
+        }
+      },
+      "subtitle": "Everything Under Control",
+      "title": "Your Digital Vault",
+      "vault_items": {
+        "items": {
+          "calendar": "Calendar and appointments",
+          "contacts": "Contacts and relationships",
+          "custom": "Any custom data",
+          "documents": "Documents and notes",
+          "emails": "Emails and conversations",
+          "finance": "Financial data",
+          "health": "Health information",
+          "photos": "Photos and media"
+        },
+        "subtitle": "Your knowledge, always secure",
+        "title": "What You Can Protect"
+      }
+    }
+  },
+  "nav": {
+    "cta": {
+      "choosePlan": "Choose Plan",
+      "from": "Starting at €299",
+      "orderNow": "Order Now"
+    },
+    "home": "← Back to Home",
+    "language": "Language",
+    "login": "Login",
+    "mcpServers": "MCP Servers",
+    "pricing": "Pricing"
+  }
 }
