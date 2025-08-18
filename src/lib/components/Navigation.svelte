@@ -17,9 +17,9 @@
 </script>
 
 <nav
-	class="
-	{variant === 'transparent'
-		? 'absolute top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-sm border-b border-white/20'
+	class="sticky top-0 z-50 w-full
+        {variant === 'transparent'
+		? 'bg-white/10 backdrop-blur-sm border-b border-white/20'
 		: variant === 'dark'
 			? 'bg-gray-900 border-b border-gray-800'
 			: 'bg-white/80 backdrop-blur-sm border-b border-gray-200'}
