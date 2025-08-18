@@ -4,12 +4,39 @@
 	let {
 		// Configurazione richiesta
 		requestText = 'Connetti i miei repository per ottimizzare il workflow di sviluppo...',
+		provider = 'openai', // Provider AI per la richiesta
 		inputType = 'audio', // 'audio', 'text', 'system'
 
 		// Styling
 		requestBgClass = 'bg-white/10',
 		requestTextClass = 'text-white text-sm'
 	} = $props();
+
+	// Provider info
+	const providers = {
+		openai: {
+			name: 'OpenAI',
+			icon: '🤖',
+			color: 'text-emerald-400'
+		},
+		anthropic: {
+			name: 'Claude',
+			icon: '🧠',
+			color: 'text-blue-300'
+		},
+		google: {
+			name: 'Gemini',
+			icon: '✨',
+			color: 'text-blue-400'
+		},
+		bolt: {
+			name: 'Bolt.new',
+			icon: '⚡',
+			color: 'text-blue-500'
+		}
+	};
+
+	const currentProvider = providers[provider] || providers.openai;
 
 	// Tipi di input - Palette uniforme blu
 	const inputTypes = {
@@ -37,16 +64,24 @@
 </script>
 
 <div class="mb-4">
-	<!-- Header della richiesta con info utente e tipo input -->
-	<div class="flex items-center space-x-2 mb-2">
-		<div class="flex items-center space-x-1">
-			<User class="w-4 h-4 text-white/70" />
-			<span class="text-white/70 text-xs font-medium">Tu</span>
+	<!-- Header della richiesta con info utente e provider -->
+	<div class="flex items-center justify-between mb-3">
+		<div class="flex items-center space-x-2">
+			<div class="flex items-center space-x-1">
+				<User class="w-4 h-4 text-white/70" />
+				<span class="text-white/70 text-xs font-medium">Tu</span>
+			</div>
+
+			<div class="flex items-center space-x-1 {currentInput.color}">
+				<svelte:component this={currentInput.icon} class="w-3 h-3" />
+				<span class="text-xs">{currentInput.label}</span>
+			</div>
 		</div>
 
-		<div class="flex items-center space-x-1 {currentInput.color}">
-			<svelte:component this={currentInput.icon} class="w-3 h-3" />
-			<span class="text-xs">{currentInput.label}</span>
+		<!-- Provider info -->
+		<div class="flex items-center space-x-1 {currentProvider.color}">
+			<span class="text-xs">{currentProvider.icon}</span>
+			<span class="text-xs font-medium">{currentProvider.name}</span>
 		</div>
 	</div>
 

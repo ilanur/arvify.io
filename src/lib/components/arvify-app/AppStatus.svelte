@@ -5,6 +5,7 @@
 		// Configurazione stato
 		status = 'waiting', // 'waiting', 'processing', 'completed', 'denied'
 		ttlSeconds = 180,
+		provider = 'openai', // Provider della richiesta
 		// Callbacks per navigazione
 		onShowDetails = null,
 
@@ -78,14 +79,19 @@
 	<!-- Descrizione e azioni -->
 	<div class="space-y-3">
 		{#if status === 'processing'}
-			<div class="text-xs text-white/70">Usa l'app per bloccare la richiesta.</div>
+			<div class="text-xs text-white/70">
+				🤖 {provider === 'openai' ? 'OpenAI' : provider.charAt(0).toUpperCase() + provider.slice(1)}
+				sta elaborando la richiesta.
+			</div>
 		{:else if status === 'completed'}
-			<div class="text-xs text-white/70">Richiesta completata.</div>
+			<div class="text-xs text-white/70">✅ Richiesta completata con successo.</div>
 		{:else if status === 'denied'}
-			<div class="text-xs text-white/70">Richiesta negata.</div>
+			<div class="text-xs text-white/70">❌ Richiesta negata dall'utente.</div>
 		{:else if status === 'waiting'}
 			<div class="text-xs text-white/70">
-				In attesa di azione, usa il tuo bracciale per approvare la richiesta.
+				⏳ In attesa di autorizzazione per condividere i dati con {provider === 'openai'
+					? 'OpenAI'
+					: provider.charAt(0).toUpperCase() + provider.slice(1)}.
 			</div>
 		{/if}
 

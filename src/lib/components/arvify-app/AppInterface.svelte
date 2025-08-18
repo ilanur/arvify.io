@@ -120,22 +120,17 @@
 
 		<!-- Scrollable Content Area -->
 		<div class="flex-1 overflow-y-auto pb-16">
-			<div class="p-4">
+			<div class="p-4 space-y-4">
 				<!-- AI Request -->
-				<AppRequest requestText={currentRequestText} />
+				<AppRequest requestText={currentRequestText} provider={currentBackend} />
 
-				<!-- Sezione Consenso e Dettagli Compatta -->
-				<div class="space-y-3 mb-4">
-					<!-- System Status -->
-					<AppSystemStatus processingStatus={currentStatus} />
-
-					<!-- Status principale -->
-					<AppStatus
-						status={currentStatus}
-						ttlSeconds={currentTtl}
-						onShowDetails={showDetailsPage}
-					/>
-				</div>
+				<!-- Status principale e azioni -->
+				<AppStatus
+					status={currentStatus}
+					ttlSeconds={currentTtl}
+					provider={currentBackend}
+					onShowDetails={showDetailsPage}
+				/>
 			</div>
 		</div>
 

@@ -4,7 +4,7 @@
 	let {
 		// Dati della richiesta
 		requestText = '',
-		provider = 'bolt',
+		provider = 'openai',
 		dataTypes = [],
 		ttlSeconds = 180,
 		scenario = 'development',
@@ -12,6 +12,24 @@
 		// Callback
 		onBack = null
 	} = $props();
+
+	// Stato locale semplice che si inizializza dai dataTypes
+	let permissions = $state({});
+
+	// Inizializza i permessi quando cambiano i dataTypes
+	$effect(() => {
+		const newPermissions = {};
+		dataTypes.forEach((dataType) => {
+			newPermissions[dataType.name] = dataType.status === 'approved';
+		});
+		permissions = newPermissions;
+	});
+
+	// Funzione per salvare le modifiche
+	function savePermissions() {
+		console.log('Permessi aggiornati:', permissions);
+		handleBack();
+	}
 
 	// Provider info
 	const providers = {
@@ -140,35 +158,57 @@
 			</div>
 		</div>
 
-		<!-- Data Access -->
+		<!-- Data Access con Checkbox -->
 		<div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
 			<h2 class="text-white text-sm font-semibold mb-3 flex items-center space-x-2">
 				<Database class="w-4 h-4" />
-				<span>Accesso ai Dati</span>
+				<span>Gestione Accesso ai Dati</span>
 			</h2>
 
-			<div class="space-y-2">
+			<div class="space-y-3">
 				{#each dataTypes as dataType}
-					{@const config = statusConfig[dataType.status] || statusConfig.pending}
 					<div
-						class="flex items-center justify-between p-2 {config.bg} rounded-lg border border-slate-600/30"
+						class="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg border border-slate-600/30"
 					>
-						<div class="flex items-center space-x-2">
-							<span class="text-xs">{config.icon}</span>
-							<span class="text-white text-xs">{dataType.name}</span>
+						<div class="flex items-center space-x-3">
+							<input
+								type="checkbox"
+								bind:checked={permissions[dataType.name]}
+								class="w-4 h-4 text-emerald-600 bg-slate-700 border-slate-500 rounded focus:ring-emerald-500"
+							/>
+							<span class="text-white text-sm font-medium">{dataType.name}</span>
 							{#if dataType.sensitive}
 								<span
-									class="text-xs px-1.5 py-0.5 bg-amber-500/20 text-amber-300 rounded text-[10px]"
+									class="text-[10px] px-1.5 py-0.5 bg-amber-500/20 text-amber-300 rounded font-medium"
 								>
 									SENSIBILE
 								</span>
 							{/if}
 						</div>
-						<span class="{config.color} text-xs font-medium capitalize">
-							{dataType.status}
+						<span
+							class="text-xs font-medium {permissions[dataType.name]
+								? 'text-emerald-400'
+								: 'text-slate-400'}"
+						>
+							{permissions[dataType.name] ? 'Autorizzato' : 'Negato'}
 						</span>
 					</div>
 				{/each}
+			</div>
+
+			<!-- Azioni di salvataggio -->
+			<div class="mt-4 pt-3 border-t border-slate-600/30">
+				<div class="flex items-center justify-between">
+					<span class="text-slate-300 text-xs">
+						Modifiche ai permessi saranno applicate immediatamente
+					</span>
+					<button
+						onclick={savePermissions}
+						class="px-3 py-1.5 bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/30 rounded-lg text-emerald-300 text-xs font-medium transition-all"
+					>
+						Salva Modifiche
+					</button>
+				</div>
 			</div>
 		</div>
 

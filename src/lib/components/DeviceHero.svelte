@@ -202,19 +202,19 @@
 
 					<!-- Smartphone con App - Dimensioni più larghe e realistiche -->
 					<div class="relative">
+						<!-- Bottone scenario fuori dal device ma dentro l'area visibile -->
+						<button
+							onclick={() => {
+								nextScenario();
+							}}
+							aria-label="Scenario successivo"
+							class="absolute -right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center text-white transition-all transform hover:scale-110 shadow-xl"
+						>
+							<ChevronRight class="w-5 h-5" />
+						</button>
+
 						<!-- Container smartphone più largo e con proporzioni migliori -->
 						<div class="bg-gray-900 rounded-3xl shadow-2xl relative overflow-hidden w-78 mx-auto">
-							<!-- Solo freccia destra, grande e moderna -->
-							<button
-								onclick={() => {
-									nextScenario();
-								}}
-								aria-label="Scenario successivo"
-								class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center text-white transition-all transform hover:scale-110 shadow-lg"
-							>
-								<ChevronRight class="w-6 h-6" />
-							</button>
-
 							<!-- Smartphone Frame con proporzioni migliori -->
 							<div class="bg-black rounded-3xl p-3 shadow-2xl">
 								<!-- Status Bar Space -->
