@@ -16,18 +16,14 @@
 		scenario = 'development',
 		requestText = null, // Se null, usa quello dal scenario
 
-		// Display options
-		theme = null, // Se null, usa quello dal scenario
-		size = 'normal', // 'compact', 'normal', 'expanded'
+                // Display options
 
-		// Data configuration
-		dataTypes = null, // Array personalizzato o null per default
-		ttlSeconds = null, // Se null, usa quello dal scenario
+                // Data configuration
+                dataTypes = null, // Array personalizzato o null per default
+                ttlSeconds = null, // Se null, usa quello dal scenario
 
-		// State management
-		showNotification = true,
-		isWaitingConsent = true,
-		processingStatus = null, // Se null, usa quello dal scenario
+                // State management
+                processingStatus = null, // Se null, usa quello dal scenario
 
 		// Backend configuration
 		backendType = null, // Se null, usa quello dal scenario
@@ -96,9 +92,8 @@
 	const scenarioConfig = getScenario(scenario);
 
 	// Usa valori del scenario come fallback
-	const currentRequestText = requestText || scenarioConfig.request;
-	const currentTheme = theme || scenarioConfig.theme;
-	const currentTtl = ttlSeconds || scenarioConfig.ttl;
+        const currentRequestText = requestText || scenarioConfig.request;
+        const currentTtl = ttlSeconds || scenarioConfig.ttl;
 	const currentStatus = processingStatus || scenarioConfig.status;
 	const currentBackend = backendType || scenarioConfig.backend;
 	const currentDataTypes = dataTypes || scenarioConfig.dataTypes;
@@ -122,21 +117,19 @@
 		<div class="flex-1 overflow-y-auto pb-16">
 			<div class="p-4">
 				<!-- AI Request -->
-				<AppRequest requestText={currentRequestText} backendType={currentBackend} />
+				<AppRequest requestText={currentRequestText} />
 
 				<!-- Sezione Consenso e Dettagli Compatta -->
 				<div class="space-y-3 mb-4">
-					<!-- Status principale con consenso provider -->
+					<!-- Status principale con consenso -->
 					<AppStatus
 						status={currentStatus}
 						ttlSeconds={currentTtl}
-						provider={currentBackend}
 						onShowDetails={showDetailsPage}
-						onShowSettings={showSettingsPage}
 					/>
 
 					<!-- System Status -->
-					<AppSystemStatus processingStatus={currentStatus} backendType={currentBackend} />
+					<AppSystemStatus processingStatus={currentStatus} />
 				</div>
 			</div>
 		</div>
