@@ -84,7 +84,9 @@
 		{:else if status === 'denied'}
 			<div class="text-xs text-white/70">Richiesta negata.</div>
 		{:else if status === 'waiting'}
-			<div class="text-xs text-white/70">In attesa di azione. Usa il bracciale per confermare</div>
+			<div class="text-xs text-white/70">
+				In attesa di azione, usa il tuo bracciale per approvare la richiesta.
+			</div>
 		{/if}
 
 		<!-- Link ai dettagli -->
