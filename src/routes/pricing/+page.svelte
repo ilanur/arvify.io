@@ -1,7 +1,5 @@
 <script>
 	import Pricing from '$lib/components/Pricing.svelte';
-	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
-	import Navigation from '$lib/components/Navigation.svelte';
 </script>
 
 <svelte:head>
@@ -22,10 +20,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
-<div class="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-	<!-- Navigation -->
-	<Navigation />
-
+<div class="bg-gradient-to-br from-gray-50 to-white">
 	<!-- Header Section -->
 
 	<!-- Pricing Section -->
@@ -79,7 +74,4 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- Footer -->
-	<DeviceFooter />
 </div>
