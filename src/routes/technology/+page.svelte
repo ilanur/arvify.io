@@ -1,7 +1,5 @@
 <script>
 	import { Shield, Database, Zap, Lock, Server, CheckCircle } from 'lucide-svelte';
-	import Navigation from '$lib/components/Navigation.svelte';
-	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
 
 	const boltFeatures = [
 		{
@@ -124,9 +122,6 @@
 </svelte:head>
 
 <div class="min-h-screen bg-gray-50">
-	<!-- Navigation -->
-	<Navigation variant="white" />
-
 	<!-- Hero Section -->
 	<section class="pt-24 pb-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -417,7 +412,4 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- Footer -->
-	<DeviceFooter />
 </div>

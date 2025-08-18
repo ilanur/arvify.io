@@ -5,7 +5,6 @@
 	import SearchBar from '$lib/components/SearchBar.svelte';
 	import StatsCard from '$lib/components/StatsCard.svelte';
 	import Hero from '$lib/components/Hero.svelte';
-	import Navigation from '$lib/components/Navigation.svelte';
 	import mcpServers from '$lib/mcp-servers.js';
 
 	let filteredServers = $state(mcpServers);
@@ -91,9 +90,6 @@
 </svelte:head>
 
 <div class="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
-	<!-- Navigation -->
-	<Navigation showCTA={false} />
-
 	<!-- Hero Section -->
 	<Hero />
 
