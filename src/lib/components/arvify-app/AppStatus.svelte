@@ -15,19 +15,19 @@
 		ttlTextClass = 'text-slate-300 text-sm'
 	} = $props();
 
-	// Status configuration con colori uniformi
+	// Status configuration con colori distintivi per ogni stato
 	const statusConfig = {
 		waiting: {
 			icon: '🔔',
 			text: 'Consenso richiesto',
 			dotClass: 'animate-pulse',
-			bgClass: 'bg-slate-500/10',
-			borderClass: 'border-slate-500/20'
+			bgClass: 'bg-amber-500/10',
+			borderClass: 'border-amber-500/20'
 		},
 		processing: {
 			icon: '🔄',
 			text: 'Elaborazione in corso',
-			dotClass: '',
+			dotClass: 'animate-spin',
 			bgClass: 'bg-blue-500/10',
 			borderClass: 'border-blue-500/20'
 		},
@@ -35,8 +35,8 @@
 			icon: '✅',
 			text: 'Completato',
 			dotClass: '',
-			bgClass: 'bg-blue-500/10',
-			borderClass: 'border-blue-500/20'
+			bgClass: 'bg-emerald-500/10',
+			borderClass: 'border-emerald-500/20'
 		},
 		denied: {
 			icon: '❌',
@@ -58,7 +58,15 @@
 	<!-- Header principale -->
 	<div class="flex items-center justify-between mb-3">
 		<div class="flex items-center space-x-2">
-			<div class="w-2 h-2 bg-blue-400 rounded-full {currentStatus.dotClass}"></div>
+			<div
+				class="w-2 h-2 rounded-full {currentStatus.dotClass} {status === 'waiting'
+					? 'bg-amber-400'
+					: status === 'processing'
+						? 'bg-blue-400'
+						: status === 'completed'
+							? 'bg-emerald-400'
+							: 'bg-red-400'}"
+			></div>
 			<span class={statusTextClass}>
 				{currentStatus.icon}
 				{currentStatus.text}
@@ -69,7 +77,15 @@
 
 	<!-- Descrizione e azioni -->
 	<div class="space-y-3">
-		<div class="text-xs text-white/70">Usa il bracciale per negare la richiesta.</div>
+		{#if status === 'processing'}
+			<div class="text-xs text-white/70">Usa l'app per bloccare la richiesta.</div>
+		{:else if status === 'completed'}
+			<div class="text-xs text-white/70">Richiesta completata.</div>
+		{:else if status === 'denied'}
+			<div class="text-xs text-white/70">Richiesta negata.</div>
+		{:else if status === 'waiting'}
+			<div class="text-xs text-white/70">In attesa di azione. Usa il bracciale per confermare</div>
+		{/if}
 
 		<!-- Link ai dettagli -->
 		<div>

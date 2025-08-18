@@ -6,7 +6,6 @@
 		Fingerprint,
 		ChevronRight,
 		Play,
-		ChevronLeft,
 		Code,
 		Plane,
 		Key,
@@ -28,37 +27,8 @@
 		currentScenario = (currentScenario + 1) % scenarios.length;
 	}
 
-	function prevScenario() {
-		currentScenario = currentScenario === 0 ? scenarios.length - 1 : currentScenario - 1;
-	}
-
-	function goToScenario(index) {
-		currentScenario = index;
-	}
-
-	// Auto-rotate carousel ogni 5 secondi
-	let isAutoRotating = $state(true);
-
-	function handleUserInteraction() {
-		isAutoRotating = false;
-		setTimeout(() => {
-			isAutoRotating = true;
-		}, 3000);
-	}
-
-	// Avvia auto-rotate al mount - usando un effect separato che non dipende da currentScenario
-	$effect(() => {
-		// Start auto-rotate on mount
-		const timer = setInterval(() => {
-			if (isAutoRotating) {
-				currentScenario = (currentScenario + 1) % scenarios.length;
-			}
-		}, 5000);
-
-		return () => {
-			if (timer) clearInterval(timer);
-		};
-	});
+	// Auto-rotate carousel disabilitato
+	// let isAutoRotating = $state(false);
 </script>
 
 <section class="relative py-20 overflow-hidden">
@@ -234,27 +204,15 @@
 					<div class="relative">
 						<!-- Container smartphone più largo e con proporzioni migliori -->
 						<div class="bg-gray-900 rounded-3xl shadow-2xl relative overflow-hidden w-78 mx-auto">
-							<!-- Navigation Arrows -->
-							<button
-								onclick={() => {
-									prevScenario();
-									handleUserInteraction();
-								}}
-								aria-label="Scenario precedente"
-								class="absolute left-1 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all"
-							>
-								<ChevronLeft class="w-4 h-4" />
-							</button>
-
+							<!-- Solo freccia destra, grande e moderna -->
 							<button
 								onclick={() => {
 									nextScenario();
-									handleUserInteraction();
 								}}
 								aria-label="Scenario successivo"
-								class="absolute right-1 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all"
+								class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center text-white transition-all transform hover:scale-110 shadow-lg"
 							>
-								<ChevronRight class="w-4 h-4" />
+								<ChevronRight class="w-6 h-6" />
 							</button>
 
 							<!-- Smartphone Frame con proporzioni migliori -->
@@ -277,10 +235,7 @@
 									<!-- App Interface con scroll container -->
 									{#key currentScenario}
 										<div class="h-full overflow-y-auto transition-all duration-500">
-											<ArvifyAppInterface
-												scenario={scenarios[currentScenario].id}
-												onUserInteraction={handleUserInteraction}
-											/>
+											<ArvifyAppInterface scenario={scenarios[currentScenario].id} />
 										</div>
 									{/key}
 								</div>
@@ -290,40 +245,24 @@
 								<div class="h-1"></div>
 							</div>
 
-							<!-- Scenario Indicators -->
-							<div class="flex justify-center mt-3 space-x-1.5">
-								{#each scenarios as _, index}
-									<button
-										onclick={() => {
-											goToScenario(index);
-											handleUserInteraction();
-										}}
-										aria-label="Vai allo scenario {index + 1}"
-										class="w-2 h-2 rounded-full transition-all {index === currentScenario
-											? 'bg-white scale-125'
-											: 'bg-white/30 hover:bg-white/50'}"
-									></button>
-								{/each}
-							</div>
-						</div>
-
-						<!-- Label Smartphone -->
-						<div class="text-center mt-3">
-							<div class="text-gray-300 text-sm">
-								Demo! Prova l'app Arvify qui sopra, funziona proprio così.
-							</div>
+							<!-- Label Smartphone -->
+							<!-- <div class="text-center mt-3">
+								<div class="text-gray-300 text-sm">
+									Demo! Prova l'app Arvify qui sopra, funziona proprio così.
+								</div>
+							</div> -->
 						</div>
 					</div>
-				</div>
 
-				<!-- Scenario Labels (sotto) -->
-				<div class="text-center mt-8">
+					<!-- Scenario Labels (sotto) -->
+					<!-- <div class="text-center mt-8">
 					<h3 class="text-white font-semibold text-xl mb-2">
 						{scenarios[currentScenario].name}
 					</h3>
 					<p class="text-gray-400 text-sm max-w-md mx-auto">
 						{scenarios[currentScenario].description}
 					</p>
+				</div> -->
 				</div>
 			</div>
 		</div>
