@@ -4,9 +4,7 @@
 	let {
 		// Configurazione richiesta
 		requestText = 'Connetti i miei repository per ottimizzare il workflow di sviluppo...',
-		backendType = 'bolt',
 		inputType = 'audio', // 'audio', 'text', 'system'
-		scenarioId = 'development',
 
 		// Styling
 		requestBgClass = 'bg-white/10',
@@ -35,42 +33,7 @@
 		}
 	};
 
-	// Backend configuration con colori uniformi blu/grigi
-	const backends = {
-		openai: {
-			logo: '🤖',
-			color: 'text-blue-400',
-			name: 'OpenAI',
-			bgColor: 'bg-blue-500/10'
-		},
-		anthropic: {
-			logo: '🧠',
-			color: 'text-blue-300',
-			name: 'Claude',
-			bgColor: 'bg-blue-500/10'
-		},
-		google: {
-			logo: '🔍',
-			color: 'text-blue-400',
-			name: 'Gemini',
-			bgColor: 'bg-blue-500/10'
-		},
-		bolt: {
-			logo: '⚡',
-			color: 'text-blue-500',
-			name: 'Bolt',
-			bgColor: 'bg-blue-500/10'
-		},
-		local: {
-			logo: '🏠',
-			color: 'text-gray-400',
-			name: 'Local',
-			bgColor: 'bg-gray-500/10'
-		}
-	};
-
 	const currentInput = inputTypes[inputType] || inputTypes.audio;
-	const currentBackend = backends[backendType] || backends.bolt;
 </script>
 
 <div class="mb-4">
@@ -84,13 +47,6 @@
 		<div class="flex items-center space-x-1 {currentInput.color}">
 			<svelte:component this={currentInput.icon} class="w-3 h-3" />
 			<span class="text-xs">{currentInput.label}</span>
-		</div>
-
-		<div
-			class="ml-auto flex items-center space-x-1 {currentBackend.bgColor} rounded-full px-2 py-1"
-		>
-			<span class="text-xs">{currentBackend.logo}</span>
-			<span class="text-xs {currentBackend.color} font-medium">{currentBackend.name}</span>
 		</div>
 	</div>
 

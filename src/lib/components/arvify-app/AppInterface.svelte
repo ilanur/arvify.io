@@ -122,21 +122,19 @@
 		<div class="flex-1 overflow-y-auto pb-16">
 			<div class="p-4">
 				<!-- AI Request -->
-				<AppRequest requestText={currentRequestText} backendType={currentBackend} />
+				<AppRequest requestText={currentRequestText} />
 
 				<!-- Sezione Consenso e Dettagli Compatta -->
 				<div class="space-y-3 mb-4">
-					<!-- Status principale con consenso provider -->
+					<!-- System Status -->
+					<AppSystemStatus processingStatus={currentStatus} />
+
+					<!-- Status principale -->
 					<AppStatus
 						status={currentStatus}
 						ttlSeconds={currentTtl}
-						provider={currentBackend}
 						onShowDetails={showDetailsPage}
-						onShowSettings={showSettingsPage}
 					/>
-
-					<!-- System Status -->
-					<AppSystemStatus processingStatus={currentStatus} backendType={currentBackend} />
 				</div>
 			</div>
 		</div>
