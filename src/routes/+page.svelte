@@ -3,8 +3,6 @@
 	import DeviceAdvantages from '$lib/components/DeviceAdvantages.svelte';
 	import DigitalVault from '$lib/components/DigitalVault.svelte';
 	import HowItWorks from '$lib/components/HowItWorks.svelte';
-	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
-	import Navigation from '$lib/components/Navigation.svelte';
 	import { Shield } from 'lucide-svelte';
 	import { t } from '$lib/utils/translations.js';
 </script>
@@ -42,9 +40,6 @@
 </svelte:head>
 
 <div class="min-h-screen">
-	<!-- Navigation -->
-	<Navigation variant="transparent" />
-
 	<!-- Hero Section -->
 	<DeviceHero />
 
@@ -169,7 +164,4 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- Footer -->
-	<DeviceFooter />
 </div>
