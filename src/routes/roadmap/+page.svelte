@@ -2,12 +2,9 @@
 	import {
 		Calendar,
 		Target,
-		Zap,
 		Users,
-		Globe,
 		Cpu,
 		Shield,
-		Briefcase,
 		CheckCircle,
 		Clock,
 		AlertTriangle
@@ -152,6 +149,16 @@
 		content="Scopri la roadmap completa di Arvify: dalle fondamenta al prodotto finale in 12 mesi. MVP, validazione, scalabilità."
 	/>
 	<meta name="keywords" content="Arvify Roadmap, Sviluppo Prodotto, MVP, Brevetto, Scalabilità" />
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://arvify.io/roadmap" />
+	<meta property="og:title" content="Roadmap Arvify" />
+	<meta
+		property="og:description"
+		content="Scopri la roadmap completa di Arvify per i prossimi 12 mesi: dallo sviluppo MVP alla scalabilità."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://arvify.io/roadmap" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="min-h-screen bg-gray-50">
@@ -222,7 +229,7 @@
 			</div>
 
 			<div class="space-y-12">
-				{#each roadmapPhases as phase, i}
+				{#each roadmapPhases as phase, i (i)}
 					<div class="relative">
 						<!-- Timeline connector -->
 						{#if i < roadmapPhases.length - 1}
@@ -278,7 +285,7 @@
 							<div class="lg:col-span-5">
 								<h4 class="text-lg font-semibold text-gray-900 mb-4">Obiettivi</h4>
 								<div class="space-y-3">
-									{#each phase.objectives as objective}
+									{#each phase.objectives as objective (objective.text)}
 										<div class="flex items-start space-x-3">
 											<div class="mt-1">
 												{#if objective.status === 'completed'}
@@ -303,7 +310,7 @@
 							<div class="lg:col-span-4">
 								<h4 class="text-lg font-semibold text-gray-900 mb-4">Deliverables</h4>
 								<div class="space-y-2">
-									{#each phase.deliverables as deliverable}
+									{#each phase.deliverables as deliverable (deliverable)}
 										<div class="flex items-center space-x-2">
 											<div class="w-2 h-2 bg-{phase.color}-500 rounded-full"></div>
 											<span class="text-gray-700 text-sm">{deliverable}</span>
@@ -334,7 +341,7 @@
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-				{#each kpis as kpi}
+				{#each kpis as kpi (kpi.label)}
 					<div class="text-center">
 						<div
 							class="w-20 h-20 bg-{kpi.color}-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -372,7 +379,7 @@
 
 			<div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
 				<div class="space-y-6">
-					{#each technicalMilestones as milestone, i}
+					{#each technicalMilestones as milestone, i (i)}
 						<div
 							class="flex items-center justify-between p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
 						>

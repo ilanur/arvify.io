@@ -2,7 +2,6 @@
 	import DeviceLogin from '$lib/components/DeviceLogin.svelte';
 	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
-	import { Shield } from 'lucide-svelte';
 </script>
 
 <svelte:head>
@@ -11,6 +10,16 @@
 		name="description"
 		content="Accedi al dashboard del tuo Arvify. Gestisci impostazioni, monitora attività e controlla il tuo assistente AI ibrido."
 	/>
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://arvify.io/login" />
+	<meta property="og:title" content="Login - Arvify.io" />
+	<meta
+		property="og:description"
+		content="Accedi al dashboard del tuo Arvify. Gestisci impostazioni, monitora attività e controlla il tuo assistente AI ibrido."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://arvify.io/login" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="min-h-screen">

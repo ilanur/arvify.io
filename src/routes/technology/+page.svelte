@@ -1,16 +1,5 @@
 <script>
-	import {
-		Shield,
-		Database,
-		Zap,
-		Lock,
-		Cloud,
-		Server,
-		Code,
-		CheckCircle,
-		AlertTriangle,
-		Cpu
-	} from 'lucide-svelte';
+	import { Shield, Database, Zap, Lock, Server, CheckCircle } from 'lucide-svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
 	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
 
@@ -122,6 +111,16 @@
 		name="keywords"
 		content="Bolt, Backend AI, Privacy, Consent Management, TTL, Biometric Security, Vector Database"
 	/>
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://arvify.io/technology" />
+	<meta property="og:title" content="Tecnologia Bolt - Arvify" />
+	<meta
+		property="og:description"
+		content="Scopri come Bolt protegge i tuoi dati AI con consenso biometrico e privacy by design."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://arvify.io/technology" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="min-h-screen bg-gray-50">
@@ -189,7 +188,7 @@
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{#each boltFeatures as feature, i}
+				{#each boltFeatures as feature, i (i)}
 					<div
 						class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 group"
 					>
@@ -231,7 +230,7 @@
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-				{#each securityLayers as layer, i}
+				{#each securityLayers as layer, i (i)}
 					<div class="text-center">
 						<div class="relative mb-6">
 							<div
@@ -314,7 +313,7 @@
 				<!-- Architecture Diagram -->
 				<div class="relative">
 					<div class="space-y-8">
-						{#each architecture as component, i}
+						{#each architecture as component, i (i)}
 							<div
 								class="flex items-center space-x-4 p-6 bg-white rounded-xl shadow-lg border border-gray-200"
 							>

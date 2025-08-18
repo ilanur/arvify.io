@@ -1,5 +1,5 @@
 <script>
-	import { Search, Filter, ExternalLink, Github, Star, Users, Code, Zap } from 'lucide-svelte';
+	import { Search, ExternalLink, Github, Star, Users, Code, Zap } from 'lucide-svelte';
 	import McpCard from '$lib/components/McpCard.svelte';
 	import CategoryFilter from '$lib/components/CategoryFilter.svelte';
 	import SearchBar from '$lib/components/SearchBar.svelte';
@@ -7,12 +7,10 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
 	import mcpServers from '$lib/mcp-servers.js';
-	import { onMount } from 'svelte';
 
 	let filteredServers = $state(mcpServers);
 	let selectedCategory = $state('all');
 	let searchQuery = $state('');
-	let isLoaded = $state(false);
 
 	// Estraggo le categorie uniche
 	const categories = ['all', ...new Set(mcpServers.map((server) => server.category))];
@@ -43,10 +41,6 @@
 	// Reagisco ai cambiamenti di categoria e ricerca
 	$effect(() => {
 		filterServers();
-	});
-
-	onMount(() => {
-		isLoaded = true;
 	});
 
 	// Statistiche
@@ -84,6 +78,16 @@
 		name="description"
 		content="Explore a curated collection of Model Context Protocol (MCP) servers. Find tools for databases, cloud platforms, AI, development, and more."
 	/>
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://arvify.io/mcp-servers" />
+	<meta property="og:title" content="MCP Servers Showcase" />
+	<meta
+		property="og:description"
+		content="Explore una raccolta di server Model Context Protocol per database, cloud, AI e sviluppo."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://arvify.io/mcp-servers" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
@@ -97,7 +101,7 @@
 	<section class="py-16 bg-white/80 backdrop-blur-sm">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-				{#each stats as stat}
+				{#each stats as stat (stat.label)}
 					<StatsCard
 						icon={stat.icon}
 						label={stat.label}
@@ -166,7 +170,7 @@
 				</div>
 			{:else}
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{#each filteredServers as server, i}
+					{#each filteredServers as server, i (server.name)}
 						<div class="animate-slide-up" style="animation-delay: {Math.min(i * 50, 500)}ms">
 							<McpCard {server} />
 						</div>
