@@ -90,21 +90,21 @@
 	const currentBackend = backendType || scenarioConfig.backend;
 	const currentDataTypes = dataTypes || scenarioConfig.dataTypes;
 
-	// Configurazioni tema
-	const themes = {
-		blue: 'from-blue-600 to-purple-600',
-		emerald: 'from-emerald-600 to-teal-600',
-		purple: 'from-purple-600 to-pink-600',
-		amber: 'from-amber-600 to-orange-600'
+	// Configurazioni tema - Design unificato professionale
+	const appTheme = {
+		background: 'from-slate-900 to-slate-800',
+		accent: 'blue', // Colore accent unificato
+		surface: 'bg-slate-800/50',
+		border: 'border-slate-700/50'
 	};
 </script>
 
-<div class="bg-gradient-to-br {themes[currentTheme]} h-full flex flex-col">
+<div class="bg-gradient-to-br {appTheme.background} h-full flex flex-col relative">
 	<!-- App Header -->
 	<AppHeader {showDetails} onToggleDetails={toggleDetails} {userAvatar} {userInitials} {userName} />
 
 	<!-- Scrollable Content Area -->
-	<div class="flex-1 overflow-y-auto">
+	<div class="flex-1 overflow-y-auto pb-20">
 		<div class="p-4">
 			<!-- AI Request -->
 			<AppRequest requestText={currentRequestText} backendType={currentBackend} />
@@ -129,15 +129,19 @@
 
 			<!-- System Status -->
 			<AppSystemStatus processingStatus={currentStatus} backendType={currentBackend} />
-
-			<!-- Cancel Request Action -->
-			<button
-				onclick={cancelRequest}
-				class="w-full bg-red-500/20 hover:bg-red-500/30 border border-red-400/50 rounded-lg py-3 px-4 text-red-200 text-sm font-medium transition-all flex items-center justify-center space-x-2"
-			>
-				<X class="w-4 h-4" />
-				<span>Cancella Richiesta</span>
-			</button>
 		</div>
+	</div>
+
+	<!-- Cancel Request Action - Fixed Bottom -->
+	<div
+		class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent backdrop-blur-sm"
+	>
+		<button
+			onclick={cancelRequest}
+			class="w-full bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 rounded-xl py-4 px-4 text-red-300 text-sm font-medium transition-all flex items-center justify-center space-x-2 backdrop-blur-sm"
+		>
+			<X class="w-5 h-5" />
+			<span>Cancella Richiesta</span>
+		</button>
 	</div>
 </div>
