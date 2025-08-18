@@ -6,9 +6,9 @@
 	import AppHeader from './AppHeader.svelte';
 	import AppRequest from './AppRequest.svelte';
 	import AppStatus from './AppStatus.svelte';
-	import AppSettings from './AppSettings.svelte';
-	import AppDataOverview from './AppDataOverview.svelte';
 	import AppSystemStatus from './AppSystemStatus.svelte';
+	import AppRequestDetails from './AppRequestDetails.svelte';
+	import AppSettingsPage from './AppSettingsPage.svelte';
 
 	// Props per personalizzare completamente l'interfaccia
 	let {
@@ -46,8 +46,8 @@
 		onUserInteraction = null
 	} = $props();
 
-	// Stato del pannello dettagli
-	let showDetails = $state(false);
+	// Stato della navigazione
+	let currentView = $state('main'); // 'main', 'details', 'settings'
 
 	// Funzione per gestire l'interazione utente
 	function handleInteraction() {
@@ -57,8 +57,18 @@
 	}
 
 	// Toggle dettagli
-	function toggleDetails(newState) {
-		showDetails = newState;
+	function showDetailsPage() {
+		currentView = 'details';
+		handleInteraction();
+	}
+
+	function showSettingsPage() {
+		currentView = 'settings';
+		handleInteraction();
+	}
+
+	function backToMain() {
+		currentView = 'main';
 		handleInteraction();
 	}
 
@@ -71,7 +81,10 @@
 	// Gestione impostazioni
 	function handleSettingChange(setting, value) {
 		handleInteraction();
-		// Qui si potrebbe implementare la logica per salvare le impostazioni
+		// Aggiorna le impostazioni locali
+		if (setting === 'auditLog') auditLog = value;
+		if (setting === 'autoCleanup') autoCleanup = value;
+		if (setting === 'encryptionLevel') encryptionLevel = value;
 	}
 
 	function handleSaveSettings() {
@@ -100,48 +113,65 @@
 </script>
 
 <div class="bg-gradient-to-br {appTheme.background} h-full flex flex-col relative">
-	<!-- App Header -->
-	<AppHeader {showDetails} onToggleDetails={toggleDetails} {userAvatar} {userInitials} {userName} />
+	{#if currentView === 'main'}
+		<!-- Vista principale -->
+		<!-- App Header -->
+		<AppHeader onToggleDetails={showSettingsPage} {userAvatar} {userInitials} {userName} />
 
-	<!-- Scrollable Content Area -->
-	<div class="flex-1 overflow-y-auto pb-20">
-		<div class="p-4">
-			<!-- AI Request -->
-			<AppRequest requestText={currentRequestText} backendType={currentBackend} />
+		<!-- Scrollable Content Area -->
+		<div class="flex-1 overflow-y-auto pb-16">
+			<div class="p-4">
+				<!-- AI Request -->
+				<AppRequest requestText={currentRequestText} backendType={currentBackend} />
 
-			<!-- Status principale -->
-			<AppStatus status={currentStatus} ttlSeconds={currentTtl} />
-
-			<!-- Pannello Dettagli Espandibile -->
-			{#if showDetails}
-				<div class="space-y-4 mb-4 animate-in slide-in-from-top duration-300">
-					<!-- Device Settings Panel -->
-					<AppSettings
-						{auditLog}
-						onSettingChange={handleSettingChange}
-						onSaveSettings={handleSaveSettings}
+				<!-- Sezione Consenso e Dettagli Compatta -->
+				<div class="space-y-3 mb-4">
+					<!-- Status principale con consenso provider -->
+					<AppStatus
+						status={currentStatus}
+						ttlSeconds={currentTtl}
+						provider={currentBackend}
+						onShowDetails={showDetailsPage}
+						onShowSettings={showSettingsPage}
 					/>
 
-					<!-- Data Overview -->
-					<AppDataOverview dataTypes={currentDataTypes} />
+					<!-- System Status -->
+					<AppSystemStatus processingStatus={currentStatus} backendType={currentBackend} />
 				</div>
-			{/if}
-
-			<!-- System Status -->
-			<AppSystemStatus processingStatus={currentStatus} backendType={currentBackend} />
+			</div>
 		</div>
-	</div>
 
-	<!-- Cancel Request Action - Fixed Bottom -->
-	<div
-		class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent backdrop-blur-sm"
-	>
-		<button
-			onclick={cancelRequest}
-			class="w-full bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 rounded-xl py-4 px-4 text-red-300 text-sm font-medium transition-all flex items-center justify-center space-x-2 backdrop-blur-sm"
+		<!-- Cancel Request Action - Fixed Bottom -->
+		<div
+			class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent backdrop-blur-sm"
 		>
-			<X class="w-5 h-5" />
-			<span>Cancella Richiesta</span>
-		</button>
-	</div>
+			<button
+				onclick={cancelRequest}
+				class="w-full bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 rounded-xl py-3 px-4 text-red-300 text-sm font-medium transition-all flex items-center justify-center space-x-2 backdrop-blur-sm"
+			>
+				<X class="w-4 h-4" />
+				<span>Cancella Richiesta</span>
+			</button>
+		</div>
+	{:else if currentView === 'details'}
+		<!-- Vista dettagli richiesta -->
+		<AppRequestDetails
+			requestText={currentRequestText}
+			provider={currentBackend}
+			dataTypes={currentDataTypes}
+			ttlSeconds={currentTtl}
+			{scenario}
+			onBack={backToMain}
+		/>
+	{:else if currentView === 'settings'}
+		<!-- Vista impostazioni -->
+		<AppSettingsPage
+			{auditLog}
+			{autoCleanup}
+			{encryptionLevel}
+			onBack={backToMain}
+			onSettingChange={handleSettingChange}
+			onSaveSettings={handleSaveSettings}
+		/>
+	{/if}
 </div>

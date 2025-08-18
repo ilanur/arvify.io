@@ -43,40 +43,6 @@
 	</h3>
 
 	<div class="space-y-4">
-		<div>
-			<label for="processing-pref" class="block text-blue-100 text-xs font-medium mb-2">
-				Preferenza Elaborazione
-			</label>
-			<select
-				id="processing-pref"
-				bind:value={processingPreference}
-				onchange={() => handleChange('processingPreference', processingPreference)}
-				class="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white text-xs"
-			>
-				<option>Locale quando possibile</option>
-				<option>Sempre locale</option>
-				<option>Bilanciato</option>
-				<option>Cloud per qualità massima</option>
-			</select>
-		</div>
-
-		<div>
-			<label for="ttl-setting" class="block text-blue-100 text-xs font-medium mb-2">
-				TTL Default
-			</label>
-			<select
-				id="ttl-setting"
-				bind:value={defaultTtl}
-				onchange={() => handleChange('defaultTtl', defaultTtl)}
-				class="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white text-xs"
-			>
-				<option>30 minuti</option>
-				<option>1 ora</option>
-				<option>6 ore</option>
-				<option>24 ore</option>
-			</select>
-		</div>
-
 		<div class="flex items-center justify-between">
 			<span class="text-blue-100 text-xs">Auto-approvazione query semplici</span>
 			<button

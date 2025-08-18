@@ -3,7 +3,8 @@
 		size = 'md', // 'sm', 'md', 'lg', 'xl'
 		showText = true,
 		textColor = 'text-white',
-		className = ''
+		className = '',
+		variant = 'center' // 'left', 'center', 'right'
 	} = $props();
 
 	// Dimensioni responsive
@@ -19,6 +20,12 @@
 		md: 'text-sm',
 		lg: 'text-lg',
 		xl: 'text-2xl'
+	};
+
+	const transforms = {
+		left: 'rotate(-30 12 12)',
+		center: '',
+		right: 'rotate(30 12 12)'
 	};
 </script>
 

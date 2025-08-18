@@ -4,7 +4,6 @@
 
 	let {
 		// Configurazione header
-		showDetails = false,
 		onToggleDetails = null,
 
 		// Configurazione utente
@@ -19,7 +18,7 @@
 
 	function handleToggle() {
 		if (onToggleDetails) {
-			onToggleDetails(!showDetails);
+			onToggleDetails()	;
 		}
 	}
 </script>
@@ -31,13 +30,9 @@
 		<button
 			onclick={handleToggle}
 			class="text-white/70 hover:text-white transition-colors p-1"
-			aria-label="Toggle details"
+			aria-label="Toggle settings"
 		>
-			{#if showDetails}
-				<ChevronUp class="w-4 h-4" />
-			{:else}
-				<Settings class="w-4 h-4" />
-			{/if}
+			<Settings class="w-4 h-4" />
 		</button>
 
 		<!-- User Profile -->
