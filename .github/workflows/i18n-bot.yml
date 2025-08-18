@@ -1,0 +1,62 @@
+name: i18n extractor bot
+
+on:
+  push:
+    paths:
+      - "src/**/*.svelte"
+      - "src/**/*.js"
+      - "src/**/*.ts"
+      - "src/lib/i18n/*.json"
+      - "scripts/i18n-*.mjs"
+  pull_request:
+    paths:
+      - "src/**/*.svelte"
+      - "src/**/*.js"
+      - "src/**/*.ts"
+      - "src/lib/i18n/*.json"
+      - "scripts/i18n-*.mjs"
+  schedule:
+    - cron: "0 3 * * 1" # every Monday at 03:00 UTC
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  i18n:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install extractor dependency
+        run: |
+          npm i -D globby@14
+
+      - name: Run i18n extractor
+        run: |
+          node scripts/i18n-extract.mjs
+
+      - name: Create Pull Request if changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(i18n): ensure i18n keys exist across locales"
+          title: "chore(i18n): ensure i18n keys exist across locales"
+          body: |
+            This bot ensured that all t('...') keys found in source code exist across the locale JSON files in src/lib/i18n.
+
+            Notes:
+            - The workflow installs globby on-the-fly to avoid editing package.json.
+            - No runtime Node APIs are used in production; this runs only in CI.
+          branch: bot/i18n-extract
+          labels: i18n, automated
+          author: "i18n-bot <actions@github.com>"
+          signoff: false
+          delete-branch: true
