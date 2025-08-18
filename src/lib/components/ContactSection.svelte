@@ -7,8 +7,8 @@
 			icon: Mail,
 			title: 'Email',
 			description: 'Scrivi per informazioni dettagliate',
-			value: 'info@arvify.io',
-			action: 'mailto:info@arvify.io',
+			value: 'ilanurs@gmail.com',
+			action: 'mailto:ilanurs@gmail.com',
 			color: 'blue'
 		},
 		{

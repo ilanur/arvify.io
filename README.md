@@ -93,7 +93,7 @@ Progetto rilasciato sotto licenza **MIT**. Usa, modifica e condividi liberamente
 ## 💬 Resta in contatto
 
 - 🌐 [arvify.io](https://arvify.io)
-- 📧 info@arvify.io
+- 📧 ilanurs@gmail.com
 - 💬 Community & supporto ufficiale
 
 ---
