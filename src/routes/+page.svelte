@@ -2,19 +2,11 @@
 	import DeviceHero from '$lib/components/DeviceHero.svelte';
 	import DeviceAdvantages from '$lib/components/DeviceAdvantages.svelte';
 	import DigitalVault from '$lib/components/DigitalVault.svelte';
-	import TechSpecs from '$lib/components/TechSpecs.svelte';
 	import HowItWorks from '$lib/components/HowItWorks.svelte';
 	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
 	import { Shield } from 'lucide-svelte';
-	import { onMount } from 'svelte';
 	import { t } from '$lib/utils/translations.js';
-
-	let isLoaded = $state(false);
-
-	onMount(() => {
-		isLoaded = true;
-	});
 </script>
 
 <svelte:head>
@@ -27,12 +19,26 @@
 		name="keywords"
 		content="Arvify, Bracciale AI, Controllo Biometrico, Privacy AI, Fingerprint, Consenso AI, Wearable AI"
 	/>
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://arvify.io/" />
 	<meta property="og:title" content="Arvify.io - Bracciale Biometrico per Controllo AI" />
 	<meta
 		property="og:description"
 		content="Il primo bracciale al mondo che ti dà controllo totale sull'AI con la tua impronta digitale"
 	/>
 	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://arvify.io/" />
+	<meta name="twitter:card" content="summary_large_image" />
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Arvify",
+			"url": "https://arvify.io/",
+			"logo": "https://arvify.io/arvify.jpg"
+		}
+	</script>
 </svelte:head>
 
 <div class="min-h-screen">

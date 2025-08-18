@@ -2,7 +2,6 @@
 	import Pricing from '$lib/components/Pricing.svelte';
 	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
-	import { Shield, Code } from 'lucide-svelte';
 </script>
 
 <svelte:head>
@@ -11,6 +10,16 @@
 		name="description"
 		content="Scopri i piani di Arvify: Starter €299, Pro €449, Enterprise €799. Dispositivo AI ibrido con Raspberry Pi 5 e Ollama integrato."
 	/>
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://arvify.io/pricing" />
+	<meta property="og:title" content="Pricing - Arvify.io" />
+	<meta
+		property="og:description"
+		content="Scopri i piani di Arvify: Starter, Pro ed Enterprise con hardware e servizi AI integrati."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://arvify.io/pricing" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="min-h-screen bg-gradient-to-br from-gray-50 to-white">

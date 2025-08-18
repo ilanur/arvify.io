@@ -9,6 +9,16 @@
 		name="description"
 		content="Contatta il team di Arvify per domande sui nostri server MCP, supporto tecnico o collaborazioni. Siamo qui per aiutarti."
 	/>
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://arvify.io/contact" />
+	<meta property="og:title" content="Contatti | Arvify" />
+	<meta
+		property="og:description"
+		content="Contatta il team di Arvify per domande sui nostri server MCP, supporto tecnico o collaborazioni."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://arvify.io/contact" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <main class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
