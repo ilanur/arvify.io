@@ -5,6 +5,7 @@
 	import HowItWorks from '$lib/components/HowItWorks.svelte';
 	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
+	import ArvifyFlow from '$lib/components/ArvifyFlow.svelte';
 	import { Shield } from 'lucide-svelte';
 	import { t } from '$lib/utils/translations.js';
 </script>
@@ -47,6 +48,8 @@
 
 	<!-- Hero Section -->
 	<DeviceHero />
+
+	<ArvifyFlow className="mt-12" />
 
 	<!-- Product Showcase Section -->
 	<section class="py-20 bg-gradient-to-b from-slate-900 to-blue-900">

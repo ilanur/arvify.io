@@ -1,47 +1,101 @@
 {
 	"nav": {
-		"mcpServers": "Servidores MCP",
+		"mcpServers": "Tecnología",
 		"pricing": "Precios",
 		"login": "Iniciar sesión",
 		"home": "← Volver al Inicio",
 		"language": "Idioma",
 		"cta": {
-			"from": "Desde €299",
-			"orderNow": "Ordenar Ahora",
-			"choosePlan": "Elegir Plan"
+			"from": "Desde €149",
+			"orderNow": "Preordenar Ahora",
+			"choosePlan": "Elegir Modelo"
 		}
 	},
 	"home": {
 		"hero": {
-			"tagline": "Asistente de IA centrado en la privacidad",
-			"highlight": "Inteligencia Híbrida",
-			"description": "El primer dispositivo de IA híbrido que combina la potencia de la nube con la privacidad local. Raspberry Pi 5 con Ollama integrado, controlado desde tu app móvil.",
-			"deviceLabel": "Dispositivo Biométrico",
+			"tagline": "Tu Dedo. Tu Llave. Tus Datos.",
+			"highlight": "La IA prepara, tú decides",
+			"description": "",
+			"deviceLabel": "Pulsera Biométrica",
 			"features": {
-				"localProcessing": "Procesamiento local para máxima privacidad",
-				"hybridCloud": "Nube híbrida cuando se necesita potencia extra",
-				"mobileControl": "Control total vía app móvil"
+				"localProcessing": "Apruebas con el dedo",
+				"hybridCloud": "Control total sobre tus datos",
+				"mobileControl": "Gestiona e interactúa fácilmente con los servicios"
+			},
+			"scenarios": {
+				"email": {
+					"title": "Análisis de Email",
+					"request": "Analiza mis emails para encontrar proyectos urgentes",
+					"description": "La IA accede a tus emails solo con tu consentimiento biométrico"
+				},
+				"finance": {
+					"title": "Presupuesto Inteligente",
+					"request": "Crea un presupuesto mensual desde mis datos de gasto",
+					"description": "Gestión financiera automática con privacidad garantizada"
+				},
+				"calendar": {
+					"title": "Planificación Smart",
+					"request": "Encuentra el mejor momento para una reunión mañana",
+					"description": "Optimización de calendario basada en tus patrones"
+				}
 			},
 			"cta": {
-				"order": "Ordenar Ahora",
+				"order": "Preordenar Ahora",
 				"demo": "Ver Demo"
 			},
 			"pricing": {
 				"startingFrom": "Desde",
-				"vat": "IVA incluida"
+				"vat": "IVA incluido"
+			}
+		},
+		"vault": {
+			"title": "Tu Vault Digital",
+			"subtitle": "Todo Bajo Control",
+			"description": "Tu dedo es la única llave que puede desbloquear tus datos. Ningún hacker, ningún software, ninguna IA puede acceder sin tu consentimiento físico.",
+			"features": {
+				"fingerprint": {
+					"title": "Dedo = Llave",
+					"description": "Plantillas biométricas encriptadas localmente, nunca compartidas"
+				},
+				"control": {
+					"title": "Control Total",
+					"description": "Gestiona cada dato en Bolt: agrega, edita, elimina"
+				},
+				"privacy": {
+					"title": "Privacidad Absoluta",
+					"description": "TTL automáticos, cero persistencia, eliminación garantizada"
+				},
+				"universal": {
+					"title": "IA Universal",
+					"description": "Funciona con cualquier IA: ChatGPT, Claude, Gemini, APIs personalizadas"
+				}
+			},
+			"vault_items": {
+				"title": "Qué Puedes Proteger",
+				"subtitle": "Tu conocimiento, siempre seguro",
+				"items": {
+					"emails": "Emails y conversaciones",
+					"documents": "Documentos y notas",
+					"calendar": "Calendario y citas",
+					"photos": "Fotos y media",
+					"contacts": "Contactos y relaciones",
+					"finance": "Datos financieros",
+					"health": "Información sanitaria",
+					"custom": "Cualquier dato personalizado"
+				}
 			}
 		},
 		"cta": {
-			"headline": "¿Listo para el Futuro de la IA?",
-			"description": "Únete a miles de usuarios que ya eligieron Arvify para una experiencia de IA realmente privada y potente.",
+			"headline": "Tu Dedo. Tu Llave. Tus Datos.",
+			"description": "Conviértete en el custodio absoluto de tu información digital. Ninguna IA podrá acceder sin tu consentimiento biométrico.",
 			"buttons": {
-				"plans": "Ver Todos los Planes",
-				"mcp": "Explorar Servidores MCP"
+				"plans": "Elige Tu Modelo",
+				"mcp": "Descubre la Tecnología"
 			},
 			"trust": {
 				"garanzia": "Garantía de 30 días",
 				"spedizione": "Envío gratis",
-				"madeInItaly": "Hecho en Italia"
+				"madeInItaly": "Made in Italy"
 			}
 		}
 	}

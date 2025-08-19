@@ -1,29 +1,46 @@
 {
 	"nav": {
-		"mcpServers": "MCP Servers",
+		"mcpServers": "Technology",
 		"pricing": "Pricing",
 		"login": "Login",
 		"home": "← Back to Home",
 		"language": "Language",
 		"cta": {
-			"from": "Starting at €299",
-			"orderNow": "Order Now",
-			"choosePlan": "Choose Plan"
+			"from": "Starting at €149",
+			"orderNow": "Preorder Now",
+			"choosePlan": "Choose Model"
 		}
 	},
 	"home": {
 		"hero": {
 			"tagline": "Your Finger. Your Key. Your Data.",
-			"highlight": "Your Digital Vault",
-			"description": "Your finger becomes the key to your digital vault. All the information you want to use with AI, always under your biometric control.",
+			"highlight": "AI prepares, you decide",
+			"description": "",
 			"deviceLabel": "Biometric Wearable",
 			"features": {
-				"localProcessing": "Your finger is the vault key",
-				"hybridCloud": "Total control over every shared data",
-				"mobileControl": "Manage, edit, remove your knowledge easily"
+				"localProcessing": "Approve with your finger",
+				"hybridCloud": "Total control over your data",
+				"mobileControl": "Manage and interact easily with services"
+			},
+			"scenarios": {
+				"email": {
+					"title": "Email Analysis",
+					"request": "Analyze my emails to find urgent projects",
+					"description": "AI accesses your emails only with your biometric consent"
+				},
+				"finance": {
+					"title": "Smart Budget",
+					"request": "Create a monthly budget from my spending data",
+					"description": "Automatic financial management with guaranteed privacy"
+				},
+				"calendar": {
+					"title": "Smart Planning",
+					"request": "Find the best time for a meeting tomorrow",
+					"description": "Calendar optimization based on your patterns"
+				}
 			},
 			"cta": {
-				"order": "Order Now",
+				"order": "Preorder Now",
 				"demo": "Watch Demo"
 			},
 			"pricing": {

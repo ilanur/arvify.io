@@ -14,13 +14,13 @@
 	"home": {
 		"hero": {
 			"tagline": "Il Tuo Dito. La Tua Chiave. I Tuoi Dati.",
-			"highlight": "Your Digital Vault",
-			"description": "Il tuo dito diventa la chiave del tuo vault digitale. Tutte le informazioni che vuoi usare con l'AI, sempre sotto il tuo controllo biometrico.",
+			"highlight": "L’AI prepara, tu decidi",
+			"description": "",
 			"deviceLabel": "Bracciale Biometrico",
 			"features": {
-				"localProcessing": "Il tuo dito è la chiave del vault",
-				"hybridCloud": "Controllo totale su ogni dato condiviso",
-				"mobileControl": "Gestisci, modifica, rimuovi facilmente la tua conoscenza"
+				"localProcessing": "Approvi con il dito",
+				"hybridCloud": "Controllo totale sui tuoi dati",
+				"mobileControl": "Gestisci e interagisci facilmente con i servizi"
 			},
 			"scenarios": {
 				"email": {
