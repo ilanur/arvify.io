@@ -116,3 +116,33 @@ mcp-list/
 ├── mcp-servers.json          # Backup dati (se presente)
 └── package.json              # Dipendenze e script
 ```
+
+Arvify (bracciale)
+
+È un fattore di consenso fisico.
+
+Non contiene segreti. Firma una challenge inviata da Bolt dopo l’impronta.
+
+Serve per approvare azioni sensibili: pagare, pubblicare, cancellare, cambiare permessi.
+
+Bolt (orchestratore)
+
+Riceve richieste, parla con l’LLM, valida piani, fa enforcement delle policy, esegue azioni via MCP servers.
+
+Custodisce token/chiavi in un vault. Espone solo token short-lived agli MCP.
+
+Registra tutto in audit con idempotency.
+
+Flusso logico (alto livello)
+
+Richiesta: utente → Arvify → Bolt (“cerca volo” / “deploy prod”).
+
+Pianificazione: Bolt chiede all’LLM un piano strutturato (azioni + parametri).
+
+Validazione: Bolt verifica il piano con JSON Schema + policy (scopes, limiti, orari, ambienti).
+
+Consenso: se l’azione è “write/critica”, Bolt invia al bracciale un riepilogo da approvare (prezzo, repo, SHA, ecc.).
+
+Esecuzione: Bolt chiama i MCP (GitHub, Travel, Payments, Cloudflare…) usando credenziali dal vault.
+
+Risultato: ritorna output (PNR, esito deploy, ricevuta) e scrive audit.
