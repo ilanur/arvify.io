@@ -1,47 +1,44 @@
-# Arvify.io – Il bracciale che mette il controllo dell’AI al tuo polso
+# Arvify.io – Consent Layer software-first per il controllo AI
 
-Arvify è il primo wearable che collega il mondo dell’intelligenza artificiale al consenso biometrico reale. Ogni richiesta AI passa dal tuo dito, trasformando il consenso in un gesto fisico, verificabile e auditabile.
-
----
-
-## ✨ Perché Arvify è innovativo
-
-- **Consenso biometrico in tempo reale** – L’AI non agisce finché tu non appoggi il dito sul sensore.
-- **Secure Element + TTL automatico** – Le chiavi crittografiche sono protette e ogni dato condiviso scade in autonomia.
-- **Compatibilità universale** – Funziona con qualunque provider AI grazie all’API e al supporto del Model Context Protocol.
-- **Trasparenza totale** – Log completi di ogni operazione, nessuna persistenza permanente nel cloud.
-- **Made in Italy** – Hardware di qualità e design elegante progettati e assemblati in Italia.
+Arvify intercetta ogni richiesta AI con estensione + proxy MCP. Notifica il tuo telefono, richiede Touch ID/Face ID e rilascia i dati solo per il TTL impostato. Dimostri il valore subito, prima di costruire hardware dedicato.
 
 ---
 
-## 🛠️ Hardware & Software
+## ✨ Cosa cambia
 
-| Hardware                     | Software                          |
-| ---------------------------- | --------------------------------- |
-| Sensore fingerprint          | Firmware dedicato per consenso    |
-| Secure element crittografico | App mobile iOS/Android            |
-| MCU ESP32‑C6 con BLE/Wi‑Fi   | Backend Bolt per gestione dati AI |
-| LED RGB + vibrazione         | API MCP per integrazioni avanzate |
-| Batteria LiPo 5‑7 giorni     | Dashboard web e demo scenari      |
+- **Software-first** – Estensione browser + proxy MCP distribuiti in poche ore, senza spedire device.
+- **Consenso biometrico esistente** – Touch ID/Face ID oggi, FIDO2/WebAuthn (YubiKey Bio, token biometrici) come fattore opzionale.
+- **Policy dinamiche** – TTL, scope e redaction per GitHub, Gmail, Calendar, Docs, segreti e API custom.
+- **Metriche concrete** – TTR, % auto-negate, leak prevented, audit trail firmato e esportabile.
+- **Roadmap onesta** – Dev kit hardware limitato (20–50 unità) solo dopo il pilot pagato e gli audit indipendenti.
+
+---
+
+## 🧱 Stack
+
+| Layer                    | Descrizione                                                      |
+| ------------------------ | ---------------------------------------------------------------- |
+| Estensione browser       | Intercetta agenti, plugin e API prima che raggiungano i dati     |
+| Proxy MCP                | Applica policy, redige dati, gestisce TTL e audit trail          |
+| App mobile               | Notifica, mostra il contesto e raccoglie il consenso biometrico  |
+| FIDO2/WebAuthn opzionale | Integrazione con YubiKey Bio / token biometrici per team critici |
+| Audit & secrets store    | Token rotabili, log firmati, export verso SIEM/SOC               |
 
 ---
 
 ## 📚 MCP Server Hub
 
-Nel repository troverai `src/lib/mcp-servers.js`:  
-una **raccolta curata di server MCP** (Model Context Protocol) con centinaia di integrazioni (traduzione, automazione, dati in tempo reale, ecc.).  
-Perfetto per esplorare e collegare Arvify a nuovi scenari di utilizzo AI.
+Nel repository troverai `src/lib/mcp-servers.js`: una raccolta curata di server MCP (Model Context Protocol) per costruire integrazioni rapide con Arvify e sperimentare nuovi flussi.
 
 ---
 
 ## 🧪 Scenari d’uso pronti
 
-`src/lib/scenarios.js` definisce diversi scenari interattivi (Sviluppo AI, Viaggi, Analisi Email, Budget, …) che mostrano come Arvify gestisce tipologie di dati, livelli di sensibilità e stato del consenso.  
-È un ottimo punto di partenza per costruire flussi personalizzati o demo da presentare a utenti e investitori.
+`src/lib/scenarios.js` definisce i tre use case “killer” del pilot: consent-gated RAG (GitHub + Gmail), just-in-time PII (Calendar & Docs) e secrets broker con credenziali a TTL. Puoi usarli per demo, PoC e test con i team.
 
 ---
 
-## 🖥️ Tech Stack Landing Page
+## 🖥️ Tech stack landing page
 
 - **SvelteKit 5 + Svelte Runes** – Performance e DX moderne
 - **Tailwind CSS 4** – Design system atomico e responsive
@@ -80,7 +77,7 @@ Configura le variabili d’ambiente (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT
 3. `npm run lint` & `npm run format`
 4. Invia la pull request
 
-Ogni contributo che migliora sicurezza, UX o integrazioni MCP è benvenuto.
+Contributi su sicurezza, governance AI e integrazioni MCP sono particolarmente apprezzati.
 
 ---
 
@@ -104,4 +101,4 @@ Progetto rilasciato sotto licenza **MIT**. Usa, modifica e condividi liberamente
 
 ---
 
-Scopri come Arvify trasforma l’intelligenza artificiale in un’esperienza sicura, tangibile e profondamente umana. Ready to take control?
+Arvify porta il consenso AI sul tuo telefono: software-first oggi, hardware solo quando i dati lo dimostrano.

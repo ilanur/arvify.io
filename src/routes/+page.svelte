@@ -11,21 +11,21 @@
 </script>
 
 <svelte:head>
-	<title>Arvify.io - Il Primo Bracciale Biometrico per Controllo AI</title>
+	<title>Arvify.io - Consent Layer Software-first per il Controllo AI</title>
 	<meta
 		name="description"
-		content="Arvify: Il bracciale che mette il controllo dell'AI nelle tue mani. Approva o nega con la tua impronta digitale. Preordinalo ora!"
+		content="Arvify Consent Layer: estensione + proxy MCP. Notifica sul telefono, Touch ID/Face ID e rilascio dati con TTL. Software-first, hardware-second."
 	/>
 	<meta
 		name="keywords"
-		content="Arvify, Bracciale AI, Controllo Biometrico, Privacy AI, Fingerprint, Consenso AI, Wearable AI"
+		content="Arvify, Consent Layer, MCP Proxy, Touch ID, Face ID, FIDO2, AI Governance"
 	/>
 	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href="https://arvify.io/" />
-	<meta property="og:title" content="Arvify.io - Bracciale Biometrico per Controllo AI" />
+	<meta property="og:title" content="Arvify.io - Consent Layer Software-first" />
 	<meta
 		property="og:description"
-		content="Il primo bracciale al mondo che ti dà controllo totale sull'AI con la tua impronta digitale"
+		content="Blocca le richieste AI con estensione + proxy MCP. Notifica telefono, Touch ID/Face ID e TTL controllato."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://arvify.io/" />
@@ -55,66 +55,69 @@
 	<section class="py-20 bg-gradient-to-b from-slate-900 to-blue-900">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-				<!-- Left: Product Image -->
-				<div class="relative">
-					<div class="relative overflow-hidden rounded-3xl shadow-2xl">
-						<img
-							src="/arvify.jpg"
-							alt="Arvify - Il Bracciale Biometrico per Controllo AI"
-							class="w-full h-auto object-cover"
-						/>
-						<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-					</div>
-
-					<!-- Floating badge -->
-					<div class="absolute top-4 left-4 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-						<span class="text-white font-medium text-sm">Made in Italy 🇮🇹</span>
-					</div>
-				</div>
-
-				<!-- Right: Product Info -->
-				<div class="text-white">
-					<h2 class="text-4xl md:text-5xl font-bold mb-6">
-						Il Futuro del
+				<div class="text-white space-y-6">
+					<h2 class="text-4xl md:text-5xl font-bold leading-tight">
+						Il futuro del consenso AI
 						<span
-							class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
+							class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
 						>
-							Controllo AI
+							È già nel tuo telefono
 						</span>
 					</h2>
-
-					<p class="text-xl text-gray-300 mb-8 leading-relaxed">
-						{t('home.hero.description')}
+					<p class="text-xl text-gray-300 leading-relaxed">
+						Arvify lancia il Consent Layer software-first: estensione + proxy MCP che blocca le
+						richieste AI prima che lascino la tua organizzazione. Niente hardware da spedire, solo
+						valore misurabile.
 					</p>
+					<ul class="space-y-3 text-gray-200">
+						<li class="flex items-center gap-3">
+							<span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+							Notifica telefono con contesto completo
+						</li>
+						<li class="flex items-center gap-3">
+							<span class="w-2 h-2 bg-blue-400 rounded-full"></span>
+							Touch ID/Face ID o chiavi biometriche opzionali
+						</li>
+						<li class="flex items-center gap-3">
+							<span class="w-2 h-2 bg-purple-400 rounded-full"></span>
+							TTL, audit trail e metriche integrate
+						</li>
+					</ul>
+				</div>
 
-					<div class="space-y-4 mb-8">
-						<div class="flex items-center space-x-3">
-							<div class="w-2 h-2 bg-emerald-400 rounded-full"></div>
-							<span class="text-gray-200">Controllo biometrico in tempo reale</span>
-						</div>
-						<div class="flex items-center space-x-3">
-							<div class="w-2 h-2 bg-blue-400 rounded-full"></div>
-							<span class="text-gray-200">Privacy garantita al 100%</span>
-						</div>
-						<div class="flex items-center space-x-3">
-							<div class="w-2 h-2 bg-purple-400 rounded-full"></div>
-							<span class="text-gray-200">Compatibile con tutti i sistemi AI</span>
-						</div>
-					</div>
+				<div class="relative">
+					<div
+						class="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/30 blur-3xl rounded-full"
+					></div>
+					<div
+						class="absolute -bottom-12 -left-12 w-36 h-36 bg-emerald-500/30 blur-3xl rounded-full"
+					></div>
 
-					<div class="flex flex-col sm:flex-row gap-4">
-						<a
-							href="/pricing"
-							class="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-center"
-						>
-							Ordina Ora - €149
-						</a>
-						<a
-							href="/technology"
-							class="border-2 border-white/20 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl transition-all text-center"
-						>
-							Scopri la Tecnologia
-						</a>
+					<div
+						class="relative rounded-3xl border border-white/10 bg-white/10 backdrop-blur-xl p-6 shadow-2xl"
+					>
+						<div class="grid gap-4">
+							<div class="rounded-2xl border border-blue-400/40 bg-blue-500/20 p-4">
+								<p class="text-sm font-semibold text-blue-100">GitHub + Gmail</p>
+								<p class="text-xs text-blue-100/80">
+									Consent-gated RAG con TTL e policy automatiche.
+								</p>
+							</div>
+							<div class="rounded-2xl border border-emerald-400/40 bg-emerald-500/20 p-4">
+								<p class="text-sm font-semibold text-emerald-100">Calendar & Docs</p>
+								<p class="text-xs text-emerald-100/80">Just-in-time PII e revoca immediata.</p>
+							</div>
+							<div class="rounded-2xl border border-cyan-400/40 bg-cyan-500/20 p-4">
+								<p class="text-sm font-semibold text-cyan-100">Secrets broker</p>
+								<p class="text-xs text-cyan-100/80">Token temporanei rotabili con audit trail.</p>
+							</div>
+							<div
+								class="rounded-2xl border border-purple-400/40 bg-purple-500/20 p-4 text-xs text-purple-100/80"
+							>
+								<p class="font-semibold text-sm text-purple-100 mb-1">Metriche</p>
+								<p>TTR, % auto-negate, leak prevented, audit trail firmato.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -148,7 +151,7 @@
 					{t('home.cta.buttons.plans')}
 				</a>
 				<a
-					href="/technology"
+					href="/roadmap"
 					class="text-white border-2 border-white/30 hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all"
 				>
 					{t('home.cta.buttons.mcp')}

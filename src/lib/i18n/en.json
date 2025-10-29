@@ -1,101 +1,101 @@
 {
 	"nav": {
 		"mcpServers": "Technology",
-		"pricing": "Pricing",
+		"pricing": "Offer",
 		"login": "Login",
 		"home": "← Back to Home",
 		"language": "Language",
 		"cta": {
-			"from": "Starting at €149",
-			"orderNow": "Preorder Now",
-			"choosePlan": "Choose Model"
+			"from": "Pilot available",
+			"orderNow": "Request demo",
+			"choosePlan": "Explore the pilot"
 		}
 	},
 	"home": {
 		"hero": {
-			"tagline": "Your Finger. Your Key. Your Data.",
-			"highlight": "AI prepares, you decide",
-			"description": "",
-			"deviceLabel": "Biometric Wearable",
+			"tagline": "Software-first, hardware-second.",
+			"highlight": "Consent for AI starts on your phone",
+			"description": "Arvify Consent Layer runs as a browser extension and MCP proxy. Every AI request triggers a push on your phone, you approve with Touch ID or Face ID, and data is released only for the selected TTL.",
+			"deviceLabel": "Consent Layer",
 			"features": {
-				"localProcessing": "Approve with your finger",
-				"hybridCloud": "Total control over your data",
-				"mobileControl": "Manage and interact easily with services"
+				"localProcessing": "Push notification + Touch ID / Face ID",
+				"hybridCloud": "MCP proxy that filters GitHub, Gmail, APIs",
+				"mobileControl": "Set TTL and policies directly from the app"
 			},
 			"scenarios": {
 				"email": {
-					"title": "Email Analysis",
-					"request": "Analyze my emails to find urgent projects",
-					"description": "AI accesses your emails only with your biometric consent"
+					"title": "Consent-gated RAG",
+					"request": "GitHub + Gmail unlocked for 30s",
+					"description": "Only the relevant files and emails are shared temporarily"
 				},
 				"finance": {
-					"title": "Smart Budget",
-					"request": "Create a monthly budget from my spending data",
-					"description": "Automatic financial management with guaranteed privacy"
+					"title": "Secrets broker",
+					"request": "Rotate credentials with TTL",
+					"description": "The AI receives temporary tokens that expire automatically"
 				},
 				"calendar": {
-					"title": "Smart Planning",
-					"request": "Find the best time for a meeting tomorrow",
-					"description": "Calendar optimization based on your patterns"
+					"title": "Just-in-time PII",
+					"request": "Calendar & Docs exactly when needed",
+					"description": "PII is exposed in a controlled window and revoked afterwards"
 				}
 			},
 			"cta": {
-				"order": "Preorder Now",
-				"demo": "Watch Demo"
+				"order": "Book a demo",
+				"demo": "Download the brief"
 			},
 			"pricing": {
-				"startingFrom": "Starting from",
-				"vat": "VAT included"
+				"startingFrom": "Quarterly pilot",
+				"vat": "limited seats"
 			}
 		},
 		"vault": {
-			"title": "Your Digital Vault",
-			"subtitle": "Everything Under Control",
-			"description": "Your finger is the only key that can unlock your data. No hacker, no software, no AI can access without your physical consent.",
+			"title": "Arvify Consent Layer",
+			"subtitle": "Extension + MCP proxy",
+			"description": "We block AI requests upstream. Every action flows through phone notification → Touch ID/Face ID → data release with TTL and audit trail.",
 			"features": {
 				"fingerprint": {
-					"title": "Finger = Key",
-					"description": "Biometric templates encrypted locally, never shared"
+					"title": "Existing biometrics",
+					"description": "Touch ID / Face ID today, optional FIDO2 biometric keys tomorrow"
 				},
 				"control": {
-					"title": "Total Control",
-					"description": "Manage every single data in Bolt: add, edit, remove"
+					"title": "Dynamic policies",
+					"description": "Granular rules for repositories, inboxes, calendars, secrets"
 				},
 				"privacy": {
-					"title": "Absolute Privacy",
-					"description": "Automatic TTL, zero persistence, guaranteed deletion"
+					"title": "Guaranteed TTL",
+					"description": "Temporary access with auto-revoke and signed log"
 				},
 				"universal": {
-					"title": "Universal AI",
-					"description": "Works with any AI: ChatGPT, Claude, Gemini, custom APIs"
+					"title": "Universal stack",
+					"description": "Works with GitHub, Google Workspace, AWS, Azure, YubiKey Bio"
 				}
 			},
 			"vault_items": {
-				"title": "What You Can Protect",
-				"subtitle": "Your knowledge, always secure",
+				"title": "What we protect",
+				"subtitle": "Data released only when it matters",
 				"items": {
-					"emails": "Emails and conversations",
-					"documents": "Documents and notes",
-					"calendar": "Calendar and appointments",
-					"photos": "Photos and media",
-					"contacts": "Contacts and relationships",
-					"finance": "Financial data",
-					"health": "Health information",
-					"custom": "Any custom data"
+					"emails": "Selected Gmail threads",
+					"documents": "Sensitive Docs & Drive",
+					"calendar": "Calendar slots with PII",
+					"photos": "GitHub repos and attachments",
+					"contacts": "Address books and groups",
+					"finance": "API secrets and credentials",
+					"health": "Audit logs for legal teams",
+					"custom": "Any MCP/custom tool"
 				}
 			}
 		},
 		"cta": {
-			"headline": "Your Finger. Your Key. Your Data.",
-			"description": "Become the absolute guardian of your digital information. No AI will ever access without your biometric consent.",
+			"headline": "Prove value before hardware",
+			"description": "Run the software pilot with three teams. Measure TTR, policy hits and leaks prevented before building the biometric dev kit.",
 			"buttons": {
-				"plans": "Choose Your Model",
-				"mcp": "Discover Technology"
+				"plans": "Request the pilot",
+				"mcp": "Read the roadmap"
 			},
 			"trust": {
-				"garanzia": "30-day guarantee",
-				"spedizione": "Free shipping",
-				"madeInItaly": "Made in Italy"
+				"garanzia": "Response SLA < 2s",
+				"spedizione": "Exportable audit trail",
+				"madeInItaly": "Dedicated operational support"
 			}
 		}
 	}

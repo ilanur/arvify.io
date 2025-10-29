@@ -18,7 +18,7 @@
 
 	function handleToggle() {
 		if (onToggleDetails) {
-			onToggleDetails()	;
+			onToggleDetails();
 		}
 	}
 </script>

@@ -1,274 +1,189 @@
 <script>
 	import {
-		Fingerprint,
+		Layers,
 		Shield,
-		Lock,
-		Key,
-		Mail,
-		FileText,
+		BellRing,
+		Fingerprint,
+		GitBranch,
 		Calendar,
-		Image,
-		Users,
-		CreditCard,
-		Heart,
-		Plus,
-		Eye,
-		Edit3,
-		Trash2,
-		Zap
+		KeyRound,
+		FileText
 	} from 'lucide-svelte';
 	import { t } from '$lib/utils/translations.js';
 
-	// Vault items con icone
-	const vaultItems = [
-		{ icon: Mail, label: t('home.vault.vault_items.items.emails'), color: 'blue' },
-		{ icon: FileText, label: t('home.vault.vault_items.items.documents'), color: 'emerald' },
-		{ icon: Calendar, label: t('home.vault.vault_items.items.calendar'), color: 'purple' },
-		{ icon: Image, label: t('home.vault.vault_items.items.photos'), color: 'pink' },
-		{ icon: Users, label: t('home.vault.vault_items.items.contacts'), color: 'indigo' },
-		{ icon: CreditCard, label: t('home.vault.vault_items.items.finance'), color: 'amber' },
-		{ icon: Heart, label: t('home.vault.vault_items.items.health'), color: 'red' },
-		{ icon: Plus, label: t('home.vault.vault_items.items.custom'), color: 'gray' }
+	const useCases = [
+		{
+			title: 'Consent-gated RAG',
+			description:
+				'GitHub + Gmail diventano fonti controllate. L’AI ottiene solo file ed email pertinenti per X secondi, poi tutto si richiude.',
+			icon: GitBranch,
+			highlights: ['Policy per branch e label', 'TTL automatico 30-90s', 'Diff e thread auditati']
+		},
+		{
+			title: 'Just-in-time PII',
+			description:
+				'Calendar e Docs condivisi solo quando serve. Lo slot viene aperto al volo, la PII torna nel vault al timeout.',
+			icon: Calendar,
+			highlights: ['Scope temporanei', 'Segnalazione PII', 'Log condiviso con il DPO']
+		},
+		{
+			title: 'Secrets broker',
+			description:
+				'Token e credenziali ruotabili on demand. Arvify emette segreti a tempo e li revoca appena l’AI termina.',
+			icon: KeyRound,
+			highlights: ['Integrazione AWS/GCP/Azure', 'Supporto YubiKey Bio', 'Kill switch immediato']
+		}
 	];
 
-	// Animazione per gli elementi del vault
-	let hoveredItem = $state(null);
+	const protectedItems = [
+		t('home.vault.vault_items.items.emails'),
+		t('home.vault.vault_items.items.documents'),
+		t('home.vault.vault_items.items.calendar'),
+		t('home.vault.vault_items.items.photos'),
+		t('home.vault.vault_items.items.contacts'),
+		t('home.vault.vault_items.items.finance'),
+		t('home.vault.vault_items.items.health'),
+		t('home.vault.vault_items.items.custom')
+	];
 </script>
 
 <section
-	class="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden"
+	class="py-20 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative overflow-hidden"
 >
-	<!-- Background Pattern -->
 	<div class="absolute inset-0 opacity-10">
 		<div
 			class="absolute inset-0"
-			style="background-image: radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 2px, transparent 0); background-size: 50px 50px;"
+			style="background-image: radial-gradient(circle at 24px 24px, rgba(148, 163, 184, 0.3) 2px, transparent 0); background-size: 48px 48px;"
 		></div>
 	</div>
 
-	<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<!-- Header -->
+	<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
 		<div class="text-center mb-16">
 			<div
-				class="inline-flex items-center px-6 py-3 bg-blue-500/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6"
+				class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium mb-6"
 			>
-				<Key class="w-4 h-4 mr-2 text-blue-400" />
-				<span class="text-blue-200">{t('home.vault.title')}</span>
+				<Layers class="w-4 h-4 text-cyan-300" />
+				<span>{t('home.vault.title')}</span>
 			</div>
-
-			<h2 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+			<h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+				<span
+					class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-emerald-300 to-cyan-300"
+				>
 					{t('home.vault.subtitle')}
 				</span>
 			</h2>
-
-			<p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+			<p class="text-xl text-slate-100/80 max-w-3xl mx-auto leading-relaxed">
 				{t('home.vault.description')}
 			</p>
 		</div>
 
-		<!-- Main Features Grid -->
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-			<!-- Left - Fingerprint Vault Visual -->
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start mb-20">
 			<div class="relative">
-				<!-- Central Fingerprint -->
-				<div class="relative flex justify-center">
-					<!-- Outer Rings -->
-					<div
-						class="absolute w-96 h-96 border-2 border-blue-500/20 rounded-full animate-ping opacity-20"
-					></div>
-					<div
-						class="absolute w-80 h-80 border-2 border-blue-500/30 rounded-full animate-ping opacity-30"
-						style="animation-delay: 0.5s"
-					></div>
-					<div
-						class="absolute w-64 h-64 border-2 border-blue-500/40 rounded-full animate-ping opacity-40"
-						style="animation-delay: 1s"
-					></div>
-
-					<!-- Central Fingerprint -->
-					<div
-						class="relative w-48 h-48 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-2xl"
-					>
-						<div
-							class="w-40 h-40 bg-gradient-to-br from-blue-500 to-emerald-600 rounded-full flex items-center justify-center"
-						>
-							<Fingerprint class="w-20 h-20 text-white" />
+				<div
+					class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-2xl space-y-6"
+				>
+					<div class="flex items-start gap-4">
+						<div class="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center">
+							<BellRing class="w-7 h-7 text-blue-200" />
 						</div>
-
-						<!-- Pulse effect -->
-						<div
-							class="absolute inset-0 bg-gradient-to-br from-blue-400 to-emerald-400 rounded-full animate-ping opacity-20"
-						></div>
+						<div>
+							<h3 class="text-2xl font-semibold mb-2">Flow completo</h3>
+							<p class="text-slate-200/80 leading-relaxed">
+								Request → notifica telefono → Touch ID/Face ID → rilascio con TTL → audit trail
+								firmato.
+							</p>
+						</div>
 					</div>
 
-					<!-- Data Orbits -->
-					{#each vaultItems.slice(0, 6) as item, index}
-						{@const IconComponent = item.icon}
-						{@const angle = index * 60 * (Math.PI / 180)}
-						{@const radius = 140}
-						{@const x = Math.cos(angle) * radius}
-						{@const y = Math.sin(angle) * radius}
-
-						<div
-							class="absolute w-12 h-12 bg-{item.color}-500/20 backdrop-blur-sm rounded-xl border border-{item.color}-400/30 flex items-center justify-center"
-							style="transform: translate({x}px, {y}px)"
-							onmouseenter={() => (hoveredItem = index)}
-							onmouseleave={() => (hoveredItem = null)}
-							role="button"
-							tabindex="0"
-						>
-							<IconComponent class="w-5 h-5 text-{item.color}-400" />
-
-							{#if hoveredItem === index}
-								<div
-									class="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10"
-								>
-									{item.label}
-								</div>
-							{/if}
+					<div class="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-6">
+						<div class="flex items-center gap-3 mb-3 text-emerald-200">
+							<Fingerprint class="w-5 h-5" />
+							<span class="text-sm font-semibold uppercase tracking-wide">Biometria esistente</span>
 						</div>
-					{/each}
-				</div>
+						<p class="text-slate-100/80 text-sm leading-relaxed">
+							FIDO2/WebAuthn e chiavi biometriche (YubiKey Bio, Token) diventano fattori opzionali.
+							Partiamo con ciò che hai già in mano: Touch ID e Face ID.
+						</p>
+					</div>
 
-				<!-- Lock/Unlock Animation -->
-				<div class="mt-8 flex justify-center">
-					<div class="bg-gray-900/80 backdrop-blur-sm rounded-2xl p-4 border border-gray-700">
-						<div class="flex items-center space-x-3">
-							<Lock class="w-5 h-5 text-green-400" />
-							<span class="text-green-400 text-sm font-medium">Vault Protetto</span>
-							<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+						<div class="rounded-xl border border-blue-400/30 bg-blue-500/10 p-4">
+							<p class="text-sm font-semibold text-blue-100 mb-2">
+								{t('home.vault.features.control.title')}
+							</p>
+							<p class="text-xs text-blue-100/80 leading-relaxed">
+								{t('home.vault.features.control.description')}
+							</p>
+						</div>
+						<div class="rounded-xl border border-cyan-400/30 bg-cyan-500/10 p-4">
+							<p class="text-sm font-semibold text-cyan-100 mb-2">
+								{t('home.vault.features.privacy.title')}
+							</p>
+							<p class="text-xs text-cyan-100/80 leading-relaxed">
+								{t('home.vault.features.privacy.description')}
+							</p>
+						</div>
+						<div class="rounded-xl border border-emerald-400/30 bg-emerald-500/10 p-4">
+							<p class="text-sm font-semibold text-emerald-100 mb-2">
+								{t('home.vault.features.fingerprint.title')}
+							</p>
+							<p class="text-xs text-emerald-100/80 leading-relaxed">
+								{t('home.vault.features.fingerprint.description')}
+							</p>
+						</div>
+						<div class="rounded-xl border border-purple-400/30 bg-purple-500/10 p-4">
+							<p class="text-sm font-semibold text-purple-100 mb-2">
+								{t('home.vault.features.universal.title')}
+							</p>
+							<p class="text-xs text-purple-100/80 leading-relaxed">
+								{t('home.vault.features.universal.description')}
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- Right - Features List -->
-			<div class="text-white">
-				<div class="space-y-8">
-					<!-- Feature 1: Fingerprint Key -->
-					<div class="flex items-start space-x-4">
-						<div
-							class="w-12 h-12 bg-blue-500/20 backdrop-blur-sm rounded-xl flex items-center justify-center"
-						>
-							<Fingerprint class="w-6 h-6 text-blue-400" />
-						</div>
-						<div>
-							<h3 class="text-xl font-bold mb-2">{t('home.vault.features.fingerprint.title')}</h3>
-							<p class="text-gray-300">{t('home.vault.features.fingerprint.description')}</p>
-						</div>
-					</div>
-
-					<!-- Feature 2: Total Control -->
-					<div class="flex items-start space-x-4">
-						<div
-							class="w-12 h-12 bg-emerald-500/20 backdrop-blur-sm rounded-xl flex items-center justify-center"
-						>
-							<Shield class="w-6 h-6 text-emerald-400" />
-						</div>
-						<div>
-							<h3 class="text-xl font-bold mb-2">{t('home.vault.features.control.title')}</h3>
-							<p class="text-gray-300">{t('home.vault.features.control.description')}</p>
-
-							<!-- Control Actions -->
-							<div class="mt-3 flex space-x-4">
-								<div class="flex items-center space-x-1 text-emerald-400 text-sm">
-									<Plus class="w-3 h-3" />
-									<span>Aggiungi</span>
-								</div>
-								<div class="flex items-center space-x-1 text-blue-400 text-sm">
-									<Edit3 class="w-3 h-3" />
-									<span>Modifica</span>
-								</div>
-								<div class="flex items-center space-x-1 text-red-400 text-sm">
-									<Trash2 class="w-3 h-3" />
-									<span>Rimuovi</span>
+			<div class="space-y-6">
+				{#each useCases as useCase, index (index)}
+					<div
+						class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:border-emerald-300/40 transition-all"
+					>
+						<div class="flex items-start gap-4">
+							<div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center">
+								<svelte:component this={useCase.icon} class="w-6 h-6 text-emerald-200" />
+							</div>
+							<div class="flex-1">
+								<h3 class="text-xl font-semibold mb-2">{useCase.title}</h3>
+								<p class="text-slate-200/80 text-sm leading-relaxed mb-4">{useCase.description}</p>
+								<div class="flex flex-wrap gap-2">
+									{#each useCase.highlights as highlight, highlightIndex (highlightIndex)}
+										<span
+											class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-xs font-medium text-emerald-100"
+										>
+											<Shield class="w-3 h-3" />
+											{highlight}
+										</span>
+									{/each}
 								</div>
 							</div>
-						</div>
-					</div>
-
-					<!-- Feature 3: Privacy -->
-					<div class="flex items-start space-x-4">
-						<div
-							class="w-12 h-12 bg-purple-500/20 backdrop-blur-sm rounded-xl flex items-center justify-center"
-						>
-							<Lock class="w-6 h-6 text-purple-400" />
-						</div>
-						<div>
-							<h3 class="text-xl font-bold mb-2">{t('home.vault.features.privacy.title')}</h3>
-							<p class="text-gray-300">{t('home.vault.features.privacy.description')}</p>
-						</div>
-					</div>
-
-					<!-- Feature 4: Universal AI -->
-					<div class="flex items-start space-x-4">
-						<div
-							class="w-12 h-12 bg-amber-500/20 backdrop-blur-sm rounded-xl flex items-center justify-center"
-						>
-							<Zap class="w-6 h-6 text-amber-400" />
-						</div>
-						<div>
-							<h3 class="text-xl font-bold mb-2">{t('home.vault.features.universal.title')}</h3>
-							<p class="text-gray-300">{t('home.vault.features.universal.description')}</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Vault Items Showcase -->
-		<div class="mt-20">
-			<div class="text-center mb-12">
-				<h3 class="text-3xl font-bold text-white mb-4">
-					{t('home.vault.vault_items.title')}
-				</h3>
-				<p class="text-gray-300 text-lg">
-					{t('home.vault.vault_items.subtitle')}
-				</p>
-			</div>
-
-			<!-- Items Grid -->
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-				{#each vaultItems as item, index}
-					{@const IconComponent = item.icon}
-					<div
-						class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-{item.color}-400/50 transition-all hover:scale-105 group"
-						onmouseenter={() => (hoveredItem = index + 10)}
-						onmouseleave={() => (hoveredItem = null)}
-						role="button"
-						tabindex="0"
-					>
-						<div class="text-center">
-							<div
-								class="w-12 h-12 bg-{item.color}-500/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform"
-							>
-								<IconComponent class="w-6 h-6 text-{item.color}-400" />
-							</div>
-							<p class="text-white text-sm font-medium">{item.label}</p>
 						</div>
 					</div>
 				{/each}
 			</div>
 		</div>
 
-		<!-- CTA Section -->
-		<div class="mt-20 text-center">
-			<div
-				class="bg-gradient-to-r from-blue-600/20 to-emerald-600/20 backdrop-blur-sm rounded-3xl p-8 border border-white/10"
-			>
-				<h3 class="text-2xl font-bold text-white mb-4">
-					Pronto a Diventare il Custode dei Tuoi Dati?
-				</h3>
-				<p class="text-gray-300 mb-6 max-w-2xl mx-auto">
-					Nessuna AI potrà mai accedere ai tuoi dati senza il tuo consenso biometrico. Il tuo dito è
-					l'unica chiave che conta.
-				</p>
-				<button
-					class="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
-				>
-					Scopri Arvify
-				</button>
+		<div class="mt-16">
+			<h3 class="text-2xl font-semibold text-center mb-6">{t('home.vault.vault_items.title')}</h3>
+			<p class="text-center text-slate-200/70 mb-10">{t('home.vault.vault_items.subtitle')}</p>
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+				{#each protectedItems as label, index (index)}
+					<div
+						class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 text-center"
+					>
+						<FileText class="w-5 h-5 mx-auto mb-2 text-emerald-200" />
+						<p class="text-sm text-slate-100">{label}</p>
+					</div>
+				{/each}
 			</div>
 		</div>
 	</div>

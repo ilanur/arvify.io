@@ -5,17 +5,17 @@
 </script>
 
 <svelte:head>
-	<title>Pricing - Arvify.io | Scegli il Tuo Piano</title>
+	<title>Pilot - Arvify Consent Layer</title>
 	<meta
 		name="description"
-		content="Scopri i piani di Arvify: Starter €299, Pro €449, Enterprise €799. Dispositivo AI ibrido con Raspberry Pi 5 e Ollama integrato."
+		content="Programma pilot software-first di 3 mesi: estensione + proxy MCP, metriche TTR, leak prevented, integrazione FIDO2 opzionale e accesso al dev kit hardware."
 	/>
 	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href="https://arvify.io/pricing" />
-	<meta property="og:title" content="Pricing - Arvify.io" />
+	<meta property="og:title" content="Pilot - Arvify Consent Layer" />
 	<meta
 		property="og:description"
-		content="Scopri i piani di Arvify: Starter, Pro ed Enterprise con hardware e servizi AI integrati."
+		content="Lancia il pilot software di Arvify: consenso AI via telefono, policy granulari e roadmap hardware dopo i risultati."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://arvify.io/pricing" />
@@ -39,41 +39,38 @@
 			<div class="space-y-8">
 				<div class="bg-gray-50 rounded-xl p-6">
 					<h3 class="text-lg font-semibold text-gray-900 mb-3">
-						Posso cambiare piano dopo l'acquisto?
+						Quanto dura il pilot e cosa include?
 					</h3>
 					<p class="text-gray-600">
-						Sì, puoi sempre fare upgrade del tuo piano acquistando componenti aggiuntivi o servizi
-						cloud. Contattaci per le opzioni disponibili.
+						Il pilot dura 12 settimane: deploy estensione + proxy MCP, configurazione policy,
+						onboarding di tre team e report settimanali con metriche TTR, auto-negate e leak
+						prevented.
+					</p>
+				</div>
+
+				<div class="bg-gray-50 rounded-xl p-6">
+					<h3 class="text-lg font-semibold text-gray-900 mb-3">Serve hardware dedicato?</h3>
+					<p class="text-gray-600">
+						No. Usiamo Touch ID/Face ID o WebAuthn già disponibili. Il dev kit biometrico (20–50
+						unità) arriva solo dopo il pilot, basato sui feedback raccolti.
 					</p>
 				</div>
 
 				<div class="bg-gray-50 rounded-xl p-6">
 					<h3 class="text-lg font-semibold text-gray-900 mb-3">
-						Cosa succede se non sono soddisfatto?
+						Possiamo integrare FIDO2 o YubiKey Bio?
 					</h3>
 					<p class="text-gray-600">
-						Offriamo una garanzia soddisfatti o rimborsati di 30 giorni. Puoi restituire il
-						dispositivo per un rimborso completo.
+						Sì, l’integrazione FIDO2/WebAuthn è opzionale. Configuriamo YubiKey Bio o token
+						biometrici come fattore aggiuntivo dove necessario.
 					</p>
 				</div>
 
 				<div class="bg-gray-50 rounded-xl p-6">
-					<h3 class="text-lg font-semibold text-gray-900 mb-3">
-						I cloud credits si rinnovano automaticamente?
-					</h3>
+					<h3 class="text-lg font-semibold text-gray-900 mb-3">Come misurate il successo?</h3>
 					<p class="text-gray-600">
-						No, i cloud credits non si rinnovano automaticamente. Puoi acquistare credits aggiuntivi
-						quando necessario direttamente dall'app.
-					</p>
-				</div>
-
-				<div class="bg-gray-50 rounded-xl p-6">
-					<h3 class="text-lg font-semibold text-gray-900 mb-3">
-						Posso usare i miei modelli AI personalizzati?
-					</h3>
-					<p class="text-gray-600">
-						Sì, Arvify supporta modelli Ollama personalizzati. Nel piano Enterprise includiamo anche
-						supporto per setup personalizzati.
+						Tracciamo TTR, percentuale di richieste auto-negate, leak prevented e qualità dell’audit
+						trail. Condividiamo un dossier finale con raccomandazioni per l’hardening.
 					</p>
 				</div>
 			</div>

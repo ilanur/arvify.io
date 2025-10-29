@@ -13,7 +13,7 @@
 	// Props per personalizzare completamente l'interfaccia
 	let {
 		// Scenario configuration
-		scenario = 'development',
+		scenario = 'consentRag',
 		requestText = null, // Se null, usa quello dal scenario
 
 		// Display options
