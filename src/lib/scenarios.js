@@ -1,120 +1,78 @@
-import { Fingerprint, Zap, Smartphone, Code, Plane } from 'lucide-svelte';
+import { GitBranch, CalendarClock, KeyRound } from 'lucide-svelte';
 
-/**
- * Configurazione centralizzata degli scenari Arvify
- * Ogni scenario include sia la configurazione UI che i dati specifici
- */
 export const scenarios = {
-	development: {
-		id: 'development',
-		name: '💻 Sviluppo AI',
-		description: "Connetti i tuoi repository per ottimizzare il workflow di sviluppo con l'AI",
+	consentRag: {
+		id: 'consentRag',
+		name: 'Consent-gated RAG',
+		description: 'GitHub + Gmail con scope temporanei e policy automatiche.',
 		theme: 'blue',
-		request: 'Connetti i miei repository per ottimizzare il workflow di sviluppo...',
-		ttl: 180,
+		request: 'Concedi accesso a file e email pertinenti per 30 secondi.',
+		ttl: 30,
 		status: 'waiting',
-		backend: 'bolt',
+		backend: 'proxy',
 		wearableColor: 'border-blue-500',
-		screenGradient: 'from-blue-500 to-purple-600',
-		icon: Code,
-		label: 'Code OK?',
+		screenGradient: 'from-blue-500 to-indigo-500',
+		icon: GitBranch,
+		label: 'RAG access',
 		dataTypes: [
-			{ name: '💻 Project repositories', status: 'approved', sensitive: false },
-			{ name: '🔧 System configurations', status: 'approved', sensitive: true },
-			{ name: '📊 Development metrics', status: 'approved', sensitive: false },
-			{ name: '🚀 Deployment keys', status: 'denied', sensitive: true },
-			{ name: '📝 Code documentation', status: 'pending', sensitive: false }
+			{ name: '📁 Repository privati', status: 'approved', sensitive: true },
+			{ name: '📬 Thread Gmail', status: 'approved', sensitive: true },
+			{ name: '📝 Issue e pull request', status: 'pending', sensitive: false },
+			{ name: '🔑 Token deploy', status: 'denied', sensitive: true }
 		]
 	},
-
-	travel: {
-		id: 'travel',
-		name: '✈️ Gestione Viaggi',
-		description: 'Bolt salva automaticamente orari voli e pickup macchina nel sistema vettoriale',
+	piiWindow: {
+		id: 'piiWindow',
+		name: 'Just-in-time PII',
+		description: 'Calendar e Docs condivisi solo quando serve.',
 		theme: 'emerald',
-		request: 'Salva gli orari del volo e il pickup della macchina nel sistema vettoriale...',
+		request: 'Apri slot calendario e Doc con PII per 2 minuti.',
 		ttl: 120,
 		status: 'processing',
-		backend: 'bolt',
+		backend: 'proxy',
 		wearableColor: 'border-emerald-500',
-		screenGradient: 'from-emerald-500 to-teal-600',
-		icon: Plane,
-		label: 'Travel?',
+		screenGradient: 'from-emerald-500 to-teal-500',
+		icon: CalendarClock,
+		label: 'PII window',
 		dataTypes: [
-			{ name: '✈️ Flight schedules', status: 'approved', sensitive: false },
-			{ name: '🚗 Car pickup details', status: 'approved', sensitive: false },
-			{ name: '🏨 Hotel reservations', status: 'pending', sensitive: true },
-			{ name: '📍 Location preferences', status: 'approved', sensitive: false },
-			{ name: '💳 Payment methods', status: 'denied', sensitive: true }
+			{ name: '📅 Slot calendario', status: 'approved', sensitive: true },
+			{ name: '📄 Doc condivisi', status: 'approved', sensitive: true },
+			{ name: '👥 Liste partecipanti', status: 'pending', sensitive: true },
+			{ name: '🗒️ Note meeting', status: 'approved', sensitive: false }
 		]
 	},
-
-	email: {
-		id: 'email',
-		name: '📧 Analisi Email',
-		description: "L'AI accede alle tue email solo con il tuo consenso biometrico",
+	secretsBroker: {
+		id: 'secretsBroker',
+		name: 'Secrets broker',
+		description: 'Token rotabili con TTL e audit trail.',
 		theme: 'purple',
-		request: 'Analizza le mie email per trovare progetti urgenti...',
-		ttl: 120,
-		status: 'completed',
-		backend: 'openai',
-		wearableColor: 'border-purple-500',
-		screenGradient: 'from-purple-500 to-pink-600',
-		icon: Fingerprint,
-		label: 'Email OK?',
-		dataTypes: [
-			{ name: '📧 Email threads', status: 'approved', sensitive: false },
-			{ name: '📅 Meeting notes', status: 'approved', sensitive: false },
-			{ name: '👤 Contact info', status: 'denied', sensitive: true },
-			{ name: '📊 Email analytics', status: 'pending', sensitive: true }
-		]
-	},
-
-	finance: {
-		id: 'finance',
-		name: '💰 Budget Intelligente',
-		description: 'Gestione finanziaria automatica con privacy garantita',
-		theme: 'amber',
-		request: 'Crea un budget mensile dai miei dati di spesa...',
-		ttl: 90,
+		request: 'Genera credenziali temporanee per deploy staging.',
+		ttl: 45,
 		status: 'waiting',
-		backend: 'anthropic',
-		wearableColor: 'border-amber-500',
-		screenGradient: 'from-amber-500 to-orange-600',
-		icon: Zap,
-		label: 'Budget?',
+		backend: 'vault',
+		wearableColor: 'border-purple-500',
+		screenGradient: 'from-purple-500 to-violet-600',
+		icon: KeyRound,
+		label: 'TTL secrets',
 		dataTypes: [
-			{ name: '💳 Transaction history', status: 'approved', sensitive: true },
-			{ name: '📈 Spending patterns', status: 'approved', sensitive: true },
-			{ name: '🏦 Bank accounts', status: 'denied', sensitive: true },
-			{ name: '📊 Investment data', status: 'pending', sensitive: true },
-			{ name: '🧾 Receipt data', status: 'approved', sensitive: false }
+			{ name: '🔐 Token temporanei', status: 'approved', sensitive: true },
+			{ name: '🛠️ Parametri ambiente', status: 'approved', sensitive: true },
+			{ name: '📈 Metriche audit', status: 'pending', sensitive: false },
+			{ name: '🔒 Chiavi permanenti', status: 'denied', sensitive: true }
 		]
 	}
 };
 
-/**
- * Array ordinato degli scenari per il carousel
- */
-export const scenarioOrder = ['development', 'travel', 'email', 'finance'];
+export const scenarioOrder = ['consentRag', 'piiWindow', 'secretsBroker'];
 
-/**
- * Ottieni un scenario specifico
- */
 export function getScenario(id) {
-	return scenarios[id] || scenarios.development;
+	return scenarios[id] || scenarios.consentRag;
 }
 
-/**
- * Ottieni tutti gli scenari come array ordinato
- */
 export function getAllScenarios() {
 	return scenarioOrder.map((id) => scenarios[id]);
 }
 
-/**
- * Ottieni solo i dataTypes di uno scenario (per compatibilità con ArvifyAppInterface)
- */
 export function getScenarioDataTypes(id) {
-	return scenarios[id]?.dataTypes || scenarios.development.dataTypes;
+	return scenarios[id]?.dataTypes || scenarios.consentRag.dataTypes;
 }

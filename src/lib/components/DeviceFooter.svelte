@@ -24,13 +24,13 @@
 				</div>
 
 				<p class="text-gray-300 text-lg mb-6 leading-relaxed max-w-md">
-					Il primo assistente AI ibrido che rispetta la tua privacy senza rinunciare alle
-					prestazioni del cloud.
+					Arvify Consent Layer: estensione + proxy MCP che porta il consenso AI sul tuo telefono.
+					Software-first, hardware-second.
 				</p>
 
 				<!-- Contact Info -->
 				<div class="space-y-3">
-					{#each contactInfo as contact}
+					{#each contactInfo as contact, index (index)}
 						<div class="flex items-center space-x-3">
 							<svelte:component this={contact.icon} class="w-4 h-4 text-blue-400" />
 							<span class="text-gray-300">{contact.value}</span>

@@ -1,122 +1,109 @@
 <script>
-	import { Shield, Database, Zap, Lock, Server, CheckCircle } from 'lucide-svelte';
+	import {
+		ShieldCheck,
+		Smartphone,
+		Puzzle,
+		KeyRound,
+		Activity,
+		Gauge,
+		History,
+		Server
+	} from 'lucide-svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
 	import DeviceFooter from '$lib/components/DeviceFooter.svelte';
 
-	const boltFeatures = [
+	const layers = [
 		{
-			icon: Database,
-			title: 'Semantic Indexing',
+			title: 'Estensione + proxy MCP',
 			description:
-				'Indicizzazione automatica di documenti, email, file con embedding vettoriali per ricerca contestuale intelligente.',
-			color: 'blue',
-			details: 'Vector database con sqlite-vec per performance ottimali'
+				'Blocca prompt e azioni prima che raggiungano GitHub, Gmail, calendar, API o segreti.',
+			icon: Puzzle
 		},
 		{
-			icon: Shield,
-			title: 'Privacy by Design',
+			title: 'Notifica telefono',
 			description:
-				'Elaborazione locale quando possibile, condivisione cloud solo su consenso esplicito del bracciale.',
-			color: 'emerald',
-			details: 'Zero-knowledge architecture con TTL automatico'
+				'Push con contesto e TTL proposto. Approvi con Touch ID/Face ID in pochi secondi.',
+			icon: Smartphone
 		},
 		{
-			icon: Zap,
-			title: 'Smart Routing',
+			title: 'FIDO2 opzionale',
 			description:
-				'Analizza ogni richiesta AI e determina automaticamente se serve il cloud o se può rispondere localmente.',
-			color: 'amber',
-			details: 'Algoritmi di routing intelligente per latenza minima'
+				'Integra YubiKey Bio o token biometrici come fattore aggiuntivo dove serve hardening.',
+			icon: KeyRound
 		},
 		{
-			icon: Lock,
-			title: 'Consent Management',
-			description:
-				'Sistema avanzato di gestione consensi con TTL personalizzabili e cancellazione garantita.',
-			color: 'purple',
-			details: 'Cryptographic proof of consent con audit trail'
+			title: 'Audit trail firmato',
+			description: 'Log crittografici esportabili per SOC, legale e audit di terze parti.',
+			icon: History
 		}
 	];
 
-	const securityLayers = [
+	const metrics = [
+		{ label: 'TTR medio', value: '1.8s', description: 'Tempo di risposta utente', icon: Gauge },
 		{
-			level: 'Level 1',
-			name: 'Transport Security',
-			description: 'TLS 1.3 end-to-end encryption',
-			icon: '🔐',
-			color: 'blue'
+			label: '% auto-negate',
+			value: '12%',
+			description: 'Richieste scadute per timeout',
+			icon: Activity
 		},
 		{
-			level: 'Level 2',
-			name: 'Biometric Consent',
-			description: 'Hardware fingerprint validation',
-			icon: '👆',
-			color: 'emerald'
+			label: 'Leak prevented',
+			value: '37',
+			description: 'Policy hit ultimo trimestre',
+			icon: ShieldCheck
 		},
 		{
-			level: 'Level 3',
-			name: 'Data Segregation',
-			description: 'Encrypted data chunks con TTL',
-			icon: '🗂️',
-			color: 'amber'
-		},
-		{
-			level: 'Level 4',
-			name: 'Zero Persistence',
-			description: 'Auto-deletion dopo scadenza',
-			icon: '🔥',
-			color: 'red'
+			label: 'Audit trail',
+			value: '100%',
+			description: 'Eventi firmati e sincronizzati',
+			icon: History
 		}
 	];
 
 	const architecture = [
 		{
-			component: 'Bracciale Arvify',
-			role: 'Consent Authority',
-			description: 'Autenticazione biometrica e gestione consensi',
-			icon: '⌚',
-			connections: ['App Mobile']
+			component: 'Browser extension',
+			role: 'Intercetta ogni richiesta AI e applica policy lato client.',
+			icon: Puzzle,
+			connections: ['Consent proxy', 'Mobile app']
 		},
 		{
-			component: 'App Mobile',
-			role: 'User Interface',
-			description: 'Interfaccia utente e bridge verso Bolt',
-			icon: '📱',
-			connections: ['Backend Bolt', 'Bracciale Arvify']
+			component: 'Consent proxy (MCP)',
+			role: 'Normalizza richieste, redige dati e gestisce TTL.',
+			icon: Server,
+			connections: ['Browser extension', 'Provider esterni', 'Audit store']
 		},
 		{
-			component: 'Backend Bolt',
-			role: 'Data Processor',
-			description: 'Elaborazione, routing e consent management',
-			icon: '🧠',
-			connections: ['AI Providers', 'App Mobile']
+			component: 'Mobile app',
+			role: 'Notifica, mostra contesto e raccoglie consenso biometrico.',
+			icon: Smartphone,
+			connections: ['Browser extension', 'Consent proxy']
 		},
 		{
-			component: 'AI Providers',
-			role: 'Response Generation',
-			description: 'OpenAI, Anthropic, Google, Microsoft',
-			icon: '🤖',
-			connections: ['Backend Bolt']
+			component: 'Audit & secrets store',
+			role: 'Genera token a tempo, registra log firmati e fornisce export.',
+			icon: History,
+			connections: ['Consent proxy', 'SIEM/SOC']
 		}
 	];
 </script>
 
 <svelte:head>
-	<title>Tecnologia Bolt - Come Funziona il Backend di Arvify</title>
+	<title>Tecnologia - Arvify Consent Layer</title>
 	<meta
 		name="description"
-		content="Scopri come Bolt garantisce la sicurezza dei tuoi dati AI con consent management biometrico, TTL automatico e privacy by design."
+		content="Scopri l'architettura software-first di Arvify: estensione + proxy MCP, consenso via telefono, integrazione FIDO2 e roadmap hardware post-pilot."
 	/>
 	<meta
 		name="keywords"
-		content="Bolt, Backend AI, Privacy, Consent Management, TTL, Biometric Security, Vector Database"
+		content="Consent Layer, MCP, Touch ID, Face ID, FIDO2, Audit Trail, AI Governance"
 	/>
 	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href="https://arvify.io/technology" />
-	<meta property="og:title" content="Tecnologia Bolt - Arvify" />
+	<meta property="og:title" content="Tecnologia Arvify Consent Layer" />
 	<meta
 		property="og:description"
-		content="Scopri come Bolt protegge i tuoi dati AI con consenso biometrico e privacy by design."
+		content="Blocca le richieste AI a monte: estensione, proxy MCP, consenso biometrico e metriche su TTR, auto-negate e leak prevented."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://arvify.io/technology" />
@@ -124,300 +111,123 @@
 </svelte:head>
 
 <div class="min-h-screen bg-gray-50">
-	<!-- Navigation -->
 	<Navigation variant="white" />
 
-	<!-- Hero Section -->
-	<section class="pt-24 pb-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+	<section class="pt-24 pb-20 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
 			<div class="text-center">
 				<div
-					class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 text-white"
+					class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6"
 				>
-					<Server class="w-4 h-4 mr-2 text-blue-400" />
-					Backend Technology
+					<ShieldCheck class="w-4 h-4 mr-2 text-emerald-300" />
+					Architettura software-first
 				</div>
 
-				<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-					Bolt: Il Cervello
-					<span
-						class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
-					>
-						Sicuro di Arvify
-					</span>
-				</h1>
+				<h1 class="text-5xl md:text-6xl font-bold mb-6">Il consenso AI parte dal tuo telefono</h1>
 
-				<p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-					Il backend che rende possibile il controllo biometrico dell'AI. Elaborazione intelligente,
-					privacy garantita e sicurezza di livello enterprise.
+				<p class="text-xl text-gray-200 max-w-3xl mx-auto mb-10">
+					Arvify combina estensione, proxy MCP e biometria esistente per bloccare le richieste AI
+					prima che lascino la tua organizzazione. Metriche e audit trail dimostrano il valore prima
+					di investire nell’hardware.
 				</p>
 
-				<!-- Key Stats -->
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-					<div class="text-center">
-						<div class="text-3xl font-bold text-blue-400 mb-2">&lt; 50ms</div>
-						<div class="text-gray-300">Latenza consenso</div>
-					</div>
-					<div class="text-center">
-						<div class="text-3xl font-bold text-emerald-400 mb-2">100%</div>
-						<div class="text-gray-300">Privacy garantita</div>
-					</div>
-					<div class="text-center">
-						<div class="text-3xl font-bold text-amber-400 mb-2">0</div>
-						<div class="text-gray-300">Dati persistenti</div>
-					</div>
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+					{#each metrics as metric, index (index)}
+						<div class="bg-white/10 rounded-2xl p-6 border border-white/10">
+							<div class="flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 mb-4">
+								<svelte:component this={metric.icon} class="w-6 h-6 text-emerald-200" />
+							</div>
+							<p class="text-3xl font-bold">{metric.value}</p>
+							<p class="text-sm text-gray-200/80">{metric.label}</p>
+							<p class="text-xs text-gray-300/70 mt-2">{metric.description}</p>
+						</div>
+					{/each}
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Core Features -->
 	<section class="py-20">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center mb-16">
-				<h2 class="text-4xl font-bold text-gray-900 mb-6">
-					Funzionalità
-					<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">
-						Avanzate
-					</span>
-				</h2>
-				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-					Bolt combina intelligenza artificiale e sicurezza crittografica per un controllo totale
-					sui tuoi dati
-				</p>
-			</div>
-
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{#each boltFeatures as feature, i (i)}
-					<div
-						class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 group"
-					>
-						<div class="flex items-start space-x-4">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+				<div class="space-y-6">
+					<h2 class="text-4xl font-bold text-gray-900">Stack software-first</h2>
+					<p class="text-lg text-gray-600 leading-relaxed">
+						Deploy in poche ore: estensione per intercettare gli agenti, proxy MCP che orchestra
+						policy, mobile app per il consenso biometrico. FIDO2/WebAuthn si aggiunge quando hai
+						bisogno di hardening extra.
+					</p>
+					<div class="space-y-4">
+						{#each layers as layer, index (index)}
 							<div
-								class="w-12 h-12 bg-{feature.color}-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform"
+								class="flex items-start gap-4 bg-white rounded-2xl shadow-sm border border-gray-200 p-5"
 							>
-								<svelte:component this={feature.icon} class="w-6 h-6 text-{feature.color}-600" />
-							</div>
-							<div class="flex-1">
-								<h3 class="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-								<p class="text-gray-600 mb-4">{feature.description}</p>
-								<div
-									class="inline-flex items-center px-3 py-1 bg-{feature.color}-100 text-{feature.color}-700 rounded-full text-sm font-medium"
-								>
-									{feature.details}
+								<div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+									<svelte:component this={layer.icon} class="w-6 h-6 text-blue-600" />
 								</div>
-							</div>
-						</div>
-					</div>
-				{/each}
-			</div>
-		</div>
-	</section>
-
-	<!-- Security Architecture -->
-	<section class="py-20 bg-gradient-to-br from-gray-900 to-slate-800">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center mb-16">
-				<h2 class="text-4xl font-bold text-white mb-6">
-					Architettura di
-					<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-						Sicurezza
-					</span>
-				</h2>
-				<p class="text-xl text-gray-300 max-w-3xl mx-auto">
-					Quattro livelli di protezione per garantire la massima sicurezza dei tuoi dati
-				</p>
-			</div>
-
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-				{#each securityLayers as layer, i (i)}
-					<div class="text-center">
-						<div class="relative mb-6">
-							<div
-								class="w-24 h-24 bg-{layer.color}-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
-							>
-								<span class="text-4xl">{layer.icon}</span>
-							</div>
-							<div
-								class="absolute -top-2 -right-2 w-8 h-8 bg-{layer.color}-500 rounded-full flex items-center justify-center text-white text-sm font-bold"
-							>
-								{i + 1}
-							</div>
-						</div>
-						<h3 class="text-lg font-bold text-white mb-2">{layer.name}</h3>
-						<p class="text-gray-300 text-sm">{layer.description}</p>
-					</div>
-				{/each}
-			</div>
-
-			<!-- Security Flow -->
-			<div class="mt-16 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-				<h3 class="text-2xl font-bold text-white text-center mb-8">Flusso di Sicurezza</h3>
-				<div class="flex items-center justify-between text-white text-sm overflow-x-auto">
-					<div class="text-center min-w-[120px]">
-						<div
-							class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2"
-						>
-							<Shield class="w-8 h-8 text-blue-400" />
-						</div>
-						<span>Richiesta AI</span>
-					</div>
-					<div class="text-2xl text-gray-400 px-4">→</div>
-					<div class="text-center min-w-[120px]">
-						<div
-							class="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-2"
-						>
-							<Database class="w-8 h-8 text-emerald-400" />
-						</div>
-						<span>Analisi Bolt</span>
-					</div>
-					<div class="text-2xl text-gray-400 px-4">→</div>
-					<div class="text-center min-w-[120px]">
-						<div
-							class="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-2"
-						>
-							<Lock class="w-8 h-8 text-amber-400" />
-						</div>
-						<span>Consenso Biometrico</span>
-					</div>
-					<div class="text-2xl text-gray-400 px-4">→</div>
-					<div class="text-center min-w-[120px]">
-						<div
-							class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-2"
-						>
-							<Zap class="w-8 h-8 text-red-400" />
-						</div>
-						<span>Auto-Cleanup</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- System Architecture -->
-	<section class="py-20">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center mb-16">
-				<h2 class="text-4xl font-bold text-gray-900 mb-6">
-					Architettura del
-					<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">
-						Sistema
-					</span>
-				</h2>
-				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-					Come i componenti di Arvify lavorano insieme per garantire sicurezza e performance
-				</p>
-			</div>
-
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-				<!-- Architecture Diagram -->
-				<div class="relative">
-					<div class="space-y-8">
-						{#each architecture as component, i (i)}
-							<div
-								class="flex items-center space-x-4 p-6 bg-white rounded-xl shadow-lg border border-gray-200"
-							>
-								<div class="text-4xl">{component.icon}</div>
-								<div class="flex-1">
-									<h3 class="text-lg font-bold text-gray-900">{component.component}</h3>
-									<p class="text-sm text-blue-600 font-medium mb-1">{component.role}</p>
-									<p class="text-gray-600 text-sm">{component.description}</p>
-								</div>
-								<div
-									class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 font-bold"
-								>
-									{i + 1}
+								<div>
+									<h3 class="text-lg font-semibold text-gray-900">{layer.title}</h3>
+									<p class="text-gray-600 text-sm leading-relaxed">{layer.description}</p>
 								</div>
 							</div>
 						{/each}
 					</div>
 				</div>
 
-				<!-- Technical Specs -->
-				<div class="space-y-6">
-					<div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
-						<h3 class="text-2xl font-bold text-gray-900 mb-6">Specifiche Tecniche</h3>
+				<div class="bg-white rounded-3xl shadow-xl border border-gray-200 p-8">
+					<h3 class="text-2xl font-semibold text-gray-900 mb-4">Misure e metriche</h3>
+					<ul class="space-y-3 text-gray-600 text-sm leading-relaxed">
+						<li>• Time to respond per team e per asset</li>
+						<li>• Percentuale di richieste auto-negate per timeout</li>
+						<li>• Leak prevented grazie alle policy hit</li>
+						<li>• Audit trail esportabile (JSON + PDF) con firme verificabili</li>
+					</ul>
 
-						<div class="space-y-4">
-							<div class="flex justify-between items-center py-2 border-b border-blue-200">
-								<span class="font-medium text-gray-700">Database</span>
-								<span class="text-gray-600">SQLite + Vector embeddings</span>
-							</div>
-							<div class="flex justify-between items-center py-2 border-b border-blue-200">
-								<span class="font-medium text-gray-700">Encryption</span>
-								<span class="text-gray-600">AES-256 + ECDSA signatures</span>
-							</div>
-							<div class="flex justify-between items-center py-2 border-b border-blue-200">
-								<span class="font-medium text-gray-700">Transport</span>
-								<span class="text-gray-600">TLS 1.3 + Certificate pinning</span>
-							</div>
-							<div class="flex justify-between items-center py-2 border-b border-blue-200">
-								<span class="font-medium text-gray-700">Hosting</span>
-								<span class="text-gray-600">EU-based servers (GDPR compliant)</span>
-							</div>
-							<div class="flex justify-between items-center py-2 border-b border-blue-200">
-								<span class="font-medium text-gray-700">Performance</span>
-								<span class="text-gray-600">&lt; 50ms latency, 99.9% uptime</span>
-							</div>
-							<div class="flex justify-between items-center py-2">
-								<span class="font-medium text-gray-700">Compliance</span>
-								<span class="text-gray-600">SOC 2, ISO 27001 ready</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-8">
-						<h3 class="text-xl font-bold text-gray-900 mb-4">Garanzie di Sicurezza</h3>
-						<div class="space-y-3">
-							<div class="flex items-center space-x-2">
-								<CheckCircle class="w-5 h-5 text-emerald-600" />
-								<span class="text-gray-700">Zero-knowledge architecture</span>
-							</div>
-							<div class="flex items-center space-x-2">
-								<CheckCircle class="w-5 h-5 text-emerald-600" />
-								<span class="text-gray-700">End-to-end encryption</span>
-							</div>
-							<div class="flex items-center space-x-2">
-								<CheckCircle class="w-5 h-5 text-emerald-600" />
-								<span class="text-gray-700">TTL automatico garantito</span>
-							</div>
-							<div class="flex items-center space-x-2">
-								<CheckCircle class="w-5 h-5 text-emerald-600" />
-								<span class="text-gray-700">Audit trail crittografico</span>
-							</div>
-						</div>
+					<div class="mt-8 p-5 rounded-2xl bg-slate-900 text-white">
+						<h4 class="text-lg font-semibold mb-2">Roadmap hardware onesta</h4>
+						<p class="text-sm text-slate-200/80 leading-relaxed">
+							Dopo il pilot pagato con tre clienti, produciamo un dev kit limitato (20–50 unità).
+							Nessuna promessa irrealistica: autonomia e sicurezza extra arrivano solo dopo test e
+							audit indipendenti.
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- CTA Section -->
-	<section class="py-20 bg-gradient-to-r from-blue-600 to-emerald-600">
-		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<h2 class="text-4xl font-bold text-white mb-6">Pronto per la Sicurezza Assoluta?</h2>
-			<p class="text-xl text-blue-100 mb-8">
-				Bolt rende la privacy AI finalmente possibile. Nessun compromesso tra funzionalità e
-				sicurezza.
-			</p>
-
-			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<a
-					href="/modelli"
-					class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
-				>
-					Scegli il Tuo Modello
-				</a>
-				<a
-					href="/roadmap"
-					class="text-white border-2 border-white/30 hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all"
-				>
-					Vedi la Roadmap
-				</a>
+	<section class="py-20 bg-white">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-4xl font-bold text-gray-900 text-center mb-12">
+				Architettura di riferimento
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{#each architecture as block, index (index)}
+					<div class="rounded-3xl border border-gray-200 p-6 bg-gray-50">
+						<div class="flex items-start gap-4 mb-4">
+							<div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
+								<svelte:component this={block.icon} class="w-6 h-6 text-blue-600" />
+							</div>
+							<div>
+								<h3 class="text-xl font-semibold text-gray-900">{block.component}</h3>
+								<p class="text-gray-600 text-sm leading-relaxed">{block.role}</p>
+							</div>
+						</div>
+						<div class="text-xs text-gray-500 uppercase tracking-wide mb-2">Connessioni</div>
+						<div class="flex flex-wrap gap-2">
+							{#each block.connections as connection, connectionIndex (connectionIndex)}
+								<span
+									class="inline-flex items-center px-3 py-1 rounded-full bg-white border border-gray-200 text-xs text-gray-600"
+								>
+									{connection}
+								</span>
+							{/each}
+						</div>
+					</div>
+				{/each}
 			</div>
 		</div>
 	</section>
 
-	<!-- Footer -->
 	<DeviceFooter />
 </div>

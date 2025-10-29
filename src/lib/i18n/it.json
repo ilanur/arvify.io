@@ -1,101 +1,101 @@
 {
 	"nav": {
 		"mcpServers": "Tecnologia",
-		"pricing": "Prezzi",
+		"pricing": "Offerta",
 		"login": "Login",
 		"home": "← Torna alla Home",
 		"language": "Lingua",
 		"cta": {
-			"from": "A partire da €149",
-			"orderNow": "Preordina Ora",
-			"choosePlan": "Scegli Modello"
+			"from": "Pilot disponibile",
+			"orderNow": "Richiedi demo",
+			"choosePlan": "Scopri il pilot"
 		}
 	},
 	"home": {
 		"hero": {
-			"tagline": "Il Tuo Dito. La Tua Chiave. I Tuoi Dati.",
-			"highlight": "L’AI prepara, tu decidi",
-			"description": "",
-			"deviceLabel": "Bracciale Biometrico",
+			"tagline": "Software-first, hardware-second.",
+			"highlight": "Il consenso AI parte dal tuo telefono",
+			"description": "Arvify Consent Layer intercetta ogni richiesta AI come estensione e proxy MCP. Ricevi una notifica sullo smartphone, approvi con Touch ID o Face ID e rilasci i dati solo per il TTL impostato.",
+			"deviceLabel": "Consent Layer",
 			"features": {
-				"localProcessing": "Approvi con il dito",
-				"hybridCloud": "Controllo totale sui tuoi dati",
-				"mobileControl": "Gestisci e interagisci facilmente con i servizi"
+				"localProcessing": "Notifica push + Touch ID/Face ID",
+				"hybridCloud": "Proxy MCP che filtra GitHub, Gmail, API",
+				"mobileControl": "TTL e policy direttamente dall'app"
 			},
 			"scenarios": {
 				"email": {
-					"title": "Analisi Email",
-					"request": "Analizza le mie email per trovare progetti urgenti",
-					"description": "L'AI accede alle tue email solo con il tuo consenso biometrico"
+					"title": "Consent-gated RAG",
+					"request": "GitHub + Gmail, accesso mirato per 30s",
+					"description": "Solo i file ed email pertinenti vengono condivisi temporaneamente"
 				},
 				"finance": {
-					"title": "Budget Intelligente",
-					"request": "Crea un budget mensile dai miei dati di spesa",
-					"description": "Gestione finanziaria automatica con privacy garantita"
+					"title": "Secrets broker",
+					"request": "Credenziali rotabili con TTL",
+					"description": "L'AI riceve token temporanei che scadono in automatico"
 				},
 				"calendar": {
-					"title": "Pianificazione Smart",
-					"request": "Trova il momento migliore per una riunione domani",
-					"description": "Ottimizzazione calendario basata sui tuoi pattern"
+					"title": "Just-in-time PII",
+					"request": "Calendar & Docs solo quando servono",
+					"description": "PII condivise in finestra controllata e poi revocate"
 				}
 			},
 			"cta": {
-				"order": "Preordina Ora",
-				"demo": "Guarda Demo"
+				"order": "Prenota una demo",
+				"demo": "Scarica la scheda tecnica"
 			},
 			"pricing": {
-				"startingFrom": "A partire da",
-				"vat": "IVA inclusa"
+				"startingFrom": "Pilot trimestrale",
+				"vat": "posti limitati"
 			}
 		},
 		"vault": {
-			"title": "Il Tuo Vault Digitale",
-			"subtitle": "Tutto Sotto Controllo",
-			"description": "Il tuo dito è l'unica chiave che può sbloccare i tuoi dati. Nessun hacker, nessun software, nessuna AI può accedere senza il tuo consenso fisico.",
+			"title": "Arvify Consent Layer",
+			"subtitle": "Estensione + proxy MCP",
+			"description": "Blocchiamo le richieste AI a monte. Ogni azione passa da notifica telefono → Touch ID/Face ID → rilascio dati con TTL e audit trail.",
 			"features": {
 				"fingerprint": {
-					"title": "Dito = Chiave",
-					"description": "Template biometrici criptati localmente, mai condivisi"
+					"title": "Biometria esistente",
+					"description": "Touch ID / Face ID oggi, FIDO2 e chiavi biometriche opzionali domani"
 				},
 				"control": {
-					"title": "Controllo Totale",
-					"description": "Gestisci ogni singolo dato in Bolt: aggiungi, modifica, rimuovi"
+					"title": "Policy dinamiche",
+					"description": "Regole granulari per repository, inbox, calendari, segreti"
 				},
 				"privacy": {
-					"title": "Privacy Assoluta",
-					"description": "TTL automatici, zero persistenza, cancellazione garantita"
+					"title": "TTL garantito",
+					"description": "Accesso temporaneo con auto-revoke e log firmato"
 				},
 				"universal": {
-					"title": "AI Universale",
-					"description": "Funziona con qualsiasi AI: ChatGPT, Claude, Gemini, API custom"
+					"title": "Stack universale",
+					"description": "Compatibile con GitHub, Google Workspace, AWS, Azure, YubiKey Bio"
 				}
 			},
 			"vault_items": {
-				"title": "Cosa Puoi Proteggere",
-				"subtitle": "La tua conoscenza, sempre sicura",
+				"title": "Cosa proteggiamo",
+				"subtitle": "Dati rilasciati solo quando servono",
 				"items": {
-					"emails": "Email e conversazioni",
-					"documents": "Documenti e note",
-					"calendar": "Calendar e appuntamenti",
-					"photos": "Foto e media",
-					"contacts": "Contatti e relazioni",
-					"finance": "Dati finanziari",
-					"health": "Informazioni sanitarie",
-					"custom": "Qualsiasi dato custom"
+					"emails": "Thread Gmail selezionati",
+					"documents": "Docs e Drive sensibili",
+					"calendar": "Slot calendario PII",
+					"photos": "Repository GitHub e file allegati",
+					"contacts": "Rubriche e gruppi",
+					"finance": "Segreti API e credenziali",
+					"health": "Log audit per i team legali",
+					"custom": "Qualsiasi MCP/strumento custom"
 				}
 			}
 		},
 		"cta": {
-			"headline": "Il Tuo Dito. La Tua Chiave. I Tuoi Dati.",
-			"description": "Diventa il custode assoluto delle tue informazioni digitali. Nessuna AI potrà mai accedere senza il tuo consenso biometrico.",
+			"headline": "Dimostra valore prima dell'hardware",
+			"description": "Lancia il pilot software con tre team. Valuta TTR, policy hit e leak prevented prima di costruire il dev kit biometrico.",
 			"buttons": {
-				"plans": "Scegli il Tuo Modello",
-				"mcp": "Scopri la Tecnologia"
+				"plans": "Richiedi il pilot",
+				"mcp": "Leggi la roadmap"
 			},
 			"trust": {
-				"garanzia": "30 giorni garanzia",
-				"spedizione": "Spedizione gratuita",
-				"madeInItaly": "Made in Italy"
+				"garanzia": "SLA risposta < 2s",
+				"spedizione": "Audit trail esportabile",
+				"madeInItaly": "Supporto operativo dedicato"
 			}
 		}
 	}

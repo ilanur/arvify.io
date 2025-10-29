@@ -1,101 +1,101 @@
 {
 	"nav": {
 		"mcpServers": "Tecnología",
-		"pricing": "Precios",
-		"login": "Iniciar sesión",
-		"home": "← Volver al Inicio",
+		"pricing": "Oferta",
+		"login": "Login",
+		"home": "← Volver al inicio",
 		"language": "Idioma",
 		"cta": {
-			"from": "Desde €149",
-			"orderNow": "Preordenar Ahora",
-			"choosePlan": "Elegir Modelo"
+			"from": "Piloto disponible",
+			"orderNow": "Pide demo",
+			"choosePlan": "Explora el piloto"
 		}
 	},
 	"home": {
 		"hero": {
-			"tagline": "Tu Dedo. Tu Llave. Tus Datos.",
-			"highlight": "La IA prepara, tú decides",
-			"description": "",
-			"deviceLabel": "Pulsera Biométrica",
+			"tagline": "Software primero, hardware después.",
+			"highlight": "El consentimiento para la IA empieza en tu teléfono",
+			"description": "Arvify Consent Layer funciona como extensión y proxy MCP. Cada petición de la IA lanza una notificación push, apruebas con Touch ID o Face ID y los datos se liberan solo durante el TTL elegido.",
+			"deviceLabel": "Consent Layer",
 			"features": {
-				"localProcessing": "Apruebas con el dedo",
-				"hybridCloud": "Control total sobre tus datos",
-				"mobileControl": "Gestiona e interactúa fácilmente con los servicios"
+				"localProcessing": "Notificación push + Touch ID / Face ID",
+				"hybridCloud": "Proxy MCP que filtra GitHub, Gmail y APIs",
+				"mobileControl": "TTL y políticas desde la app"
 			},
 			"scenarios": {
 				"email": {
-					"title": "Análisis de Email",
-					"request": "Analiza mis emails para encontrar proyectos urgentes",
-					"description": "La IA accede a tus emails solo con tu consentimiento biométrico"
+					"title": "RAG con consentimiento",
+					"request": "GitHub + Gmail abiertos 30 s",
+					"description": "Solo se comparten temporalmente los archivos y correos relevantes"
 				},
 				"finance": {
-					"title": "Presupuesto Inteligente",
-					"request": "Crea un presupuesto mensual desde mis datos de gasto",
-					"description": "Gestión financiera automática con privacidad garantizada"
+					"title": "Secrets broker",
+					"request": "Credenciales rotables con TTL",
+					"description": "La IA recibe tokens temporales que caducan solos"
 				},
 				"calendar": {
-					"title": "Planificación Smart",
-					"request": "Encuentra el mejor momento para una reunión mañana",
-					"description": "Optimización de calendario basada en tus patrones"
+					"title": "PII just-in-time",
+					"request": "Calendar y Docs solo cuando hace falta",
+					"description": "La PII se expone en una ventana controlada y luego se revoca"
 				}
 			},
 			"cta": {
-				"order": "Preordenar Ahora",
-				"demo": "Ver Demo"
+				"order": "Reserva una demo",
+				"demo": "Descarga la ficha"
 			},
 			"pricing": {
-				"startingFrom": "Desde",
-				"vat": "IVA incluido"
+				"startingFrom": "Piloto trimestral",
+				"vat": "plazas limitadas"
 			}
 		},
 		"vault": {
-			"title": "Tu Vault Digital",
-			"subtitle": "Todo Bajo Control",
-			"description": "Tu dedo es la única llave que puede desbloquear tus datos. Ningún hacker, ningún software, ninguna IA puede acceder sin tu consentimiento físico.",
+			"title": "Arvify Consent Layer",
+			"subtitle": "Extensión + proxy MCP",
+			"description": "Bloqueamos las peticiones de la IA en origen. Cada acción pasa por notificación móvil → Touch ID/Face ID → liberación de datos con TTL y auditoría.",
 			"features": {
 				"fingerprint": {
-					"title": "Dedo = Llave",
-					"description": "Plantillas biométricas encriptadas localmente, nunca compartidas"
+					"title": "Biometría existente",
+					"description": "Touch ID / Face ID hoy, claves biométricas FIDO2 opcionales mañana"
 				},
 				"control": {
-					"title": "Control Total",
-					"description": "Gestiona cada dato en Bolt: agrega, edita, elimina"
+					"title": "Políticas dinámicas",
+					"description": "Reglas granulares para repos, inbox, calendarios y secretos"
 				},
 				"privacy": {
-					"title": "Privacidad Absoluta",
-					"description": "TTL automáticos, cero persistencia, eliminación garantizada"
+					"title": "TTL garantizado",
+					"description": "Acceso temporal con auto-revoke y log firmado"
 				},
 				"universal": {
-					"title": "IA Universal",
-					"description": "Funciona con cualquier IA: ChatGPT, Claude, Gemini, APIs personalizadas"
+					"title": "Stack universal",
+					"description": "Compatible con GitHub, Google Workspace, AWS, Azure, YubiKey Bio"
 				}
 			},
 			"vault_items": {
-				"title": "Qué Puedes Proteger",
-				"subtitle": "Tu conocimiento, siempre seguro",
+				"title": "Qué protegemos",
+				"subtitle": "Datos liberados solo cuando importan",
 				"items": {
-					"emails": "Emails y conversaciones",
-					"documents": "Documentos y notas",
-					"calendar": "Calendario y citas",
-					"photos": "Fotos y media",
-					"contacts": "Contactos y relaciones",
-					"finance": "Datos financieros",
-					"health": "Información sanitaria",
-					"custom": "Cualquier dato personalizado"
+					"emails": "Hilos de Gmail seleccionados",
+					"documents": "Docs y Drive sensibles",
+					"calendar": "Slots de calendario con PII",
+					"photos": "Repos de GitHub y adjuntos",
+					"contacts": "Contactos y grupos",
+					"finance": "Secretos y credenciales API",
+					"health": "Logs de auditoría para legales",
+					"custom": "Cualquier herramienta MCP / custom"
 				}
 			}
 		},
 		"cta": {
-			"headline": "Tu Dedo. Tu Llave. Tus Datos.",
-			"description": "Conviértete en el custodio absoluto de tu información digital. Ninguna IA podrá acceder sin tu consentimiento biométrico.",
+			"headline": "Prueba el valor antes del hardware",
+			"description": "Lanza el piloto software con tres equipos. Mide TTR, hits de políticas y fugas evitadas antes de construir el kit biométrico.",
 			"buttons": {
-				"plans": "Elige Tu Modelo",
-				"mcp": "Descubre la Tecnología"
+				"plans": "Solicita el piloto",
+				"mcp": "Lee la hoja de ruta"
 			},
 			"trust": {
-				"garanzia": "Garantía de 30 días",
-				"spedizione": "Envío gratis",
-				"madeInItaly": "Made in Italy"
+				"garanzia": "SLA de respuesta < 2s",
+				"spedizione": "Audit trail exportable",
+				"madeInItaly": "Soporte operativo dedicado"
 			}
 		}
 	}
