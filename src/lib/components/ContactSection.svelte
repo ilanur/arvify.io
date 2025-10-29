@@ -1,5 +1,5 @@
 <script>
-	import { Mail, Phone, MapPin, MessageCircle, Clock, Shield } from 'lucide-svelte';
+	import { Mail, Phone, MessageCircle, Clock, Shield } from 'lucide-svelte';
 	import ContactForm from './ContactForm.svelte';
 
 	const contactMethods = [
@@ -75,7 +75,7 @@
 				<h3 class="text-2xl font-bold text-gray-900 mb-8">Come raggiungerci</h3>
 
 				<div class="space-y-6">
-					{#each contactMethods as method}
+					{#each contactMethods as method (method.title)}
 						<a
 							href={method.action}
 							class="group block p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg border border-gray-100 hover:border-{method.color}-200 transition-all duration-300"
@@ -153,7 +153,7 @@
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{#each faqs as faq}
+				{#each faqs as faq (faq.question)}
 					<div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
 						<h4 class="font-semibold text-gray-900 mb-3">{faq.question}</h4>
 						<p class="text-gray-600 leading-relaxed">{faq.answer}</p>

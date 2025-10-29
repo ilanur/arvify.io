@@ -1,4 +1,4 @@
-import { Fingerprint, Zap, Smartphone, Code, Plane } from 'lucide-svelte';
+import { Fingerprint, Zap, Code, Plane } from 'lucide-svelte';
 
 /**
  * Configurazione centralizzata degli scenari Arvify

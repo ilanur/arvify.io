@@ -20,7 +20,7 @@
 	</div>
 
 	<div class="flex flex-wrap gap-2">
-		{#each categories as category}
+		{#each categories as category (category)}
 			<button
 				class="category-pill {selectedCategory === category ? 'active' : ''}"
 				onclick={() => (selectedCategory = category)}

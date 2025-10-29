@@ -1,5 +1,5 @@
 <script>
-	import { ArrowLeft, Settings, Shield, Bell, FileText, Zap } from 'lucide-svelte';
+	import { ArrowLeft, Shield, Bell, FileText, Zap } from 'lucide-svelte';
 
 	let {
 		// Configurazione impostazioni

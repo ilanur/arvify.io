@@ -1,14 +1,14 @@
 {
 	"nav": {
 		"mcpServers": "Tecnologia",
-		"pricing": "Prezzi",
+		"pricing": "Pilot pagato",
 		"login": "Login",
 		"home": "← Torna alla Home",
 		"language": "Lingua",
 		"cta": {
-			"from": "A partire da €149",
-			"orderNow": "Preordina Ora",
-			"choosePlan": "Scegli Modello"
+			"from": "Pilot pagato • 3 posti",
+			"orderNow": "Prenota pilot",
+			"choosePlan": "Invia richiesta"
 		}
 	},
 	"home": {

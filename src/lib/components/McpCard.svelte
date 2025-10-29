@@ -1,5 +1,5 @@
 <script>
-	import { ExternalLink, Github, Star, Users, Globe, Server } from 'lucide-svelte';
+	import { ExternalLink, Github, Star } from 'lucide-svelte';
 
 	let { server } = $props();
 
@@ -95,7 +95,7 @@
 		<div class="mb-4">
 			<h4 class="text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">Features</h4>
 			<div class="flex flex-wrap gap-1">
-				{#each server.features.slice(0, 3) as feature}
+				{#each server.features.slice(0, 3) as feature (feature)}
 					<span class="bg-white/70 text-gray-700 text-xs px-2 py-1 rounded-md border">
 						{feature}
 					</span>
@@ -116,7 +116,7 @@
 				Platform Support
 			</h4>
 			<div class="flex flex-wrap gap-1">
-				{#each server.badges as badge}
+				{#each server.badges as badge (badge)}
 					<span class="badge {getBadgeColor(badge)} text-xs">
 						{badge}
 					</span>

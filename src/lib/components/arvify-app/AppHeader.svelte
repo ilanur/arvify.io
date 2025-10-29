@@ -1,5 +1,5 @@
 <script>
-	import { ChevronUp, Settings } from 'lucide-svelte';
+	import { Settings } from 'lucide-svelte';
 	import ArvifyLogo from '$lib/components/ArvifyLogo.svelte';
 
 	let {
@@ -18,7 +18,7 @@
 
 	function handleToggle() {
 		if (onToggleDetails) {
-			onToggleDetails()	;
+			onToggleDetails();
 		}
 	}
 </script>

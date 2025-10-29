@@ -1,5 +1,5 @@
 <script>
-	import { Fingerprint, Shield, Battery, Wifi, Settings, Smartphone } from 'lucide-svelte';
+	import { Fingerprint, Battery, Wifi, Settings, Smartphone } from 'lucide-svelte';
 
 	const specs = [
 		{
@@ -62,7 +62,7 @@
 
 		<!-- Specs Grid -->
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-			{#each specs as spec, i}
+			{#each specs as spec, i (spec.category)}
 				<div
 					class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300"
 					style="animation-delay: {i * 150}ms"
@@ -77,7 +77,7 @@
 
 					<!-- Specs List -->
 					<div class="space-y-4">
-						{#each spec.items as item}
+						{#each spec.items as item (item.label)}
 							<div class="flex justify-between items-start">
 								<span class="text-gray-600 font-medium">{item.label}</span>
 								<span class="text-gray-900 font-semibold text-right ml-4">{item.value}</span>
@@ -96,7 +96,7 @@
 			</div>
 
 			<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-				{#each aiProviders as provider}
+				{#each aiProviders as provider (provider.name)}
 					<div
 						class="text-center p-6 rounded-xl bg-gray-50 hover:bg-{provider.color}-50 transition-colors"
 					>

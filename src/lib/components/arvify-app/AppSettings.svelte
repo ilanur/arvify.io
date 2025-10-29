@@ -3,8 +3,6 @@
 
 	let {
 		// Configurazione impostazioni
-		processingPreference = 'Locale quando possibile',
-		defaultTtl = '30 minuti',
 		autoApproval = true,
 		pushNotifications = true,
 		auditLog = true,
