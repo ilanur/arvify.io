@@ -1,13 +1,13 @@
 <script>
 	import {
 		Code,
-		Plane,
-		Mail,
-		DollarSign,
+		Calendar,
+		KeyRound,
 		Brain,
 		Server,
 		Fingerprint,
 		Zap,
+		Smartphone,
 		Play,
 		Pause
 	} from 'lucide-svelte';
@@ -17,37 +17,37 @@
 
 	const flowSteps = $state([
 		{
-			id: 'ai',
-			title: 'AI Reasoning',
-			desc: 'Analizza la richiesta e prepara il piano di azione',
+			id: 'extension',
+			title: 'Extension intercept',
+			desc: 'Blocca la richiesta AI e invia il contesto al proxy MCP',
 			icon: Brain,
 			color: 'from-blue-500 to-blue-600'
 		},
 		{
-			id: 'bolt',
-			title: 'Bolt Orchestration',
-			desc: 'Valida il piano e orchestra i servizi necessari',
+			id: 'proxy',
+			title: 'Proxy MCP',
+			desc: 'Classifica i dati, applica policy e prepara il prompt di consenso',
 			icon: Server,
 			color: 'from-purple-500 to-purple-600'
 		},
 		{
-			id: 'mcp',
-			title: 'MCP Services',
-			desc: 'Connette e coordina i servizi esterni',
-			icon: Zap,
+			id: 'consent',
+			title: 'Consent push',
+			desc: 'Notifica su mobile con Touch ID / Face ID richiesto',
+			icon: Smartphone,
 			color: 'from-emerald-500 to-emerald-600'
 		},
 		{
-			id: 'arvify',
-			title: 'Biometric Consent',
-			desc: 'Richiede consenso biometrico per procedere',
+			id: 'biometrics',
+			title: 'Biometria + policy',
+			desc: 'Approvi, neghi o lasci scadere: tutto tracciato e firmato',
 			icon: Fingerprint,
 			color: 'from-indigo-500 to-indigo-600'
 		},
 		{
-			id: 'action',
-			title: 'Secure Action',
-			desc: "Esegue l'azione verificata in modo sicuro",
+			id: 'release',
+			title: 'TTL release',
+			desc: 'Rilascia dati/secret solo per il tempo concordato con auto-cleanup',
 			icon: Zap,
 			color: 'from-green-500 to-green-600'
 		}
@@ -55,64 +55,49 @@
 
 	const demoScenarios = $state([
 		{
-			id: 'travel',
-			title: 'Smart Travel Booking',
-			description: 'Prenota voli e hotel con un tocco',
-			icon: Plane,
-			gradient: 'from-sky-400 to-blue-600',
-			steps: [
-				'AI trova volo Milano → Roma, ore 07:15, 210€',
-				'Bolt verifica disponibilità e confronta prezzi',
-				'MCP Travel API conferma opzioni migliori',
-				'Tocco biometrico su Arvify per confermare',
-				'Biglietto emesso e inviato via email'
-			],
-			tag: 'Consumer • Travel'
-		},
-		{
-			id: 'development',
-			title: 'AI Code Assistant',
-			description: 'Deploy e gestione repository sicura',
+			id: 'github-gmail',
+			title: 'Consent-gated RAG',
+			description: 'GitHub + Gmail, accesso temporaneo ai soli artefatti rilevanti',
 			icon: Code,
-			gradient: 'from-violet-400 to-purple-600',
+			gradient: 'from-blue-500 to-indigo-600',
 			steps: [
-				'AI analizza il codice e suggerisce ottimizzazioni',
-				'Bolt prepara il pipeline di deployment',
-				'MCP GitHub gestisce repository e chiavi',
-				'Consenso biometrico per deploy in produzione',
-				'Applicazione deployata con successo'
+				'L’estensione blocca la richiesta AI su repo privati',
+				'Proxy MCP seleziona file ed email pertinenti',
+				'Notifica mobile richiede Touch ID con TTL di 90s',
+				'Dati rilasciati solo entro lo scope autorizzato',
+				'Audit trail firmato inviato al SIEM aziendale'
 			],
-			tag: 'Developer • DevOps'
+			tag: 'Dev team • Supporto prodotto'
 		},
 		{
-			id: 'finance',
-			title: 'Smart Budget Manager',
-			description: 'Gestione finanziaria intelligente',
-			icon: DollarSign,
-			gradient: 'from-amber-400 to-orange-600',
+			id: 'calendar-docs',
+			title: 'PII on-demand',
+			description: 'Calendar & Docs condivisi solo quando serve',
+			icon: Calendar,
+			gradient: 'from-emerald-500 to-teal-500',
 			steps: [
-				'AI analizza le spese degli ultimi 3 mesi',
-				'Bolt categorizza e identifica pattern',
-				'MCP Banking API recupera dati aggiornati',
-				'Consenso per accesso dati finanziari',
-				'Budget personalizzato creato e attivato'
+				'Proxy MCP identifica PII nel documento richiesto',
+				'Push mobile mostra preview minimizzata',
+				'Face ID conferma visibilità per 60 secondi',
+				'Documento condiviso con watermark e auto-expire',
+				'Log accesso inviato al responsabile privacy'
 			],
-			tag: 'Finance • Personal'
+			tag: 'Consulenza • Team legale'
 		},
 		{
-			id: 'email',
-			title: 'Email Intelligence',
-			description: 'Analisi e gestione email automatica',
-			icon: Mail,
-			gradient: 'from-pink-400 to-rose-600',
+			id: 'secrets-broker',
+			title: 'Secrets broker',
+			description: 'Credenziali temporanee con rotazione automatica',
+			icon: KeyRound,
+			gradient: 'from-purple-500 to-pink-500',
 			steps: [
-				'AI scansiona email per progetti urgenti',
-				'Bolt prioritizza e categorizza messaggi',
-				'MCP Email API accede alle caselle autorizzate',
-				'Conferma biometrica per accesso email',
-				'Report priorità e azioni suggerite generato'
+				'AI chiede accesso a database o API interne',
+				'Proxy MCP genera secret temporaneo da vault',
+				'Biometria + YubiKey Bio come fattore extra',
+				'Secret valido per 45 secondi poi revocato',
+				'Report di utilizzo e rotazione registrato'
 			],
-			tag: 'Productivity • Email'
+			tag: 'Security • Platform team'
 		}
 	]);
 
@@ -163,30 +148,28 @@
 	<!-- Hero Section -->
 	<header class="text-center mb-12">
 		<div
-			class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/50 dark:to-purple-950/50 border border-indigo-200 dark:border-indigo-800 mb-6"
+			class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-sky-100 to-emerald-100 dark:from-sky-950/40 dark:to-emerald-950/40 border border-sky-200 dark:border-sky-800 mb-6"
 		>
-			<Zap class="w-4 h-4 text-indigo-600" />
-			<span class="text-sm font-medium text-indigo-700 dark:text-indigo-300"
-				>AI Flow Orchestration</span
+			<Zap class="w-4 h-4 text-sky-600" />
+			<span class="text-sm font-medium text-sky-700 dark:text-sky-300"
+				>Consent Layer Architecture</span
 			>
 		</div>
 
 		<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
 			<span
-				class="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent"
+				class="bg-gradient-to-r from-blue-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent"
 			>
-				Dal Pensiero all'Azione
+				Dalla richiesta bloccata al rilascio con TTL
 			</span>
 		</h2>
 
 		<p
 			class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed"
 		>
-			L'AI <span class="font-semibold text-indigo-600">prepara</span>, Bolt
-			<span class="font-semibold text-purple-600">orchestra</span>, MCP
-			<span class="font-semibold text-emerald-600">connette</span>, Arvify
-			<span class="font-semibold text-indigo-600">autorizza</span>. Il consenso biometrico è la
-			chiave che abilita l'azione sicura.
+			Ogni tool MCP passa dalla nostra estensione: il proxy classifica, il telefono approva, il
+			secret viene rilasciato solo per il tempo concordato. Metriche e audit trail sono inclusi by
+			design.
 		</p>
 	</header>
 
@@ -202,7 +185,7 @@
 		>
 			<!-- Flow Steps -->
 			<div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-4 mb-8">
-				{#each flowSteps as step, i}
+				{#each flowSteps as step, i (step.id)}
 					<div class="relative group">
 						<!-- Step Card -->
 						<div
@@ -321,7 +304,7 @@
 			<h3 class="text-2xl font-bold mb-6">Scenari d'Uso Reali</h3>
 
 			<div class="grid gap-4">
-				{#each demoScenarios as scenario, index}
+				{#each demoScenarios as scenario, index (scenario.id)}
 					<button
 						type="button"
 						class={`group relative overflow-hidden rounded-2xl border p-6 text-left transition-all duration-300 transform hover:scale-102
@@ -387,7 +370,7 @@ ${index === activeScenario ? 'text-white/90' : 'text-slate-600 dark:text-slate-3
 				</div>
 
 				<div class="space-y-4">
-					{#each currentScenario.steps as step, idx}
+					{#each currentScenario.steps as step, idx (step)}
 						<div
 							class={`flex items-start gap-4 p-4 rounded-xl transition-all duration-300
 ${idx <= activeStep ? 'bg-white/20 backdrop-blur-sm' : 'bg-white/10'}

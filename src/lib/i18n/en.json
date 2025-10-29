@@ -1,14 +1,14 @@
 {
 	"nav": {
 		"mcpServers": "Technology",
-		"pricing": "Pricing",
+		"pricing": "Paid pilot",
 		"login": "Login",
 		"home": "← Back to Home",
 		"language": "Language",
 		"cta": {
-			"from": "Starting at €149",
-			"orderNow": "Preorder Now",
-			"choosePlan": "Choose Model"
+			"from": "Paid pilot • 3 seats",
+			"orderNow": "Book pilot",
+			"choosePlan": "Request access"
 		}
 	},
 	"home": {

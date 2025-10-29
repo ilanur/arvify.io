@@ -197,7 +197,7 @@
 						</h3>
 
 						<div class="space-y-4">
-							{#each recentActivity as activity}
+							{#each recentActivity as activity (activity.query)}
 								<div class="flex items-center justify-between p-4 bg-white/5 rounded-lg">
 									<div class="flex items-center space-x-3">
 										<div

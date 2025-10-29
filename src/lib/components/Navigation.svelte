@@ -1,6 +1,6 @@
 <script>
 	// @ts-nocheck
-	import { Shield, Menu, X } from 'lucide-svelte';
+	import { Menu, X } from 'lucide-svelte';
 	import { page } from '$app/stores';
 	import { t } from '$lib/utils/translations.js';
 	import ArvifyLogo from '$lib/components/ArvifyLogo.svelte';

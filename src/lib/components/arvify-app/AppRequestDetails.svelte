@@ -76,13 +76,6 @@
 		const remainingSeconds = seconds % 60;
 		return `${minutes}m ${remainingSeconds}s`;
 	}
-
-	// Status mapping per i dati
-	const statusConfig = {
-		approved: { color: 'text-blue-400', bg: 'bg-blue-500/10', icon: '✅' },
-		denied: { color: 'text-red-400', bg: 'bg-red-500/10', icon: '❌' },
-		pending: { color: 'text-slate-300', bg: 'bg-slate-500/10', icon: '⏳' }
-	};
 </script>
 
 <div class="h-full flex flex-col bg-gradient-to-br from-slate-900 to-slate-800">
@@ -166,7 +159,7 @@
 			</h2>
 
 			<div class="space-y-3">
-				{#each dataTypes as dataType}
+				{#each dataTypes as dataType (dataType.name)}
 					<div
 						class="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg border border-slate-600/30"
 					>

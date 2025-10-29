@@ -45,7 +45,7 @@
 	</div>
 
 	<div class="space-y-1 max-h-16 overflow-y-auto">
-		{#each dataTypes.slice(0, maxVisible) as dataType}
+		{#each dataTypes.slice(0, maxVisible) as dataType (dataType.label ?? dataType)}
 			<div class="flex items-center justify-between text-xs">
 				<div class="flex items-center space-x-2">
 					<span class="text-gray-300">{dataType.name}</span>

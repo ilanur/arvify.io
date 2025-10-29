@@ -9,9 +9,7 @@
 		// Callbacks per navigazione
 		onShowDetails = null,
 
-		// Styling
-		statusBgClass = 'bg-slate-500/10',
-		statusBorderClass = 'border border-slate-500/20',
+		// Styling placeholders per compatibilità futura
 		statusTextClass = 'text-white text-sm font-medium',
 		ttlTextClass = 'text-slate-300 text-sm'
 	} = $props();

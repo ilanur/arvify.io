@@ -6,7 +6,6 @@
 	import AppHeader from './AppHeader.svelte';
 	import AppRequest from './AppRequest.svelte';
 	import AppStatus from './AppStatus.svelte';
-	import AppSystemStatus from './AppSystemStatus.svelte';
 	import AppRequestDetails from './AppRequestDetails.svelte';
 	import AppSettingsPage from './AppSettingsPage.svelte';
 
@@ -16,17 +15,11 @@
 		scenario = 'development',
 		requestText = null, // Se null, usa quello dal scenario
 
-		// Display options
-		theme = null, // Se null, usa quello dal scenario
-		size = 'normal', // 'compact', 'normal', 'expanded'
-
 		// Data configuration
 		dataTypes = null, // Array personalizzato o null per default
 		ttlSeconds = null, // Se null, usa quello dal scenario
 
 		// State management
-		showNotification = true,
-		isWaitingConsent = true,
 		processingStatus = null, // Se null, usa quello dal scenario
 
 		// Backend configuration
@@ -97,7 +90,6 @@
 
 	// Usa valori del scenario come fallback
 	const currentRequestText = requestText || scenarioConfig.request;
-	const currentTheme = theme || scenarioConfig.theme;
 	const currentTtl = ttlSeconds || scenarioConfig.ttl;
 	const currentStatus = processingStatus || scenarioConfig.status;
 	const currentBackend = backendType || scenarioConfig.backend;
